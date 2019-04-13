@@ -47,7 +47,9 @@ void
 release(struct spinlock *lk)
 {
   if(!holding(lk))
-    panic("release");
+  {
+    cprintf( "\n LOCK THAT FUCKED US IS -- %s  \n" , lk->name );
+    panic("release");}
 
   lk->pcs[0] = 0;
   lk->cpu = 0;

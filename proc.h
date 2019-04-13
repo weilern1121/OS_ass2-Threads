@@ -47,7 +47,7 @@ struct thread {
     struct trapframe *tf;        // Trap frame for current syscall
     struct context *context;     // swtch() here to run process
     void *chan;                  // If non-zero, sleeping on chan
-    //int killed;                  // If non-zero, have been killed
+    int killed;                  // If non-zero, have been killed
     //struct file *ofile[NOFILE];  // Open files
     //struct inode *cwd;           // Current directory
     char name[16];               // Thread name (debugging)
@@ -59,13 +59,13 @@ struct thread {
 struct proc {
   uint sz;                     // Size of process memory (bytes)
   pde_t* pgdir;                // Page table
-  char *kstack;                // Bottom of kernel stack for this process
+  //char *kstack;                // Bottom of kernel stack for this process
   enum procstate state;        // Process state
   int pid;                     // Process ID
   struct proc *parent;         // Parent process
   //struct trapframe *tf;        // Trap frame for current syscall
   struct context *context;     // swtch() here to run process
-  //void *chan;                  // If non-zero, sleeping on chan
+  void *chan;                  // If non-zero, sleeping on chan
   int killed;                  // If non-zero, have been killed
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
@@ -73,6 +73,10 @@ struct proc {
   struct thread thread[NTHREADS];  // process's thread array
   struct thread *mainThread;  // proc's main thread
   int tidCounter;         //proc's current amount of threads
+  struct spinlock *procLock; //lock - might change to MUTEX
+  int exited;                  // If non-zero, have been exited
+
+
 
 
 };
