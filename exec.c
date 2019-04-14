@@ -10,7 +10,8 @@
 int
 exec(char *path, char **argv)
 {
-    cprintf("\n\n ---EXEC---- \n\n");
+
+    //cprintf("\n\n ---EXEC---- \n\n");
     char *s, *last;
     int i, off;
     uint argc, sz, sp, ustack[3+MAXARG+1];

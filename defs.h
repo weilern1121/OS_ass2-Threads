@@ -121,7 +121,13 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 struct thread*  mythread();
-void            cleanProcOneThread(struct thread *curthread, struct proc *p);
+void            cleanProcOneThread(struct thread *, struct proc *);
+//kthread
+int             kthread_create(void (*start_func)(), void* stack);
+int             kthread_id();
+void            kthread_exit();
+int             kthread_join(int thread_id);
+
 // swtch.S
 void            swtch(struct context**, struct context*);
 

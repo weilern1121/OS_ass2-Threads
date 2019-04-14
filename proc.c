@@ -17,6 +17,8 @@ static struct proc *initproc;
 
 int nextpid = 1;
 
+int tidCounter = 1;
+
 int DEBUGMODE = 0; //0-off , 1- without SLEEP & WAKEUP & SCHED , 2-all commands
 
 extern void forkret(void);
@@ -38,6 +40,7 @@ pinit(void) {
 
 }
 
+//must be called under acquire(&ptable.lock); !!
 void
 cleanThread(struct thread *t) {
     kfree(t->tkstack);
@@ -46,6 +49,9 @@ cleanThread(struct thread *t) {
     t->tid = 0;
     t->name[0] = 0;
     t->killed = 0;
+    //clean trap frame and context
+    memset(t->tf, 0, sizeof(*t->tf));
+    memset(t->context, 0, sizeof(*t->context));
 }
 
 void
@@ -146,7 +152,6 @@ allocproc(void) {
     found:
     p->state = EMBRYO;
     p->pid = nextpid++;
-    p->tidCounter = 1;
 
     //p->procLock = JustLock;
 
@@ -161,7 +166,7 @@ allocproc(void) {
 
     foundThread:
     t->state = EMBRYO;
-    t->tid = p->tidCounter++;
+    t->tid = tidCounter++;
     p->mainThread = t;
 
     // Allocate kernel stack.
@@ -322,7 +327,7 @@ exit(void) {
     //struct thread *t;
     struct thread *curthread = mythread();
     int fd;
-    //if (DEBUGMODE > 0)
+    if (DEBUGMODE > 0)
         cprintf("EXIT");
     if (curproc == initproc)
         panic("init exiting");
@@ -343,11 +348,11 @@ exit(void) {
 //        }
 //    }
 
-   // if (DEBUGMODE > 0)
-   cprintf(" BEFORE cleanProcOneThread\n");
+    // if (DEBUGMODE > 0)
+    //cprintf(" BEFORE cleanProcOneThread\n");
     cleanProcOneThread(curthread, curproc);
-   // if (DEBUGMODE > 0)
-   cprintf(" AFTER cleanProcOneThread\n");
+    // if (DEBUGMODE > 0)
+    //cprintf(" AFTER cleanProcOneThread\n");
     acquire(&ptable.lock);
     curproc->mainThread = curthread;
     //only 1 thread is able
@@ -375,7 +380,7 @@ exit(void) {
 
     // Parent might be sleeping in wait().
     wakeup1(curproc->parent->mainThread);
-    cprintf(" AFTER wakeup1(curproc->parent->mainThread);\n");
+    //cprintf(" AFTER wakeup1(curproc->parent->mainThread);\n");
 
     // Pass abandoned children to init.
     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
@@ -385,7 +390,7 @@ exit(void) {
                 wakeup1(initproc->mainThread);
         }
     }
-    cprintf(" AFTER Pass abandoned children to init.\n");
+    //cprintf(" AFTER Pass abandoned children to init.\n");
 
     //TODO- where to unlock
     //cleanThread(curthread);
@@ -721,4 +726,114 @@ procdump(void) {
         }
         cprintf("\n");
     }
+}
+
+//TODO - need to update stack
+int kthread_create(void (*start_func)(), void *stack) {
+    struct thread *t;
+    struct proc *p = myproc();
+    char *sp;
+    acquire(&ptable.lock);
+    for (t = p->thread; t < &p->thread[NTHREADS]; t++)
+        if (t->state == UNUSED)
+            goto foundThread2;
+    //got here- didn't have a room for new thread
+    release(&ptable.lock);
+    return -1;
+
+    foundThread2:
+    t->state = EMBRYO;
+    t->tid = tidCounter++;
+
+    // Allocate kernel stack.
+    if ((t->tkstack = kalloc()) == 0) {
+        t->state = UNUSED;
+        release(&ptable.lock);
+        return -1;
+    }
+
+    sp = t->tkstack + KSTACKSIZE;
+
+    // Leave room for trap frame.
+    sp -= sizeof *t->tf;
+    t->tf = (struct trapframe *) sp;
+
+    // Set up new context to start executing at forkret,
+    // which returns to trapret.
+    sp -= 4;
+    *(uint *) sp = (uint) trapret;
+
+    sp -= sizeof *t->context;
+    t->context = (struct context *) sp;
+    memset(t->context, 0, sizeof *t->context);
+    t->context->eip = (uint) forkret;
+
+    memset(t->tf, 0, sizeof(*t->tf));
+    t->tf->cs = (SEG_UCODE << 3) | DPL_USER;
+    t->tf->ds = (SEG_UDATA << 3) | DPL_USER;
+    t->tf->es = t->tf->ds;
+    t->tf->ss = t->tf->ds;
+    t->tf->eflags = FL_IF;
+    t->tf->esp = PGSIZE;
+    t->tf->eip = (uint) start_func;  // beginning of run func
+
+    safestrcpy(t->name, myproc()->name, sizeof(myproc()->name));
+    t->cwd = namei("/");
+
+    t->killed = 0;
+    t->chan = 0;
+    t->state = RUNNABLE;
+    release(&ptable.lock);
+    return 0;
+}
+
+//this func haven't been used - i's implementation is in sysproc
+int kthread_id() {
+    return mythread()->tid;
+}
+
+void kthread_exit() {
+    struct thread *t;
+    struct proc *p = myproc();
+    int counter = 0;
+    acquire(&ptable.lock);
+    for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
+        if (t->state == UNUSED || t->state == ZOMBIE)
+            counter++;
+    }
+    if (counter == (NTHREADS - 1)){ //all other threads aren't available -> close proc
+        release(&ptable.lock);
+        exit();
+    }
+    else{   //there are other threads in the same proc - close just the specific thread
+        cleanThread(t);
+        release(&ptable.lock);
+    }
+}
+
+int kthread_join(int thread_id) {
+    struct thread *t;
+    struct proc *p;
+    acquire(&ptable.lock);
+    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+        if (p->state != UNUSED) {
+            for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
+                if (t->tid == thread_id)
+                    goto found2;
+            }
+        }
+    }
+    //if got here - exit the loop and didn't find the thread tid
+    release(&ptable.lock);
+    return -1;
+    found2:
+    if (t->state == UNUSED || t->state == ZOMBIE){
+        release(&ptable.lock);
+        return -1;
+    }
+    sleep(t,&ptable.lock);
+    //TODO - not sure about release
+    if(holding(&ptable.lock))
+        release(&ptable.lock);
+    return 0;
 }
