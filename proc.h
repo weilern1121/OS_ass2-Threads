@@ -73,7 +73,7 @@ struct proc {
   struct thread thread[NTHREADS];  // process's thread array
   struct thread *mainThread;  // proc's main thread
   int tidCounter;         //proc's current amount of threads
-  struct spinlock *procLock; //lock - might change to MUTEX
+  //struct spinlock *procLock; //lock - might change to MUTEX
   int exited;                  // If non-zero, have been exited
 
 
