@@ -19,7 +19,7 @@ exec(char *path, char **argv)
     pde_t *pgdir, *oldpgdir;
     struct proc *curproc = myproc();
     struct  thread *curthread = mythread();
-    struct  thread *t;
+    //struct  thread *t;
     begin_op();
 
     if((ip = namei(path)) == 0){
