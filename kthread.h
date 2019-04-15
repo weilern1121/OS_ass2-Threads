@@ -1,3 +1,13 @@
+#include "types.h"
+#include "defs.h"
+#include "param.h"
+#include "x86.h"
+#include "memlayout.h"
+#include "mmu.h"
+#include "proc.h"
+#include "spinlock.h"
+
+
 #define MAX_STACK_SIZE 4000
 #define MAX_MUTEXES 64
 
@@ -19,3 +29,18 @@ trnmnt_tree* trnmnt_tree_alloc(int depth);
 int trnmnt_tree_dealloc(trnmnt_tree* tree);
 int trnmnt_tree_acquire(trnmnt_tree* tree,int ID);
 int trnmnt_tree_release(trnmnt_tree* tree,int ID);
+
+
+struct kthread_mutex_t {
+    uint locked;       // Is the lock held?
+    int active;        // Is the Mutex been init?
+    int mid;
+
+    // For debugging:
+    struct thread *thread;   // The cpu holding the lock.
+
+
+    // TODO we are not sure about this line but it doesnt affect us now;
+    uint pcs[10];      // The call stack (an array of program counters)
+    // that locked the lock.
+};

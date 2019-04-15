@@ -6,18 +6,28 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
+#include "kthread.h"
 
 struct {
     struct spinlock lock;
     struct proc proc[NPROC];
-    //struct spinlock tlocks[NPROC];
 } ptable;
 
+
+struct {
+    struct spinlock lock;
+    struct kthread_mutex_t kthread_mutex_t[MAX_MUTEXES];
+} mtable;
+
 static struct proc *initproc;
+
+
 
 int nextpid = 1;
 
 int tidCounter = 1;
+
+int mutexCounter = 1;
 
 int DEBUGMODE = 0; //0-off , 1- without SLEEP & WAKEUP & SCHED , 2-all commands
 
@@ -35,6 +45,7 @@ pinit(void) {
         cprintf(" PINIT ");
     //struct spinlock *l;
     initlock(&ptable.lock, "ptable");
+    initlock(&mtable.lock, "mtable");
     //for (l = ptable.tlocks; l < &ptable.tlocks[NPROC]; l++)
     //initlock(l, "ttable");
 
@@ -838,3 +849,191 @@ int kthread_join(int thread_id) {
         release(&ptable.lock);
     return 0;
 }
+
+
+
+
+
+
+
+int
+kthread_mutex_alloc()
+{
+    struct kthread_mutex_t *m;
+
+    acquire(&mtable.lock);
+
+    for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
+        if (!m->active)
+            goto alloc_mutex;
+    }
+
+    release(&mtable.lock);
+    return -1;
+
+    alloc_mutex:
+    m->active = 1;
+    m->mid = mutexCounter++;
+    m->locked = 0;
+    m->thread = 0;
+    release(&mtable.lock);
+    return m->mid;
+
+
+}
+
+
+int
+kthread_mutex_dealloc(int mutex_id){
+    struct kthread_mutex_t *m;
+
+    acquire(&mtable.lock);
+
+    for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
+        if ( m->mid == mutex_id ) {
+            if( m->locked ){
+                release(&mtable.lock);
+                return -1;
+            } else
+                goto dealloc_mutex;
+        }
+    }
+
+    release(&mtable.lock);
+    return -1;
+
+    dealloc_mutex:
+    m->active = 0;
+    m->mid = -1;
+    m->locked = 0;
+    m->thread = 0;
+    release(&mtable.lock);
+    return 0;
+}
+
+
+
+
+int
+kthread_mutex_lock(int mutex_id)
+{
+    struct kthread_mutex_t *m;
+
+    pushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
+    acquire(&mtable.lock);
+
+    for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
+        if (m->active && m->mid == mutex_id) {
+            if (m->locked) {
+                sleep( m->thread , &mtable.lock );
+            }
+
+            goto lock_mutex;
+
+        }
+    }
+
+    release(&mtable.lock);
+    return -1;
+
+    lock_mutex:
+
+    // The xchg is atomic.
+    while(xchg(&m->locked, 1) != 0)
+        ;
+
+    // Tell the C compiler and the processor to not move loads or stores
+    // past this point, to ensure that the critical section's memory
+    // references happen after the lock is acquired.
+    __sync_synchronize();   // << TODO - not our line!!!
+
+    // Record info about lock acquisition for debugging.
+    m->thread = mythread();
+    getcallerpcs(&m, m->pcs);
+    release(&mtable.lock);
+    return 0;
+}
+
+// Release the lock.
+int
+kthread_mutex_unlock(int mutex_id)
+{
+    struct kthread_mutex_t *m;
+
+    acquire(&mtable.lock);
+
+    for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
+        if ( m->active && m->mid == mutex_id && m->locked && m->thread == mythread() )
+                goto unlock_mutex;
+    }
+
+    release(&mtable.lock);
+    return -1;
+
+    unlock_mutex:
+
+    m->pcs[0] = 0;
+    m->thread = 0;
+
+    // Tell the C compiler and the processor to not move loads or stores
+    // past this point, to ensure that all the stores in the critical
+    // section are visible to other cores before the lock is released.
+    // Both the C compiler and the hardware may re-order loads and
+    // stores; __sync_synchronize() tells them both not to.
+    __sync_synchronize();
+
+    // Release the lock, equivalent to lk->locked = 0.
+    // This code can't use a C assignment, since it might
+    // not be atomic. A real OS would use C atomics here.
+    asm volatile("movl $0, %0" : "+m" (m->locked) : );
+
+    wakeup(mythread());
+    popcli();
+}
+
+// Record the current call stack in pcs[] by following the %ebp chain.
+// TODO NOT OUR CODE MIGHT BE REMOVED
+void
+getcallerpcs(void *v, uint pcs[])
+{
+    uint *ebp;
+    int i;
+
+    ebp = (uint*)v - 2;
+    for(i = 0; i < 10; i++){
+        if(ebp == 0 || ebp < (uint*)KERNBASE || ebp == (uint*)0xffffffff)
+            break;
+        pcs[i] = ebp[1];     // saved %eip
+        ebp = (uint*)ebp[0]; // saved %ebp
+    }
+    for(; i < 10; i++)
+        pcs[i] = 0;
+}
+
+// Pushcli/popcli are like cli/sti except that they are matched:
+// it takes two popcli to undo two pushcli.  Also, if interrupts
+// are off, then pushcli, popcli leaves them off.
+
+void
+pushcli(void)
+{
+    int eflags;
+
+    eflags = readeflags();
+    cli();
+    if(mycpu()->ncli == 0)
+        mycpu()->intena = eflags & FL_IF;
+    mycpu()->ncli += 1;
+}
+
+void
+popcli(void)
+{
+    if(readeflags()&FL_IF)
+        panic("popcli - interruptible");
+    if(--mycpu()->ncli < 0)
+        panic("popcli");
+    if(mycpu()->ncli == 0 && mycpu()->intena)
+        sti();
+}
+
