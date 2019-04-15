@@ -913,13 +913,60 @@ kthread_mutex_dealloc(int mutex_id){
 
 
 
+// Record the current call stack in pcs[] by following the %ebp chain.
+// TODO NOT OUR CODE MIGHT BE REMOVED
+void
+mgetcallerpcs(void *v, uint pcs[])
+{
+    uint *ebp;
+    int i;
+
+    ebp = (uint*)v - 2;
+    for(i = 0; i < 10; i++){
+        if(ebp == 0 || ebp < (uint*)KERNBASE || ebp == (uint*)0xffffffff)
+            break;
+        pcs[i] = ebp[1];     // saved %eip
+        ebp = (uint*)ebp[0]; // saved %ebp
+    }
+    for(; i < 10; i++)
+        pcs[i] = 0;
+}
+
+// Pushcli/popcli are like cli/sti except that they are matched:
+// it takes two popcli to undo two pushcli.  Also, if interrupts
+// are off, then pushcli, popcli leaves them off.
+
+void
+mpushcli(void)
+{
+    int eflags;
+
+    eflags = readeflags();
+    cli();
+    if(mycpu()->ncli == 0)
+        mycpu()->intena = eflags & FL_IF;
+    mycpu()->ncli += 1;
+}
+
+void
+mpopcli(void)
+{
+    if(readeflags()&FL_IF)
+        panic("popcli - interruptible");
+    if(--mycpu()->ncli < 0)
+        panic("popcli");
+    if(mycpu()->ncli == 0 && mycpu()->intena)
+        sti();
+}
+
+
 
 int
 kthread_mutex_lock(int mutex_id)
 {
     struct kthread_mutex_t *m;
 
-    pushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
+    mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
     acquire(&mtable.lock);
 
     for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
@@ -949,7 +996,7 @@ kthread_mutex_lock(int mutex_id)
 
     // Record info about lock acquisition for debugging.
     m->thread = mythread();
-    getcallerpcs(&m, m->pcs);
+    mgetcallerpcs(&m, m->pcs);
     release(&mtable.lock);
     return 0;
 }
@@ -988,52 +1035,7 @@ kthread_mutex_unlock(int mutex_id)
     asm volatile("movl $0, %0" : "+m" (m->locked) : );
 
     wakeup(mythread());
-    popcli();
-}
-
-// Record the current call stack in pcs[] by following the %ebp chain.
-// TODO NOT OUR CODE MIGHT BE REMOVED
-void
-getcallerpcs(void *v, uint pcs[])
-{
-    uint *ebp;
-    int i;
-
-    ebp = (uint*)v - 2;
-    for(i = 0; i < 10; i++){
-        if(ebp == 0 || ebp < (uint*)KERNBASE || ebp == (uint*)0xffffffff)
-            break;
-        pcs[i] = ebp[1];     // saved %eip
-        ebp = (uint*)ebp[0]; // saved %ebp
-    }
-    for(; i < 10; i++)
-        pcs[i] = 0;
-}
-
-// Pushcli/popcli are like cli/sti except that they are matched:
-// it takes two popcli to undo two pushcli.  Also, if interrupts
-// are off, then pushcli, popcli leaves them off.
-
-void
-pushcli(void)
-{
-    int eflags;
-
-    eflags = readeflags();
-    cli();
-    if(mycpu()->ncli == 0)
-        mycpu()->intena = eflags & FL_IF;
-    mycpu()->ncli += 1;
-}
-
-void
-popcli(void)
-{
-    if(readeflags()&FL_IF)
-        panic("popcli - interruptible");
-    if(--mycpu()->ncli < 0)
-        panic("popcli");
-    if(mycpu()->ncli == 0 && mycpu()->intena)
-        sti();
+    mpopcli();
+    return 0;
 }
 

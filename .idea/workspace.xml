@@ -12,116 +12,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab1ebdc-e23f-48aa-a889-e15afd4e9d87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_cat" beforeDir="false" afterPath="$PROJECT_DIR$/_cat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_echo" beforeDir="false" afterPath="$PROJECT_DIR$/_echo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_forktest" beforeDir="false" afterPath="$PROJECT_DIR$/_forktest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_grep" beforeDir="false" afterPath="$PROJECT_DIR$/_grep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_init" beforeDir="false" afterPath="$PROJECT_DIR$/_init" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_kill" beforeDir="false" afterPath="$PROJECT_DIR$/_kill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ln" beforeDir="false" afterPath="$PROJECT_DIR$/_ln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ls" beforeDir="false" afterPath="$PROJECT_DIR$/_ls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_mkdir" beforeDir="false" afterPath="$PROJECT_DIR$/_mkdir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_rm" beforeDir="false" afterPath="$PROJECT_DIR$/_rm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sh" beforeDir="false" afterPath="$PROJECT_DIR$/_sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_stressfs" beforeDir="false" afterPath="$PROJECT_DIR$/_stressfs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_usertests" beforeDir="false" afterPath="$PROJECT_DIR$/_usertests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_wc" beforeDir="false" afterPath="$PROJECT_DIR$/_wc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_zombie" beforeDir="false" afterPath="$PROJECT_DIR$/_zombie" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bio.o" beforeDir="false" afterPath="$PROJECT_DIR$/bio.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootasm.o" beforeDir="false" afterPath="$PROJECT_DIR$/bootasm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootblock" beforeDir="false" afterPath="$PROJECT_DIR$/bootblock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootblock.asm" beforeDir="false" afterPath="$PROJECT_DIR$/bootblock.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootblock.o" beforeDir="false" afterPath="$PROJECT_DIR$/bootblock.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootblockother.o" beforeDir="false" afterPath="$PROJECT_DIR$/bootblockother.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootmain.o" beforeDir="false" afterPath="$PROJECT_DIR$/bootmain.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cat.asm" beforeDir="false" afterPath="$PROJECT_DIR$/cat.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cat.o" beforeDir="false" afterPath="$PROJECT_DIR$/cat.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cat.sym" beforeDir="false" afterPath="$PROJECT_DIR$/cat.sym" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/console.o" beforeDir="false" afterPath="$PROJECT_DIR$/console.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo.asm" beforeDir="false" afterPath="$PROJECT_DIR$/echo.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo.o" beforeDir="false" afterPath="$PROJECT_DIR$/echo.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo.sym" beforeDir="false" afterPath="$PROJECT_DIR$/echo.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entry.o" beforeDir="false" afterPath="$PROJECT_DIR$/entry.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entryother.o" beforeDir="false" afterPath="$PROJECT_DIR$/entryother.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exec.o" beforeDir="false" afterPath="$PROJECT_DIR$/exec.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.o" beforeDir="false" afterPath="$PROJECT_DIR$/file.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forktest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/forktest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forktest.o" beforeDir="false" afterPath="$PROJECT_DIR$/forktest.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fs.img" beforeDir="false" afterPath="$PROJECT_DIR$/fs.img" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fs.o" beforeDir="false" afterPath="$PROJECT_DIR$/fs.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grep.asm" beforeDir="false" afterPath="$PROJECT_DIR$/grep.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grep.o" beforeDir="false" afterPath="$PROJECT_DIR$/grep.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grep.sym" beforeDir="false" afterPath="$PROJECT_DIR$/grep.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ide.o" beforeDir="false" afterPath="$PROJECT_DIR$/ide.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.asm" beforeDir="false" afterPath="$PROJECT_DIR$/init.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.o" beforeDir="false" afterPath="$PROJECT_DIR$/init.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sym" beforeDir="false" afterPath="$PROJECT_DIR$/init.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initcode.o" beforeDir="false" afterPath="$PROJECT_DIR$/initcode.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initcode.out" beforeDir="false" afterPath="$PROJECT_DIR$/initcode.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioapic.o" beforeDir="false" afterPath="$PROJECT_DIR$/ioapic.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kalloc.o" beforeDir="false" afterPath="$PROJECT_DIR$/kalloc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kbd.o" beforeDir="false" afterPath="$PROJECT_DIR$/kbd.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel" beforeDir="false" afterPath="$PROJECT_DIR$/kernel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel.asm" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel.sym" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kill.asm" beforeDir="false" afterPath="$PROJECT_DIR$/kill.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kill.o" beforeDir="false" afterPath="$PROJECT_DIR$/kill.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kill.sym" beforeDir="false" afterPath="$PROJECT_DIR$/kill.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kthread.h" beforeDir="false" afterPath="$PROJECT_DIR$/kthread.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lapic.o" beforeDir="false" afterPath="$PROJECT_DIR$/lapic.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ln.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ln.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ln.o" beforeDir="false" afterPath="$PROJECT_DIR$/ln.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ln.sym" beforeDir="false" afterPath="$PROJECT_DIR$/ln.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.o" beforeDir="false" afterPath="$PROJECT_DIR$/log.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ls.asm" beforeDir="false" afterPath="$PROJECT_DIR$/ls.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ls.o" beforeDir="false" afterPath="$PROJECT_DIR$/ls.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ls.sym" beforeDir="false" afterPath="$PROJECT_DIR$/ls.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdir.asm" beforeDir="false" afterPath="$PROJECT_DIR$/mkdir.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdir.o" beforeDir="false" afterPath="$PROJECT_DIR$/mkdir.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdir.sym" beforeDir="false" afterPath="$PROJECT_DIR$/mkdir.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkfs" beforeDir="false" afterPath="$PROJECT_DIR$/mkfs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mp.o" beforeDir="false" afterPath="$PROJECT_DIR$/mp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/picirq.o" beforeDir="false" afterPath="$PROJECT_DIR$/picirq.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipe.o" beforeDir="false" afterPath="$PROJECT_DIR$/pipe.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/printf.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/proc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proc.h" beforeDir="false" afterPath="$PROJECT_DIR$/proc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proc.d" beforeDir="false" afterPath="$PROJECT_DIR$/proc.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proc.o" beforeDir="false" afterPath="$PROJECT_DIR$/proc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rm.asm" beforeDir="false" afterPath="$PROJECT_DIR$/rm.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rm.o" beforeDir="false" afterPath="$PROJECT_DIR$/rm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rm.sym" beforeDir="false" afterPath="$PROJECT_DIR$/rm.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.asm" beforeDir="false" afterPath="$PROJECT_DIR$/sh.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.o" beforeDir="false" afterPath="$PROJECT_DIR$/sh.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.sym" beforeDir="false" afterPath="$PROJECT_DIR$/sh.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sleeplock.o" beforeDir="false" afterPath="$PROJECT_DIR$/sleeplock.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spinlock.o" beforeDir="false" afterPath="$PROJECT_DIR$/spinlock.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stressfs.asm" beforeDir="false" afterPath="$PROJECT_DIR$/stressfs.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stressfs.o" beforeDir="false" afterPath="$PROJECT_DIR$/stressfs.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stressfs.sym" beforeDir="false" afterPath="$PROJECT_DIR$/stressfs.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/string.o" beforeDir="false" afterPath="$PROJECT_DIR$/string.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swtch.o" beforeDir="false" afterPath="$PROJECT_DIR$/swtch.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syscall.o" beforeDir="false" afterPath="$PROJECT_DIR$/syscall.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sysfile.o" beforeDir="false" afterPath="$PROJECT_DIR$/sysfile.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sysproc.o" beforeDir="false" afterPath="$PROJECT_DIR$/sysproc.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trap.o" beforeDir="false" afterPath="$PROJECT_DIR$/trap.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trapasm.o" beforeDir="false" afterPath="$PROJECT_DIR$/trapasm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uart.o" beforeDir="false" afterPath="$PROJECT_DIR$/uart.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ulib.o" beforeDir="false" afterPath="$PROJECT_DIR$/ulib.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/umalloc.o" beforeDir="false" afterPath="$PROJECT_DIR$/umalloc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usertests.asm" beforeDir="false" afterPath="$PROJECT_DIR$/usertests.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usertests.o" beforeDir="false" afterPath="$PROJECT_DIR$/usertests.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usertests.sym" beforeDir="false" afterPath="$PROJECT_DIR$/usertests.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usys.o" beforeDir="false" afterPath="$PROJECT_DIR$/usys.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vectors.o" beforeDir="false" afterPath="$PROJECT_DIR$/vectors.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vm.o" beforeDir="false" afterPath="$PROJECT_DIR$/vm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wc.asm" beforeDir="false" afterPath="$PROJECT_DIR$/wc.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wc.o" beforeDir="false" afterPath="$PROJECT_DIR$/wc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wc.sym" beforeDir="false" afterPath="$PROJECT_DIR$/wc.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xv6.img" beforeDir="false" afterPath="$PROJECT_DIR$/xv6.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zombie.asm" beforeDir="false" afterPath="$PROJECT_DIR$/zombie.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zombie.o" beforeDir="false" afterPath="$PROJECT_DIR$/zombie.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zombie.sym" beforeDir="false" afterPath="$PROJECT_DIR$/zombie.sym" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="1023" column="26" lean-forward="true" selection-start-line="1023" selection-start-column="26" selection-end-line="1023" selection-end-column="26" />
+            <state relative-caret-position="353">
+              <caret line="1037" column="14" selection-start-line="1037" selection-start-column="14" selection-end-line="1037" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -148,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spinlock.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="648">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
               <folding>
                 <element signature="e#33#51#0" expanded="true" />
               </folding>
@@ -161,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/spinlock.h">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+              <caret column="11" selection-start-column="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -169,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proc.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="-555">
               <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
             </state>
           </provider>
@@ -178,11 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kthread.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="25" column="39" selection-start-line="25" selection-end-line="25" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="232">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -222,6 +131,7 @@
       </list>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="293" />
     <option name="y" value="47" />
@@ -234,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,16 +199,17 @@
       <workItem from="1555248257168" duration="9676000" />
       <workItem from="1555325093256" duration="395000" />
       <workItem from="1555327130592" duration="4351000" />
+      <workItem from="1555331686585" duration="663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26276000" />
+    <option name="totallyTimeSpent" value="26939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16252074" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1641791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -309,7 +220,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21212122" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.276907" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32914573" />
       <window_info anchor="bottom" id="CMake" order="11" />
@@ -427,44 +338,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spinlock.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proc.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kthread.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="25" column="39" selection-start-line="25" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spinlock.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="648">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding>
             <element signature="e#33#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spinlock.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kthread.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="1023" column="26" lean-forward="true" selection-start-line="1023" selection-start-column="26" selection-end-line="1023" selection-end-column="26" />
+        <state relative-caret-position="353">
+          <caret line="1037" column="14" selection-start-line="1037" selection-start-column="14" selection-end-line="1037" selection-end-column="14" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
