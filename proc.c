@@ -6,7 +6,8 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
-#include "kthread.h"
+#define MAX_STACK_SIZE 4000
+#define MAX_MUTEXES 64
 
 struct {
     struct spinlock lock;
@@ -872,6 +873,7 @@ kthread_mutex_alloc()
     return -1;
 
     alloc_mutex:
+    m->waitingCounter=0;
     m->active = 1;
     m->mid = mutexCounter++;
     m->locked = 0;
@@ -891,7 +893,7 @@ kthread_mutex_dealloc(int mutex_id){
 
     for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
         if ( m->mid == mutex_id ) {
-            if( m->locked ){
+            if( m->locked || m->waitingCounter > 0){
                 release(&mtable.lock);
                 return -1;
             } else
@@ -972,11 +974,11 @@ kthread_mutex_lock(int mutex_id)
     for( m = mtable.kthread_mutex_t ; m < &mtable.kthread_mutex_t[MAX_MUTEXES] ; m++ ) {
         if (m->active && m->mid == mutex_id) {
             if (m->locked) {
+                m->waitingCounter++;
                 sleep( m->thread , &mtable.lock );
+                m->waitingCounter--;
             }
-
             goto lock_mutex;
-
         }
     }
 

@@ -74,4 +74,5 @@ add_executable(Assignment2
         vm.c
         wc.c
         x86.h
-        zombie.c)
+        zombie.c
+        tournament_tree.h trnmnt_tree.c)

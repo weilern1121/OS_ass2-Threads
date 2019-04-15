@@ -87,3 +87,17 @@ struct proc {
 //   original data and bss
 //   fixed-size stack
 //   expandable heap
+
+
+
+struct kthread_mutex_t {
+    uint locked;       // Is the lock held?
+    int active;        // Is the Mutex been init?
+    int mid;
+    int waitingCounter; //couner of how many threads are waiting on this specific mutex
+    // For debugging:
+    struct thread *thread;   // The cpu holding the lock.
+    // TODO we are not sure about this line but it doesnt affect us now;
+    uint pcs[10];      // The call stack (an array of program counters)
+    // that locked the lock.
+};

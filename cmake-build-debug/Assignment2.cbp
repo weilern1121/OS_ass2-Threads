@@ -251,10 +251,16 @@
 		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sysproc.c">
 			<Option target="Assignment2"/>
 		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/tournament_tree.h">
+			<Option target="Assignment2"/>
+		</Unit>
 		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/trap.c">
 			<Option target="Assignment2"/>
 		</Unit>
 		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/traps.h">
+			<Option target="Assignment2"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/trnmnt_tree.c">
 			<Option target="Assignment2"/>
 		</Unit>
 		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/types.h">

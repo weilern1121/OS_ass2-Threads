@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/weilern/os192/ass2/OS_ass2-Threads/sysfile.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/sysfile.c.o"
   "/home/weilern/os192/ass2/OS_ass2-Threads/sysproc.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/sysproc.c.o"
   "/home/weilern/os192/ass2/OS_ass2-Threads/trap.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/trap.c.o"
+  "/home/weilern/os192/ass2/OS_ass2-Threads/trnmnt_tree.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/trnmnt_tree.c.o"
   "/home/weilern/os192/ass2/OS_ass2-Threads/uart.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/uart.c.o"
   "/home/weilern/os192/ass2/OS_ass2-Threads/ulib.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/ulib.c.o"
   "/home/weilern/os192/ass2/OS_ass2-Threads/umalloc.c" "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/CMakeFiles/Assignment2.dir/umalloc.c.o"

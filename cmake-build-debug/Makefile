@@ -1176,6 +1176,33 @@ trap.c.s:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trap.c.s
 .PHONY : trap.c.s
 
+trnmnt_tree.o: trnmnt_tree.c.o
+
+.PHONY : trnmnt_tree.o
+
+# target to build an object file
+trnmnt_tree.c.o:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.o
+.PHONY : trnmnt_tree.c.o
+
+trnmnt_tree.i: trnmnt_tree.c.i
+
+.PHONY : trnmnt_tree.i
+
+# target to preprocess a source file
+trnmnt_tree.c.i:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.i
+.PHONY : trnmnt_tree.c.i
+
+trnmnt_tree.s: trnmnt_tree.c.s
+
+.PHONY : trnmnt_tree.s
+
+# target to generate assembly for a file
+trnmnt_tree.c.s:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.s
+.PHONY : trnmnt_tree.c.s
+
 uart.o: uart.c.o
 
 .PHONY : uart.o
@@ -1491,6 +1518,9 @@ help:
 	@echo "... trap.o"
 	@echo "... trap.i"
 	@echo "... trap.s"
+	@echo "... trnmnt_tree.o"
+	@echo "... trnmnt_tree.i"
+	@echo "... trnmnt_tree.s"
 	@echo "... uart.o"
 	@echo "... uart.i"
 	@echo "... uart.s"
