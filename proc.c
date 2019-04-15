@@ -220,7 +220,7 @@ userinit(void) {
 
     safestrcpy(p->name, "initcode", sizeof(p->name));
     safestrcpy(p->mainThread->name, "initThread", sizeof(p->mainThread->name));
-    p->mainThread->cwd = namei("/");
+    p->cwd = namei("/");
 
     // this assignment to p->state lets other cores
     // run this process. the acquire forces the above
@@ -296,7 +296,8 @@ fork(void) {
     for (i = 0; i < NOFILE; i++)
         if (curproc->ofile[i])
             np->ofile[i] = filedup(curproc->ofile[i]);
-    np->mainThread->cwd = idup(curthread->cwd);
+//    np->mainThread->cwd = idup(curthread->cwd);
+    np->cwd = idup(curproc->cwd);
 
     safestrcpy(np->name, curproc->name, sizeof(curproc->name));
     //TODO
@@ -372,9 +373,9 @@ exit(void) {
         release(&ptable.lock);
 
     begin_op();
-    iput(curthread->cwd);
+    iput(curproc->cwd);
     end_op();
-    curthread->cwd = 0;
+    curproc->cwd = 0;
 
     acquire(&ptable.lock);
 
@@ -778,7 +779,7 @@ int kthread_create(void (*start_func)(), void *stack) {
     t->tf->eip = (uint) start_func;  // beginning of run func
 
     safestrcpy(t->name, myproc()->name, sizeof(myproc()->name));
-    t->cwd = namei("/");
+    //t->cwd = namei("/");
 
     t->killed = 0;
     t->chan = 0;

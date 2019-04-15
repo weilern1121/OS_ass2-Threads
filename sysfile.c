@@ -374,8 +374,8 @@ sys_chdir(void)
 {
   char *path;
   struct inode *ip;
-  //struct proc *curproc = myproc();
-  struct thread *curthread = mythread();
+  struct proc *curproc = myproc();
+  //struct thread *curthread = mythread();
   
   begin_op();
   if(argstr(0, &path) < 0 || (ip = namei(path)) == 0){
@@ -389,9 +389,9 @@ sys_chdir(void)
     return -1;
   }
   iunlock(ip);
-  iput(curthread->cwd);
+  iput(curproc->cwd);
   end_op();
-  curthread->cwd = ip;
+  curproc->cwd = ip;
   return 0;
 }
 

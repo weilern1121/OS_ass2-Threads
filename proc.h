@@ -49,7 +49,7 @@ struct thread {
     void *chan;                  // If non-zero, sleeping on chan
     int killed;                  // If non-zero, have been killed
     //struct file *ofile[NOFILE];  // Open files
-    struct inode *cwd;           // Current directory
+    //struct inode *cwd;           // Current directory
     char name[16];               // Thread name (debugging)
     void (*start_func)();       //pointer to the running function of the thread
 };
@@ -68,7 +68,7 @@ struct proc {
   void *chan;                  // If non-zero, sleeping on chan
   int killed;                  // If non-zero, have been killed
   struct file *ofile[NOFILE];  // Open files
-  //struct inode *cwd;           // Current directory
+  struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
   struct thread thread[NTHREADS];  // process's thread array
   struct thread *mainThread;  // proc's main thread
