@@ -7,6 +7,18 @@ extern int trnmnt_tree_dealloc(struct trnmnt_tree* tree);
 extern int trnmnt_tree_acquire(struct trnmnt_tree* tree,int ID);
 extern int trnmnt_tree_release(struct trnmnt_tree* tree,int ID);
 
+int pow(int a, int b) {
+    //Calculating a^b
+    if (a < 0 || b < 0) {
+        cprintf("Illegal input: for a^b: a= %d, b= %d \n", a, b);
+        return -1;
+    }
+    int output = 1;
+    for (int i = 0; i < b; i++)
+        output *= a;
+    return output;
+}
+
 struct
 trnmnt_tree* trnmnt_tree_alloc(int depth){
     struct trnmnt_tree *t;
@@ -18,7 +30,7 @@ trnmnt_tree* trnmnt_tree_alloc(int depth){
 
 int
 trnmnt_tree_dealloc(struct trnmnt_tree* tree){
-    for(int i=0; i<((2^tree->depth)-1); i++){
+    for(int i=0; i<(pow(2,tree->depth)-1); i++){
         if(kthread_mutex_dealloc(tree->trnmntMutex[i]) ==-1)
             return -1;
     }
@@ -33,19 +45,19 @@ trnmnt_tree_acquire(struct trnmnt_tree* tree,int ID){
         localID= localID/2;     //wich lock try to lock in current level
         if(kthread_mutex_lock(tree->trnmntMutex[x+localID]) == -1)
             return -1; //lock ->if not succeed sleep (in mutex implementation)
-        x+=((2^tree->depth)/(2^lvl)); //move x to point to the next level for localID
+        x+=((pow(2,tree->depth))/(pow(2,lvl))); //move x to point to the next level for localID
     }
     return 0;
 }
 
 int
 trnmnt_tree_release(struct trnmnt_tree* tree,int ID){
-    int x=(2^tree->depth)-2, localID=1;
+    int x=pow(2,tree->depth)-2, localID;
     for(int lvl=tree->depth; lvl>=1; lvl--){
-        localID= ID/(2^lvl);     //wich lock try to lock in current level
+        localID= ID/pow(2,lvl);     //wich lock try to lock in current level
         if(kthread_mutex_unlock(tree->trnmntMutex[x+localID]) == -1)
             return -1; //unlock ->if not curthead holds this lock -> return -1 (in mutex implementation)
-        x-=((2^tree->depth)/((2^lvl)-1)); //move x to point to the next level for localID
+        x -= pow(2,(tree->depth-lvl+1)); //move x to point to the next level for localID
     }
     return 0;
 }
