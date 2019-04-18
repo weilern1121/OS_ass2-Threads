@@ -8,292 +8,292 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment2">
-				<Option output="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Assignment2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option output="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Assignment2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/."/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/yoav/Desktop/Git/Assignment2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment2"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment2"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment2/fast">
-				<Option output="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Assignment2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option output="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Assignment2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/."/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/yoav/Desktop/Git/Assignment2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment2/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment2/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/Assignment2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/asm.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/asm.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/bio.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/bio.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/bootmain.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/bootmain.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/buf.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/buf.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/cat.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/cat.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/console.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/console.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/date.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/date.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/defs.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/defs.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/echo.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/echo.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/elf.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/elf.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/exec.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/exec.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fcntl.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/fcntl.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/file.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/file.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/file.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/file.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/forktest.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/forktest.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fs.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/fs.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fs.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/fs.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/grep.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/grep.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ide.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/ide.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/init.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/init.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ioapic.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/ioapic.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kalloc.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/kalloc.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kbd.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/kbd.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kbd.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/kbd.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kill.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/kill.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kthread.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/kthread.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/lapic.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/lapic.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ln.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/ln.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/log.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/log.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ls.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/ls.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/main.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/main.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/memide.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/memide.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/memlayout.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/memlayout.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mkdir.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/mkdir.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mkfs.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/mkfs.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mmu.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/mmu.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mp.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/mp.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mp.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/mp.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/param.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/param.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/picirq.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/picirq.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/pipe.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/pipe.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/printf.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/printf.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/proc.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/proc.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/proc.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/proc.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/rm.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/rm.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sh.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sh.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sleeplock.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sleeplock.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sleeplock.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sleeplock.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/spinlock.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/spinlock.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/spinlock.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/spinlock.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/stat.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/stat.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/stressfs.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/stressfs.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/string.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/string.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/syscall.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/syscall.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/syscall.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/syscall.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sysfile.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sysfile.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sysproc.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sysproc.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/tournament_tree.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/tournament_tree.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/trap.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/trap.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/traps.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/traps.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/trnmnt_tree.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/trnmnt_tree.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/types.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/types.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/uart.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/uart.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ulib.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/ulib.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/umalloc.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/umalloc.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/user.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/user.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/usertests.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/usertests.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/vm.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/vm.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/wc.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/wc.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/x86.h">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/x86.h">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/zombie.c">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/zombie.c">
 			<Option target="Assignment2"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/CMakeLists.txt">
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

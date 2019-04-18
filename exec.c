@@ -106,7 +106,7 @@ exec(char *path, char **argv)
     //func in proc.c
     //clean all other threads except curthread
     cleanProcOneThread(curthread,curproc);
-    curproc->mainThread=curthread;
+    //curproc->mainThread=curthread;
 
     switchuvm(curproc);
     freevm(oldpgdir);

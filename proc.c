@@ -71,16 +71,19 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
 
     struct thread *t;
     // Remove threads (except of the exec thread)
+    ptable.lock.name = "CLEANPROCONETHREAD";
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if (t != curthread) {
+        if (t != curthread && t->state != UNUSED ) {
             if (t->state == RUNNING)
                 sleep(t, &ptable.lock);
-            if (t->state == RUNNING || t->state == RUNNABLE) {
+            //TODO MAYBE NEED TO BE ALSO PR ZOMBIE
+            //if (t->state == RUNNING || t->state == RUNNABLE || t->state == ZOMBIE ) {
                 cleanThread(t);
-            }
+            //}
         }
     }
+    p->mainThread = curthread;
     release(&ptable.lock);
 }
 
@@ -149,6 +152,7 @@ allocproc(void) {
     struct proc *p;
     struct thread *t;
     char *sp;
+    ptable.lock.name = "ALLOC";
     acquire(&ptable.lock);
     //struct spinlock *JustLock;
 
@@ -238,6 +242,8 @@ userinit(void) {
     // run this process. the acquire forces the above
     // writes to be visible, and the lock is also needed
     // because the assignment might not be atomic.
+
+    ptable.lock.name = "INIT";
     acquire(&ptable.lock);
     //acquire(p->procLock);
 
@@ -317,6 +323,7 @@ fork(void) {
 
     pid = np->pid;
 
+    ptable.lock.name = "FORK";
     acquire(&ptable.lock);
     //acquire(np->procLock);
 
@@ -345,31 +352,15 @@ exit(void) {
     if (curproc == initproc)
         panic("init exiting");
 
-    //Close all proc's threads
-    //acquire(curproc->procLock);
-//    acquire(&ptable.lock);
-//    for (t = curproc->thread; t < &curproc->thread[NTHREADS]; t++) {
-//        if(t != curthread) {
-//            t->killed = 1;
-//            if(t->state == RUNNING) {
-//                if(DEBUGMODE>0)
-//                    cprintf("WAITING IN EXIT  ");
-//                sleep( t , &ptable.lock );
-//            }
-//            if(t->state != UNUSED)
-//                t->state = ZOMBIE;
-//        }
-//    }
 
-    // if (DEBUGMODE > 0)
-    //cprintf(" BEFORE cleanProcOneThread\n");
     cleanProcOneThread(curthread, curproc);
-    // if (DEBUGMODE > 0)
-    //cprintf(" AFTER cleanProcOneThread\n");
-    acquire(&ptable.lock);
-    curproc->mainThread = curthread;
+
+    //ptable.lock.name = "EXIT";
+    //acquire(&ptable.lock);
+    //curproc->mainThread = curthread;
     //only 1 thread is able
 
+    //release(&ptable.lock);
 
     //When got here - the only thread that is RUNNINNg is curThread
     //all other threads are ZOMBIE
@@ -381,14 +372,13 @@ exit(void) {
             curproc->ofile[fd] = 0;
         }
     }
-    if (holding(&ptable.lock))
-        release(&ptable.lock);
 
     begin_op();
     iput(curproc->cwd);
     end_op();
     curproc->cwd = 0;
 
+    ptable.lock.name = "EXIT2";
     acquire(&ptable.lock);
 
     // Parent might be sleeping in wait().
@@ -428,6 +418,7 @@ wait(void) {
     struct proc *curproc = myproc();
     struct thread *t;
 
+    ptable.lock.name = "WAIT";
     acquire(&ptable.lock);
     for (;;) {
         // Scan through table looking for exited children.
@@ -491,6 +482,8 @@ scheduler(void) {
         sti();
 
         // Loop over process table looking for process to run.
+
+        ptable.lock.name = "SCHEDUALER";
         acquire(&ptable.lock);
 
         for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
@@ -574,6 +567,8 @@ void
 yield(void) {
     //struct  proc *p = myproc();
     //acquire(p->procLock);
+
+    ptable.lock.name = "YIELD";
     acquire(&ptable.lock);
     mythread()->state = RUNNABLE;
     sched();
@@ -625,6 +620,8 @@ sleep(void *chan, struct spinlock *lk) {
     // (wakeup runs with ptable.lock locked),
     // so it's okay to release lk.
     if (lk != &ptable.lock) {
+
+        ptable.lock.name = "SLEEP";
         acquire(&ptable.lock);
         release(lk);
     }
@@ -640,6 +637,7 @@ sleep(void *chan, struct spinlock *lk) {
     // Reacquire original lock.
     if (lk != &ptable.lock) {  //DOC: sleeplock2
         release(&ptable.lock);
+        ptable.lock.name = "SLEEP2";
         acquire(lk);
     }
 }
@@ -668,6 +666,9 @@ void
 wakeup(void *chan) {
     if (DEBUGMODE > 1)
         cprintf(" WAKEUP ");
+    char *aa =ptable.lock.name;
+    ptable.lock.name = "WAKEUP";
+    ptable.lock.namee = aa;
     acquire(&ptable.lock);
     wakeup1(chan);
     release(&ptable.lock);
@@ -682,6 +683,7 @@ kill(int pid) {
         cprintf(" KILL ");
     struct proc *p;
     struct thread *t;
+    ptable.lock.name = "KILL";
     acquire(&ptable.lock);
     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
         if (p->pid == pid) {
@@ -746,6 +748,7 @@ int kthread_create(void (*start_func)(), void *stack) {
     struct thread *t;
     struct proc *p = myproc();
     char *sp;
+    ptable.lock.name = "KTHREADCREATE";
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++)
         if (t->state == UNUSED)
@@ -809,6 +812,7 @@ void kthread_exit() {
     struct thread *t;
     struct proc *p = myproc();
     int counter = 0;
+    ptable.lock.name = "KTHREADEXIT";
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
         if (t->state == UNUSED || t->state == ZOMBIE)

@@ -25,9 +25,10 @@ void
 acquire(struct spinlock *lk)
 {
   pushcli(); // disable interrupts to avoid deadlock.
-  if(holding(lk))
+  if(holding(lk)) {
+    cprintf(" PANIC, %s \t %s \t %s", lk->name , lk->namee , mythread()->name  );
     panic("acquire");
-
+  }
   // The xchg is atomic.
   while(xchg(&lk->locked, 1) != 0)
     ;
@@ -47,9 +48,7 @@ void
 release(struct spinlock *lk)
 {
   if(!holding(lk))
-  {
-    cprintf( "\n LOCK THAT FUCKED US IS -- %s  \n" , lk->name );
-    panic("release");}
+    panic("release");
 
   lk->pcs[0] = 0;
   lk->cpu = 0;

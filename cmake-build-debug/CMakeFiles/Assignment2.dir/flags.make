@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/weilern/os192/ass2/OS_ass2-Threads/. 
+C_INCLUDES = -I/home/yoav/Desktop/Git/Assignment2/. 
 
