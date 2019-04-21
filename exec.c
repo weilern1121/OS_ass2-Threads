@@ -108,7 +108,7 @@ exec(char *path, char **argv)
     cleanProcOneThread(curthread,curproc);
     //curproc->mainThread=curthread;
 
-    switchuvm(curproc);
+    switchuvm(curproc,curthread);
     freevm(oldpgdir);
     return 0;
 

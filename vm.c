@@ -154,11 +154,11 @@ switchkvm(void)
 
 // Switch TSS and h/w page table to correspond to process p.
 void
-switchuvm(struct proc *p)
+switchuvm(struct proc *p, struct thread *t)
 {
   if(p == 0)
     panic("switchuvm: no process");
-  if(p->mainThread->tkstack == 0)
+  if(t->tkstack == 0)
     panic("switchuvm: no kstack");
   if(p->pgdir == 0)
     panic("switchuvm: no pgdir");
@@ -168,7 +168,7 @@ switchuvm(struct proc *p)
                                 sizeof(mycpu()->ts)-1, 0);
   mycpu()->gdt[SEG_TSS].s = 0;
   mycpu()->ts.ss0 = SEG_KDATA << 3;
-  mycpu()->ts.esp0 = (uint)p->mainThread->tkstack + KSTACKSIZE;
+  mycpu()->ts.esp0 = (uint)t->tkstack + KSTACKSIZE;
   // setting IOPL=0 in eflags *and* iomb beyond the tss segment limit
   // forbids I/O instructions (e.g., inb and outb) from user space
   mycpu()->ts.iomb = (ushort) 0xFFFF;
