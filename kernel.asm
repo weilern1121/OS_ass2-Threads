@@ -8914,7 +8914,7 @@ int kthread_create(void (*start_func)(), void *stack) {
 
 80104870 <kthread_id>:
 
-//this func haven't been used - i's implementation is in sysproc
+//this func haven't been used - it's implementation is in sysproc
 int kthread_id() {
 80104870:	55                   	push   %ebp
 80104871:	89 e5                	mov    %esp,%ebp

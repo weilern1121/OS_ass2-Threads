@@ -46,6 +46,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assignment2.dir/wc.c.o"
   "CMakeFiles/Assignment2.dir/zombie.c.o"
   "CMakeFiles/Assignment2.dir/trnmnt_tree.c.o"
+  "CMakeFiles/Assignment2.dir/sanity.c.o"
   "Assignment2.pdb"
   "Assignment2"
 )
