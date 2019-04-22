@@ -73,13 +73,8 @@ struct proc {
   char name[16];               // Process name (debugging)
   struct thread thread[NTHREADS];  // process's thread array
   struct thread *mainThread;  // proc's main thread
-
   //struct spinlock *procLock; //lock - might change to MUTEX
   int exited;                  // If non-zero, have been exited
-
-
-
-
 };
 
 // Process memory is laid out contiguously, low addresses first:
@@ -100,4 +95,11 @@ struct kthread_mutex_t {
     // TODO we are not sure about this line but it doesnt affect us now;
     uint pcs[10];      // The call stack (an array of program counters)
     // that locked the lock.
+};
+
+struct trnmnt_tree{
+    struct spinlock *lock;           //spinlock
+    int depth;                      //tree depth
+    int trnmntMutex[MAX_MUTEXES];    // mutex array
+    //TODO - maybe need to add boolean array
 };

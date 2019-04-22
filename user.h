@@ -23,11 +23,24 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+
 //kthread syscalls
 int kthread_create(void (*start_func)(), void* );
 int kthread_id();
 void kthread_exit();
 int kthread_join(int);
+
+//kthread_mutex syscalls
+int kthread_mutex_alloc(void);
+int kthread_mutex_dealloc(int);
+int kthread_mutex_lock(int);
+int kthread_mutex_unlock(int);
+
+//trnmnt_tree
+struct trnmnt_tree* trnmnt_tree_alloc(int);
+int trnmnt_tree_dealloc(struct trnmnt_tree*);
+int trnmnt_tree_acquire(struct trnmnt_tree* ,int);
+int trnmnt_tree_release(struct trnmnt_tree* ,int);
 
 // ulib.c
 int stat(const char*, struct stat*);

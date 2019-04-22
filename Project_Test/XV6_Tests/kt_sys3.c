@@ -7,7 +7,7 @@
 #include "../../syscall.h"
 #include "../../traps.h"
 #include "../../memlayout.h"
-#include "../../tournament_tree.h"
+#include "trnmnt_tree.h"
 #include "../../kthread.h"
 
 #define THREAD_NUM 10

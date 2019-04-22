@@ -127,6 +127,16 @@ int             kthread_create(void (*start_func)(), void* stack);
 int             kthread_id();
 void            kthread_exit();
 int             kthread_join(int thread_id);
+//kthread_mutex
+int             kthread_mutex_alloc(void);
+int             kthread_mutex_dealloc(int);
+int             kthread_mutex_lock(int);
+int             kthread_mutex_unlock(int);
+//trnmnt_tree
+struct trnmnt_tree* trnmnt_tree_alloc(int);
+int             trnmnt_tree_dealloc(struct trnmnt_tree*);
+int             trnmnt_tree_acquire(struct trnmnt_tree*, int);
+int             trnmnt_tree_release(struct trnmnt_tree*, int);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

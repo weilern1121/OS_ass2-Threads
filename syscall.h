@@ -24,4 +24,13 @@
 #define SYS_kthread_id 23
 #define SYS_kthread_exit 24
 #define SYS_kthread_join 25
+#define SYS_kthread_mutex_alloc 26
+#define SYS_kthread_mutex_dealloc 27
+#define SYS_kthread_mutex_lock 28
+#define SYS_kthread_mutex_unlock 29
+#define SYS_trnmnt_tree_alloc 30
+#define SYS_trnmnt_tree_dealloc 31
+#define SYS_trnmnt_tree_acquire 32
+#define SYS_trnmnt_tree_release 33
+
 

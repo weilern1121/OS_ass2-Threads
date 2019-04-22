@@ -12,4 +12,6 @@
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
 #define FSSIZE       1000  // size of file system in blocks
 #define NTHREADS       16  // max num of threads per proc
+#define MAX_MUTEXES   64    //max num of mutexes
+#define MAX_STACK_SIZE 4000
 
