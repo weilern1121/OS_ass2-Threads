@@ -50,8 +50,10 @@ pinit(void) {
 //must be called under acquire(&ptable.lock); !!
 void
 cleanThread(struct thread *t) {
-    kfree(t->tkstack);
-    t->tkstack = 0;
+    if( t->tkstack != 0){
+        kfree(t->tkstack);
+        t->tkstack = 0;
+    }
     t->state = UNUSED;
     t->tid = 0;
     t->name[0] = 0;
@@ -751,10 +753,11 @@ procdump(void) {
 //TODO - need to update stack
 int kthread_create(void (*start_func)(), void *stack) {
     struct thread *t;
+    struct thread *curthread=mythread();
     struct proc *p = myproc();
     char *sp;
     ptable.lock.name = "KTHREADCREATE";
-    acquire(&ptable.lock);
+    acquire(&ptable.lock); //find UNUSED thread in curproc
     for (t = p->thread; t < &p->thread[NTHREADS]; t++)
         if (t->state == UNUSED)
             goto foundThread2;
@@ -788,8 +791,37 @@ int kthread_create(void (*start_func)(), void *stack) {
     t->context = (struct context *) sp;
     memset(t->context, 0, sizeof *t->context);
     t->context->eip = (uint) forkret;
-
+    //TODO - copy trapframe from the current thread (like fork)
     memset(t->tf, 0, sizeof(*t->tf));
+    //copy all fields except eip, esp
+    t->tf->gs=curthread->tf->gs;
+    t->tf->fs=curthread->tf->fs;
+    t->tf->ss=curthread->tf->ss;
+    t->tf->trapno=curthread->tf->trapno;
+    t->tf->err=curthread->tf->err;
+    t->tf->eflags=curthread->tf->eflags;
+    t->tf->edx=curthread->tf->edx;
+    t->tf->edi=curthread->tf->edi;
+    t->tf->ebx=curthread->tf->ebx;
+    t->tf->ecx=curthread->tf->ecx;
+    t->tf->ebp=curthread->tf->ebp;
+    t->tf->eax=curthread->tf->eax;
+    t->tf->ds=curthread->tf->ds;
+    t->tf->cs=curthread->tf->cs;
+    t->tf->es=curthread->tf->es;
+    t->tf->esi=curthread->tf->esi;
+    t->tf->oesp=curthread->tf->oesp;
+    t->tf->padding1=curthread->tf->padding1;
+    t->tf->padding2=curthread->tf->padding2;
+    t->tf->padding3=curthread->tf->padding3;
+    t->tf->padding4=curthread->tf->padding4;
+    t->tf->padding5=curthread->tf->padding5;
+    t->tf->padding6=curthread->tf->padding6;
+
+    t->tf->eip = (uint) start_func;  // beginning of run func
+    t->tf->esp= (uint) stack; //beginning of user stack
+
+/*    memset(t->tf, 0, sizeof(*t->tf));
     t->tf->cs = (SEG_UCODE << 3) | DPL_USER;
     t->tf->ds = (SEG_UDATA << 3) | DPL_USER;
     t->tf->es = t->tf->ds;
@@ -797,13 +829,17 @@ int kthread_create(void (*start_func)(), void *stack) {
     t->tf->eflags = FL_IF;
     t->tf->esp = PGSIZE;
     t->tf->eip = (uint) start_func;  // beginning of run func
+*/
 
     safestrcpy(t->name, myproc()->name, sizeof(myproc()->name));
     //t->cwd = namei("/");
 
 //    t->killed = 0;
     t->chan = 0;
+    //t->start_func=start_func; //TODO - not sure that need this line and field
     t->state = RUNNABLE;
+//    cprintf("finish kthread_create\n");
+//    cprintf("t->tf->eip= %d \t t->tf->esp= %d\n", t->tf->eip,t->tf->esp);
     release(&ptable.lock);
     return 0;
 }
@@ -814,20 +850,24 @@ int kthread_id() {
 }
 
 void kthread_exit() {
+//    cprintf("enter kthread_exit\n");
     struct thread *t;
     struct proc *p = myproc();
     int counter = 0;
     ptable.lock.name = "KTHREADEXIT";
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if (t->state == UNUSED || t->state == ZOMBIE)
+        if (t->state != RUNNABLE && t->state != RUNNING)
             counter++;
     }
-    if (counter == (NTHREADS - 1)) { //all other threads aren't available -> close proc
+    //cprintf("counter= %d \tNTHREADS= %d\n",counter,NTHREADS);
+    if (counter == (NTHREADS - 2)) { //all other threads aren't available -> close proc
         release(&ptable.lock);
         exit();
     } else {   //there are other threads in the same proc - close just the specific thread
         cleanThread(t);
+        t->state=ZOMBIE;
+        //sched(); //TODO- need to call this func while holding ptable.lock
         release(&ptable.lock);
     }
 }
@@ -1041,7 +1081,7 @@ kthread_mutex_unlock(int mutex_id) {
 /********************************
         trnmnt_tree
  ********************************/
-
+/*
 int pow(int a, int b) {
     //Calculating a^b
     if (a < 0 || b < 0) {
@@ -1099,3 +1139,4 @@ trnmnt_tree_release(struct trnmnt_tree* tree,int ID){
     }
     return 0;
 }
+*/

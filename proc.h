@@ -52,7 +52,7 @@ struct thread {
     //struct file *ofile[NOFILE];  // Open files
     //struct inode *cwd;           // Current directory
     char name[16];               // Thread name (debugging)
-    void (*start_func)();       //pointer to the running function of the thread
+    //void (*start_func)();       //pointer to the running function of the thread
 };
 
 
@@ -96,10 +96,10 @@ struct kthread_mutex_t {
     uint pcs[10];      // The call stack (an array of program counters)
     // that locked the lock.
 };
-
+/*
 struct trnmnt_tree{
     struct spinlock *lock;           //spinlock
     int depth;                      //tree depth
     int trnmntMutex[MAX_MUTEXES];    // mutex array
     //TODO - maybe need to add boolean array
-};
+};*/

@@ -36,7 +36,7 @@ int kthread_mutex_dealloc(int);
 int kthread_mutex_lock(int);
 int kthread_mutex_unlock(int);
 
-//trnmnt_tree
+//trnmnt_tree.c
 struct trnmnt_tree* trnmnt_tree_alloc(int);
 int trnmnt_tree_dealloc(struct trnmnt_tree*);
 int trnmnt_tree_acquire(struct trnmnt_tree* ,int);

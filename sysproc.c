@@ -87,9 +87,13 @@ int
 sys_kthread_create(void) {
     void (*start_func)() = 0;
     void *stack = 0;
-    if (argptr(0, (void *) start_func, sizeof(*start_func)) < 0)
+//    if (argptr(0, (void *) start_func, sizeof(*start_func)) < 0)
+//        return -1;
+//    if (argptr(0, stack, sizeof(*stack)) < 0)
+//        return -1;
+    if (argint(0, (int *) &start_func) < 0)
         return -1;
-    if (argptr(0, stack, sizeof(*stack)) < 0)
+    if (argint(1, (int *) &stack) < 0)
         return -1;
     return kthread_create(start_func, stack);
 }
@@ -142,7 +146,7 @@ sys_kthread_mutex_unlock(void) {
         return -1;
     return kthread_mutex_unlock(tid);
 }
-
+/*
 //trnmnt_tree syscalls
 struct trnmnt_tree *
 sys_trnmnt_tree_alloc(void) {
@@ -181,3 +185,4 @@ sys_trnmnt_tree_release(void){
         return -1;
     return trnmnt_tree_release(tree, ID);
 }
+ */
