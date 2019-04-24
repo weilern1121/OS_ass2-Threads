@@ -1,4 +1,4 @@
-# Install script for directory: /home/weilern/os192/ass2/OS_ass2-Threads
+# Install script for directory: /home/yoav/Desktop/Git/Assignment2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
