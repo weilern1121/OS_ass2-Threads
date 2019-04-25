@@ -103,6 +103,17 @@ $ thread 1 entering
 thread 1 exiting
 $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
+
+
+
+
+
+
+
+
+
+
+
     vector<string> test_2_UserPrograms = {"quitXV6","kt_sys1"};
     string test_2_Hint = "Problem with creating threads and exiting threads.";
     int test_2_time_limit = 240000;
@@ -172,16 +183,6 @@ Finished joing thread 9
 thread 10 entering
 thread 10 exiting
 Finished joing thread 10
-Thread 1 isn't my thread anymore, as it should be
-Thread 2 isn't my thread anymore, as it should be
-Thread 3 isn't my thread anymore, as it should be
-Thread 4 isn't my thread anymore, as it should be
-Thread 5 isn't my thread anymore, as it should be
-Thread 6 isn't my thread anymore, as it should be
-Thread 7 isn't my thread anymore, as it should be
-Thread 8 isn't my thread anymore, as it should be
-Thread 9 isn't my thread anymore, as it should be
-Thread 10 isn't my thread anymore, as it should be
 $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_4_UserPrograms = {"quitXV6","kt_sys3","sleep"};

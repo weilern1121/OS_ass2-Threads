@@ -7,7 +7,7 @@
 #include "../../syscall.h"
 #include "../../traps.h"
 #include "../../memlayout.h"
-#include "trnmnt_tree.h"
+#include "../../trnmnt_tree.h"
 #include "../../kthread.h"
 
 #define THREAD_NUM 10
@@ -18,7 +18,7 @@
         sleep( id * 200); \
         printf(1,"thread %d entering\n", id ); \
         printf(1,"thread %d exiting\n", id ); \
-        kthread_exit(); \
+        kthread_exit();\
     }
 
 #define THREAD_STACK(name) \
@@ -91,20 +91,6 @@ int main(int argc, char *argv[]){
             printf(1,"Unknown result code from join\n");
         }
     }
-
-    
-    for(int i = 0;i < THREAD_NUM;i++){
-        int result = kthread_join(pids[i]);
-        if(result == 0){
-            printf(1,"Thread %d shouldn't be my thread anymore\n",i+1);
-        }
-        else if(result == -1){
-            printf(1,"Thread %d isn't my thread anymore, as it should be\n",i+1);
-        }
-        else{
-            printf(1,"Unknown result code from join\n");
-        }
-    }    
 
     exit();
 }

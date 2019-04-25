@@ -55,8 +55,8 @@ cleanThread(struct thread *t) {
     t->name[0] = 0;
 //    t->killed = 0;
     //clean trap frame and context
-    memset(t->tf, 0, sizeof(*t->tf));
-    memset(t->context, 0, sizeof(*t->context));
+    //memset(t->tf, 0, sizeof(*t->tf));
+    //memset(t->context, 0, sizeof(*t->context));
 }
 
 void
@@ -71,7 +71,8 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
             if (t->state == RUNNING)
                 sleep(t, &ptable.lock);
 
-            cleanThread(t);
+            //cleanThread(t);
+            t->state = ZOMBIE;
 
         }
     }
@@ -179,9 +180,9 @@ allocproc(void) {
 
     // Allocate kernel stack.
     if ((t->tkstack = kalloc()) == 0) {
-        p->pid = 0;
+        p->pid = -1;
         p->state = UNUSED;
-        t->tid = 0;
+        t->tid = -1;
         t->state = UNUSED;
         release(&ptable.lock);
         return 0;
@@ -415,7 +416,7 @@ wait(void) {
                 //kfree for the stacks od the proc's threads
 
                 for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-                    if (t->state != UNUSED)
+                    if (t->state == ZOMBIE)
                         cleanThread(t);
                 }
 
@@ -787,26 +788,19 @@ int kthread_create(void (*start_func)(), void *stack) {
     t->tf->padding5=curthread->tf->padding5;
     t->tf->padding6=curthread->tf->padding6;
 
+
     t->tf->eip = (uint) start_func;  // beginning of run func
     t->tf->esp= (uint) stack; //beginning of user stack
 
-/*    memset(t->tf, 0, sizeof(*t->tf));
-    t->tf->cs = (SEG_UCODE << 3) | DPL_USER;
-    t->tf->ds = (SEG_UDATA << 3) | DPL_USER;
-    t->tf->es = t->tf->ds;
-    t->tf->ss = t->tf->ds;
-    t->tf->eflags = FL_IF;
-    t->tf->esp = PGSIZE;
-    t->tf->eip = (uint) start_func;  // beginning of run func
-*/
+
 
     safestrcpy(t->name, myproc()->name, sizeof(myproc()->name));
-    //t->cwd = namei("/");
+
 
 //    t->killed = 0;
     t->chan = 0;
-    //t->start_func=start_func; //TODO - not sure that need this line and field
     t->state = RUNNABLE;
+
 
     release(&ptable.lock);
     return 0;
@@ -820,35 +814,54 @@ int kthread_id() {
 void kthread_exit() {
 
     struct thread *t;
+    struct thread *curthread = mythread();
     struct proc *p = myproc();
     int counter = 0;
     ptable.lock.name = "KTHREADEXIT";
     acquire(&ptable.lock);
+
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if (t->state != RUNNABLE && t->state != RUNNING)
+        if ( (t->state == UNUSED || t->state == ZOMBIE) && t != curthread )
             counter++;
     }
 
     if (counter == (NTHREADS - 1)) { //all other threads aren't available -> close proc
         release(&ptable.lock);
         exit();
-    } else {   //there are other threads in the same proc - close just the specific thread
-        cleanThread(t);
-        t->state=ZOMBIE;
-        //sched(); //TODO- need to call this func while holding ptable.lock
+    }
+    else {   //there are other threads in the same proc - close just the specific thread
+        if( curthread == p->mainThread ) {
+            for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
+                 if (t->state == RUNNABLE && t != curthread)
+                    p->mainThread = t;
+            }
+        }
+
+        //wakeup1( mythread() );
+        //TODO this was the problem - cleanThread(curthread);
+        curthread->state = ZOMBIE;
+        wakeup1( curthread );
+        sched(); //TODO- need to call this func while holding ptable.lock
         release(&ptable.lock);
+
     }
 }
 
 int kthread_join(int thread_id) {
     struct thread *t;
-    struct proc *p;
+    struct proc *p = myproc();
     acquire(&ptable.lock);
-    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-        if (p->state != UNUSED) {
-            for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-                if (t->tid == thread_id)
-                    goto found2;
+    for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
+        if (t->tid == thread_id) {
+            if (t->state == ZOMBIE ) {
+                release(&ptable.lock);
+                return 0;
+            } else{// if (t->state != UNUSED) {
+                cprintf("GOTO SLEEP");
+                sleep(t, &ptable.lock);
+                cprintf("BACKFROM SLEEP");
+                release(&ptable.lock);
+                return 0;
             }
         }
     }
@@ -856,16 +869,6 @@ int kthread_join(int thread_id) {
     release(&ptable.lock);
     return -1;
 
-    found2:
-    if (t->state == UNUSED || t->state == ZOMBIE) {
-        release(&ptable.lock);
-        return -1;
-    }
-    sleep(t, &ptable.lock);
-    //TODO - not sure about release
-    if (holding(&ptable.lock))
-        release(&ptable.lock);
-    return 0;
 }
 
 /********************************

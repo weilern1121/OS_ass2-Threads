@@ -167,7 +167,7 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_kt_sys4\
+	_kt_sys3\
 	_sleep\
 	_sh\
 	_init\
@@ -283,11 +283,11 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_kt_sys4: $(ULIB)
-	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o kt_sys4.o ./Project_Test/XV6_Tests/kt_sys4.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _kt_sys4 kt_sys4.o $(ULIB)
-	objdump -S _kt_sys4 > kt_sys4.asm
-	$(OBJDUMP) -t _kt_sys4 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kt_sys4.sym
+_kt_sys3: $(ULIB)
+	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o kt_sys3.o ./Project_Test/XV6_Tests/kt_sys3.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _kt_sys3 kt_sys3.o $(ULIB)
+	objdump -S _kt_sys3 > kt_sys3.asm
+	$(OBJDUMP) -t _kt_sys3 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kt_sys3.sym
 
 _sleep: $(ULIB)
 	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sleep.o ./Project_Test/XV6_Tests/sleep.c

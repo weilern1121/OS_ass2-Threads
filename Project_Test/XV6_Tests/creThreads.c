@@ -7,7 +7,7 @@
 #include "../../syscall.h"
 #include "../../traps.h"
 #include "../../memlayout.h"
-#include "trnmnt_tree.h"
+#include "../../tournament_tree.h"
 #include "../../kthread.h"
 
 #define THREAD_NUM 16
@@ -16,8 +16,6 @@
 #define THREAD_START(name, id) \
     void name(){ \
         sleep( id * 100); \
-        printf(1,"thread %d entering\n", id ); \
-        printf(1,"thread %d exiting\n", id ); \
         kthread_exit(); \
     }
 

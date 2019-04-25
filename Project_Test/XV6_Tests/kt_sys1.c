@@ -30,8 +30,7 @@ void (*threads_starts[])(void) =
     {threadStart_1};
 
 int main(int argc, char *argv[]){
-
-	THREAD_STACK(threadStack_1)
+    THREAD_STACK(threadStack_1)
    
     void (*threads_stacks[])(void) = 
         {threadStack_1};
@@ -39,7 +38,6 @@ int main(int argc, char *argv[]){
     for(int i = 0;i < THREAD_NUM;i++){
         kthread_create(threads_starts[i], threads_stacks[i]);
     }
-
 
     sleep(1000);
 
