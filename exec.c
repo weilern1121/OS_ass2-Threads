@@ -10,8 +10,6 @@
 int
 exec(char *path, char **argv)
 {
-
-    //cprintf("\n\n ---EXEC---- \n\n");
     char *s, *last;
     int i, off;
     uint argc, sz, sp, ustack[3+MAXARG+1];
@@ -21,7 +19,7 @@ exec(char *path, char **argv)
     pde_t *pgdir, *oldpgdir;
     struct proc *curproc = myproc();
     struct  thread *curthread = mythread();
-    //struct  thread *t;
+
     begin_op();
 
     if((ip = namei(path)) == 0){

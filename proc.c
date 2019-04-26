@@ -578,8 +578,10 @@ sleep(void *chan, struct spinlock *lk) {
     struct proc *p = myproc();
     struct thread *t = mythread();
 
-    if (p == 0)
+    if (p == 0) {
+        cprintf("TRAP CAME FROM HERE");
         panic("sleep");
+    }
 
     if (lk == 0)
         panic("sleep without lk");
@@ -803,7 +805,7 @@ int kthread_create(void (*start_func)(), void *stack) {
 
 
     release(&ptable.lock);
-    return 0;
+    return t->tid;
 }
 
 //this func haven't been used - it's implementation is in sysproc
@@ -837,7 +839,6 @@ void kthread_exit() {
             }
         }
 
-        //wakeup1( mythread() );
         //TODO this was the problem - cleanThread(curthread);
         curthread->state = ZOMBIE;
         wakeup1( curthread );
@@ -856,12 +857,13 @@ int kthread_join(int thread_id) {
             if (t->state == ZOMBIE ) {
                 release(&ptable.lock);
                 return 0;
-            } else{// if (t->state != UNUSED) {
-                cprintf("GOTO SLEEP");
+            } else if (t->state != UNUSED) {
                 sleep(t, &ptable.lock);
-                cprintf("BACKFROM SLEEP");
                 release(&ptable.lock);
                 return 0;
+            } else {
+                release(&ptable.lock);
+                return -1;
             }
         }
     }

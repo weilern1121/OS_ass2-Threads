@@ -1,5 +1,0 @@
-$ Starting joining threads, should indicate when each thread was sucessfully joined soon
-GOTO SLEEPthread 1 entering
-thread 1 exiting
-thread 2 entering
-thread 2 exiting
