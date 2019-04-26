@@ -68,8 +68,14 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
         if (t != curthread && t->state != UNUSED) {
-            if (t->state == RUNNING)
-                sleep(t, &ptable.lock);
+            //TODO - this is becuase sleep make us trap and by this method we are smart waiting.
+            while (t->state == RUNNING){
+                //cprintf("TRAP CAME FROM HERE1");
+                release(&ptable.lock);
+                yield();
+                acquire(&ptable.lock);
+                //sleep(t, &ptable.lock);
+            }
 
             //cleanThread(t);
             t->state = ZOMBIE;
@@ -578,10 +584,9 @@ sleep(void *chan, struct spinlock *lk) {
     struct proc *p = myproc();
     struct thread *t = mythread();
 
-    if (p == 0) {
-        cprintf("TRAP CAME FROM HERE");
+    if (p == 0)
         panic("sleep");
-    }
+
 
     if (lk == 0)
         panic("sleep without lk");

@@ -75,4 +75,4 @@ add_executable(Assignment2
         wc.c
         x86.h
         zombie.c
-        trnmnt_tree.h trnmnt_tree.c sanity.c)
+        tournament_tree.h tournament_tree.c sanity.c)

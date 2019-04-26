@@ -254,16 +254,16 @@
 		<Unit filename="/home/yoav/Desktop/Git/Assignment2/sysproc.c">
 			<Option target="Assignment2"/>
 		</Unit>
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/tournament_tree.c">
+			<Option target="Assignment2"/>
+		</Unit>
+		<Unit filename="/home/yoav/Desktop/Git/Assignment2/tournament_tree.h">
+			<Option target="Assignment2"/>
+		</Unit>
 		<Unit filename="/home/yoav/Desktop/Git/Assignment2/trap.c">
 			<Option target="Assignment2"/>
 		</Unit>
 		<Unit filename="/home/yoav/Desktop/Git/Assignment2/traps.h">
-			<Option target="Assignment2"/>
-		</Unit>
-		<Unit filename="/home/yoav/Desktop/Git/Assignment2/trnmnt_tree.c">
-			<Option target="Assignment2"/>
-		</Unit>
-		<Unit filename="/home/yoav/Desktop/Git/Assignment2/trnmnt_tree.h">
 			<Option target="Assignment2"/>
 		</Unit>
 		<Unit filename="/home/yoav/Desktop/Git/Assignment2/types.h">

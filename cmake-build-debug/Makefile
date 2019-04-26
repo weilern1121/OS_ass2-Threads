@@ -1176,6 +1176,33 @@ sysproc.c.s:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysproc.c.s
 .PHONY : sysproc.c.s
 
+tournament_tree.o: tournament_tree.c.o
+
+.PHONY : tournament_tree.o
+
+# target to build an object file
+tournament_tree.c.o:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.o
+.PHONY : tournament_tree.c.o
+
+tournament_tree.i: tournament_tree.c.i
+
+.PHONY : tournament_tree.i
+
+# target to preprocess a source file
+tournament_tree.c.i:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.i
+.PHONY : tournament_tree.c.i
+
+tournament_tree.s: tournament_tree.c.s
+
+.PHONY : tournament_tree.s
+
+# target to generate assembly for a file
+tournament_tree.c.s:
+	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.s
+.PHONY : tournament_tree.c.s
+
 trap.o: trap.c.o
 
 .PHONY : trap.o
@@ -1202,33 +1229,6 @@ trap.s: trap.c.s
 trap.c.s:
 	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trap.c.s
 .PHONY : trap.c.s
-
-trnmnt_tree.o: trnmnt_tree.c.o
-
-.PHONY : trnmnt_tree.o
-
-# target to build an object file
-trnmnt_tree.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.o
-.PHONY : trnmnt_tree.c.o
-
-trnmnt_tree.i: trnmnt_tree.c.i
-
-.PHONY : trnmnt_tree.i
-
-# target to preprocess a source file
-trnmnt_tree.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.i
-.PHONY : trnmnt_tree.c.i
-
-trnmnt_tree.s: trnmnt_tree.c.s
-
-.PHONY : trnmnt_tree.s
-
-# target to generate assembly for a file
-trnmnt_tree.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trnmnt_tree.c.s
-.PHONY : trnmnt_tree.c.s
 
 uart.o: uart.c.o
 
@@ -1545,12 +1545,12 @@ help:
 	@echo "... sysproc.o"
 	@echo "... sysproc.i"
 	@echo "... sysproc.s"
+	@echo "... tournament_tree.o"
+	@echo "... tournament_tree.i"
+	@echo "... tournament_tree.s"
 	@echo "... trap.o"
 	@echo "... trap.i"
 	@echo "... trap.s"
-	@echo "... trnmnt_tree.o"
-	@echo "... trnmnt_tree.i"
-	@echo "... trnmnt_tree.s"
 	@echo "... uart.o"
 	@echo "... uart.i"
 	@echo "... uart.s"

@@ -1,6 +1,6 @@
 #include "types.h"
 #include "param.h"
-#include "trnmnt_tree.h"
+#include "tournament_tree.h"
 #include "defs.h"
 #include "kthread.h"
 /*

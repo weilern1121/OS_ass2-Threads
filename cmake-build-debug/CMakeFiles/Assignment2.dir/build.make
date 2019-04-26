@@ -655,18 +655,18 @@ CMakeFiles/Assignment2.dir/zombie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment2.dir/zombie.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yoav/Desktop/Git/Assignment2/zombie.c -o CMakeFiles/Assignment2.dir/zombie.c.s
 
-CMakeFiles/Assignment2.dir/trnmnt_tree.c.o: CMakeFiles/Assignment2.dir/flags.make
-CMakeFiles/Assignment2.dir/trnmnt_tree.c.o: ../trnmnt_tree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/Assignment2.dir/trnmnt_tree.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment2.dir/trnmnt_tree.c.o   -c /home/yoav/Desktop/Git/Assignment2/trnmnt_tree.c
+CMakeFiles/Assignment2.dir/tournament_tree.c.o: CMakeFiles/Assignment2.dir/flags.make
+CMakeFiles/Assignment2.dir/tournament_tree.c.o: ../tournament_tree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yoav/Desktop/Git/Assignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/Assignment2.dir/tournament_tree.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment2.dir/tournament_tree.c.o   -c /home/yoav/Desktop/Git/Assignment2/tournament_tree.c
 
-CMakeFiles/Assignment2.dir/trnmnt_tree.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment2.dir/trnmnt_tree.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yoav/Desktop/Git/Assignment2/trnmnt_tree.c > CMakeFiles/Assignment2.dir/trnmnt_tree.c.i
+CMakeFiles/Assignment2.dir/tournament_tree.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment2.dir/tournament_tree.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yoav/Desktop/Git/Assignment2/tournament_tree.c > CMakeFiles/Assignment2.dir/tournament_tree.c.i
 
-CMakeFiles/Assignment2.dir/trnmnt_tree.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment2.dir/trnmnt_tree.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yoav/Desktop/Git/Assignment2/trnmnt_tree.c -o CMakeFiles/Assignment2.dir/trnmnt_tree.c.s
+CMakeFiles/Assignment2.dir/tournament_tree.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment2.dir/tournament_tree.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yoav/Desktop/Git/Assignment2/tournament_tree.c -o CMakeFiles/Assignment2.dir/tournament_tree.c.s
 
 CMakeFiles/Assignment2.dir/sanity.c.o: CMakeFiles/Assignment2.dir/flags.make
 CMakeFiles/Assignment2.dir/sanity.c.o: ../sanity.c
@@ -729,7 +729,7 @@ Assignment2_OBJECTS = \
 "CMakeFiles/Assignment2.dir/vm.c.o" \
 "CMakeFiles/Assignment2.dir/wc.c.o" \
 "CMakeFiles/Assignment2.dir/zombie.c.o" \
-"CMakeFiles/Assignment2.dir/trnmnt_tree.c.o" \
+"CMakeFiles/Assignment2.dir/tournament_tree.c.o" \
 "CMakeFiles/Assignment2.dir/sanity.c.o"
 
 # External object files for target Assignment2
@@ -781,7 +781,7 @@ Assignment2: CMakeFiles/Assignment2.dir/usertests.c.o
 Assignment2: CMakeFiles/Assignment2.dir/vm.c.o
 Assignment2: CMakeFiles/Assignment2.dir/wc.c.o
 Assignment2: CMakeFiles/Assignment2.dir/zombie.c.o
-Assignment2: CMakeFiles/Assignment2.dir/trnmnt_tree.c.o
+Assignment2: CMakeFiles/Assignment2.dir/tournament_tree.c.o
 Assignment2: CMakeFiles/Assignment2.dir/sanity.c.o
 Assignment2: CMakeFiles/Assignment2.dir/build.make
 Assignment2: CMakeFiles/Assignment2.dir/link.txt
