@@ -28,6 +28,7 @@ int uptime(void);
 int kthread_create(void (*start_func)(), void* );
 int kthread_id();
 void kthread_exit();
+void kthread_exit_trap();
 int kthread_join(int);
 
 //kthread_mutex syscalls

@@ -14,5 +14,5 @@
 #define NTHREADS       16  // max num of threads per proc
 #define MAX_MUTEXES   64    //max num of mutexes
 #define MAX_STACK_SIZE 4000
-#define DEBUGMODE   1 //0-off , 1- without SLEEP & WAKEUP & SCHED , 2-all commands
+#define DEBUGMODE   0 //0-off , 1- without SLEEP & WAKEUP & SCHED , 2-all commands
 

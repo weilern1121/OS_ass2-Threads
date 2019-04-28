@@ -1,110 +1,68 @@
-$  FORK  ALLOCPROC  GROWPROC APPLYED  
- GROWPROC DONE  EXEC  CLEAN_PROC_ONE_THREAD  FORK  ALLOCPROC  GROWPROC APPLYED  
- GROWPROC DONE Creating thread 1
- KTHREAD_CREATE Created thread 1 successfully
+$ Creating thread 1
+Created thread 1 successfully
 Creating thread 2
- KTHREAD_CREATE Created thread 2 successfully
+Created thread 2 successfully
 Creating thread 3
- KTHREAD_CREATE Created thread 3 successfully
+Created thread 3 successfully
 Creating thread 4
- KTHREAD_CREATE Created thread 4 successfully
+Created thread 4 successfully
 Creating thread 5
- KTHREAD_CREATE Created thread 5 successfully
+Created thread 5 successfully
 Creating thread 6
- KTHREAD_CREATE Created thread 6 successfully
+Created thread 6 successfully
 Creating thread 7
- KTHREAD_CREATE Created thread 7 successfully
+Created thread 7 successfully
 Creating thread 8
- KTHREAD_CREATE Created thread 8 successfully
+Created thread 8 successfully
 Creating thread 9
- KTHREAD_CREATE Created thread 9 successfully
+Created thread 9 successfully
 Creating thread 10
- KTHREAD_CREATE Created thread 10 successfully
+Created thread 10 successfully
 Creating thread 11
- KTHREAD_CREATE Created thread 11 successfully
+Created thread 11 successfully
 Creating thread 12
- KTHREAD_CREATE Created thread 12 successfully
+Created thread 12 successfully
 Creating thread 13
- KTHREAD_CREATE Created thread 13 successfully
+Created thread 13 successfully
 Creating thread 14
- KTHREAD_CREATE Created thread 14 successfully
+Created thread 14 successfully
 Creating thread 15
- KTHREAD_CREATE Created thread 15 successfully
+Created thread 15 successfully
 Creating thread 16
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	4 	4 	4 	3 	3 	3 	3 	3 	3 	3 	3 	3 	3 	3 	3 	
 Created thread 16 unsuccessfully
 Should have successfully created all threads but one
 Eexcuting exec creThreads
- EXEC  CLEAN_PROC_ONE_THREAD mythread() && mythread()->tkilled)
- KTHREAD_EXIT mythread() && mythread()->tkilled)
- KTHREAD_EXIT mythread() && mythread()->tkilled)
- KTHREAD_EXIT  GROWPROC APPLYED  
- GROWPROC DONE Creating thread 1
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
+Creating thread 1
 Finished creating thread 1 successfully
 Creating thread 2
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
-Finished creating thread 2 su KTHREAD_EXIT ccessfully
+Finished creating thread 2 successfully
 Creating thread 3
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
 Finished creating thread 3 successfully
 Creating thread 4
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
 Finished creating thread 4 successfully
 Creating thread 5
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 5 unsuccessfully
- KTHREAD_EXIT Creating thread 6
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
+Finished creating thread 5 successfully
+Creating thread 6
 Finished creating thread 6 successfully
 Creating thread 7
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 7 unsuccessfully
+Finished creating thread 7 successfully
 Creating thread 8
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished cre KTHREAD_EXIT ating thread 8 unsuccessfully
+Finished creating thread 8 successfully
 Creating thread 9
- KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
 Finished creating thread 9 successfully
 Creating thread 10
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 10 unsuccessfully
+Finished creating thread 10 successfully
 Creating thread 11
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 11 unsuccessfully
+Finished creating thread 11 successfully
 Creating thread 12
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 12 unsuccessfully
+Finished creating thread 12 successfully
 Creating thread 13
- KTHREAD_EXIT  KTHREAD_CREATE found - t->state == ZOMBIE && t->tkilled)
- CLEAN_THREAD finish t->state == ZOMBIE - cleanThread(t))
 Finished creating thread 13 successfully
 Creating thread 14
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 14 unsuccessfully
+Finished creating thread 14 successfully
 Creating thread 15
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
-Finished creating thread 15 unsuccessfully
+Finished creating thread 15 successfully
 Creating thread 16
- KTHREAD_CREATE Error - t->state == UNUSED)
-4 	2 	2 	2 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	5 	
 Finished creating thread 16 unsuccessfully
 Should have sucessfully created all threads but one
- KTHREAD_EXIT EXIT CLEAN_PROC_ONE_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD  CLEAN_THREAD EXIT CLEAN_PROC_ONE_THREAD  CLEAN_THREAD $  FORK  ALLOCPROC  GROWPROC APPLYED  
- GROWPROC DONE EXIT CLEAN_PROC_ONE_THREAD  CLEAN_THREAD $  FORK  ALLOCPROC  GROWPROC APPLYED  
- GROWPROC DONE  EXEC  CLEAN_PROC_ONE_THREAD Finished Yehonatan Peleg Test, quiting...
+$ $ Finished Yehonatan Peleg Test, quiting...
