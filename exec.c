@@ -6,10 +6,11 @@
 #include "defs.h"
 #include "x86.h"
 #include "elf.h"
-
 int
 exec(char *path, char **argv)
 {
+    if (DEBUGMODE > 0)
+        cprintf(" EXEC ");
     char *s, *last;
     int i, off;
     uint argc, sz, sp, ustack[3+MAXARG+1];
@@ -22,6 +23,11 @@ exec(char *path, char **argv)
 
     begin_op();
 
+    //func in proc.c
+    //clean all other threads except curthread
+    //After this func: P->mainThread == curthread
+    cleanProcOneThread(curthread,curproc,1);
+
     if((ip = namei(path)) == 0){
         end_op();
         cprintf("exec: fail\n");
@@ -33,11 +39,13 @@ exec(char *path, char **argv)
     // Check ELF header
     if(readi(ip, (char*)&elf, 0, sizeof(elf)) != sizeof(elf))
         goto bad;
-    if(elf.magic != ELF_MAGIC)
+    if(elf.magic != ELF_MAGIC) {
         goto bad;
+    }
 
-    if((pgdir = setupkvm()) == 0)
+    if((pgdir = setupkvm()) == 0) {
         goto bad;
+    }
 
     // Load program into memory.
     sz = 0;
@@ -79,7 +87,6 @@ exec(char *path, char **argv)
         ustack[3+argc] = sp;
     }
     ustack[3+argc] = 0;
-
     ustack[0] = 0xffffffff;  // fake return PC
     ustack[1] = argc;
     ustack[2] = sp - (argc+1)*4;  // argv pointer
@@ -100,11 +107,6 @@ exec(char *path, char **argv)
     curproc->sz = sz;
     curthread->tf->eip = elf.entry;  // main
     curthread->tf->esp = sp;
-
-    //func in proc.c
-    //clean all other threads except curthread
-    cleanProcOneThread(curthread,curproc);
-    //curproc->mainThread=curthread;
 
     switchuvm(curproc,curthread); //need to send mainThread, because other are not exists
     freevm(oldpgdir);
