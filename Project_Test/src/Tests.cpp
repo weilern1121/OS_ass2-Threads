@@ -528,7 +528,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_7_UserPrograms = {"quitXV6","kt_sys6"};
     string test_7_Hint = "Problem with cleaning after threads in thread join.";
-    int test_7_time_limit = 420000;
+    int test_7_time_limit = 840000;
 
     string test_8_Input = R"V0G0N(
 kt_sys7

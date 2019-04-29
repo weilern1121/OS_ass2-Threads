@@ -76,16 +76,16 @@ cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag) {
     acquire(&ptable.lock);
     p->mainThread = curthread;
     int i;
-    for (i = 0 , t = p->thread; t < &p->thread[NTHREADS];i++, t++) {
+    for (i = 0, t = p->thread; t < &p->thread[NTHREADS]; i++, t++) {
         if (t != curthread && t->state != UNUSED) {
             if (execFlag) {
                 if (t->state != RUNNING)
                     cleanThread(t);
-                else{
+                else {
                     t->tkilled = 1;
                 }
                 //sleep(t,&ptable.lock);
-                    // cprintf(" THREAD NUM %d IS RUNNING \n" , i );
+                // cprintf(" THREAD NUM %d IS RUNNING \n" , i );
             } else {
                 if (t->state == RUNNING)
                     sleep(t, &ptable.lock);
@@ -96,28 +96,28 @@ cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag) {
     }
 
 
-            /*if (t->state == RUNNING) {
-                if (execFlag == 1) { //got the call from exec
-                    //sleep(t, &ptable.lock);
-                    while (t->state == RUNNING) {
-                        cprintf("TRAP CAME FROM HERE1");
-                        release(&ptable.lock);
-                        yield();
-                        acquire(&ptable.lock);
-                    }
-                    //t->state = UNUSED;
-                    t->tkilled = 1;
-
-                } else {
-                    cprintf( "GOT HERE");
-                    sleep(t, &ptable.lock);
-                    cleanThread(t);
-                }
+    /*if (t->state == RUNNING) {
+        if (execFlag == 1) { //got the call from exec
+            //sleep(t, &ptable.lock);
+            while (t->state == RUNNING) {
+                cprintf("TRAP CAME FROM HERE1");
+                release(&ptable.lock);
+                yield();
+                acquire(&ptable.lock);
             }
-            //if (t->state == ZOMBIE && t->tkilled )
-            t->state = UNUSED;
+            //t->state = UNUSED;
+            t->tkilled = 1;
+
+        } else {
+            cprintf( "GOT HERE");
+            sleep(t, &ptable.lock);
+            cleanThread(t);
         }
-    }*/
+    }
+    //if (t->state == ZOMBIE && t->tkilled )
+    t->state = UNUSED;
+}
+}*/
     release(&ptable.lock);
 }
 
@@ -764,21 +764,21 @@ int kthread_create(void (*start_func)(), void *stack) {
 
     ptable.lock.name = "KTHREADCREATE";
     acquire(&ptable.lock); //find UNUSED thread in curproc
-    for (t = p->thread , i = 0; t < &p->thread[NTHREADS]; i++, t++) {
+    for (t = p->thread, i = 0; t < &p->thread[NTHREADS]; i++, t++) {
         /*if( t->state == ZOMBIE && t->tkilled && t != p->mainThread && t != curthread ) {
             cleanThread(t);
         }*/
 
-        if (t->state == UNUSED ) {
+        if (t->state == UNUSED) {
             //cprintf(" CLEAND THREAD NUM %d  \t\n" , i);
             goto foundThread2;
         }
     }
     //got here- didn't have a room for new thread
-    if (DEBUGMODE > 0){
+    if (DEBUGMODE > 0) {
         cprintf("Error - t->state == UNUSED)\n");
         for (t = p->thread; t < &p->thread[NTHREADS]; t++)
-            cprintf("%d \t",t->state);
+            cprintf("%d \t", t->state);
         cprintf("\n");
     }
     release(&ptable.lock);
@@ -890,6 +890,7 @@ void kthread_exit_trap() {
     release(&ptable.lock);
     exit();
 }
+
 void kthread_exit() {
     if (DEBUGMODE > 0)
         cprintf(" KTHREAD_EXIT ");
@@ -913,7 +914,7 @@ void kthread_exit() {
             wakeup1(p);
             wakeup1(p->parent->mainThread);
 
-            if(curthread->tkilled){
+            if (curthread->tkilled) {
                 curthread->tkilled = 0;
                 curthread->state = UNUSED;
             } else
@@ -927,50 +928,20 @@ void kthread_exit() {
     release(&ptable.lock);
     exit();
 }
-/*
-    pushcli(); //TODO
+
+
+int kthread_join(int thread_id) {
+    if (DEBUGMODE > 0)
+        cprintf(" KTHREAD_JOIN ");
+    struct thread *t;
+    struct proc *p = myproc();
     acquire(&ptable.lock);
-    for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if ((t->state == UNUSED || t->state == ZOMBIE) && t != curthread)
-            counter++;
-    }
-
-    if (counter == (NTHREADS - 1)) { //all other threads aren't available -> close proc
-        release(&ptable.lock);
-        popcli(); //TODO
-        exit();
-    } else {   //there are other threads in the same proc - close just the specific thread
-        if (curthread == p->mainThread) { //if (curthread == p->mainThread) -> set new mainThread
-            for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-                if (t->state == RUNNABLE && t != curthread)
-                    p->mainThread = t;
-            }
-        }
-
-        //cleanThread(curthread); //TODO- moved this line to kthread_create, here got panic-trap
-        curthread->state = ZOMBIE;
-        cprintf("\ncounter= %d\n",counter);
-        //curthread->state = UNUSED;
-        curthread->tkilled = 1;
-        wakeup1(curthread);
-        wakeup1(p->parent->mainThread);
-        popcli(); //TODO
-
-        sched(); //TODO- need to call this func while holding ptable.lock
-        release(&ptable.lock);
-
-    }*/
-
-
-    int kthread_join(int thread_id) {
-        if (DEBUGMODE > 0)
-            cprintf(" KTHREAD_JOIN ");
-        struct thread *t;
-        struct proc *p = myproc();
-        acquire(&ptable.lock);
+    for(;;) { //only way to exit loop is via not found tid or t->state = UNUSED/ZOMBIE
         for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
             if (t->tid == thread_id) {
-                if (t->state == ZOMBIE) {
+                goto foundTid;
+                //TODO - old version
+                /*if (t->state == ZOMBIE) {
                     release(&ptable.lock);
                     return 0;
                 } else if (t->state != UNUSED) {
@@ -980,194 +951,221 @@ void kthread_exit() {
                 } else {
                     release(&ptable.lock);
                     return -1;
-                }
+                }*/
             }
         }
+
         //if got here - exit the loop and didn't find the thread tid
         release(&ptable.lock);
         return -1;
 
+        foundTid:
+        switch (t->state) {
+            case ZOMBIE: //clean t and return 0
+                t->state = UNUSED;
+                t->tkilled = 0;
+                t->tid=0;
+                release(&ptable.lock);
+                if (t->tkstack != 0) {
+                    kfree(t->tkstack);
+                    t->tkstack = 0;
+                }
+                return 0;
+                break;
+            case UNUSED: //error - can't wait on thread that already exited
+                if (DEBUGMODE > 0)
+                    cprintf("kthread_join ERROR - waiting on UNUSED kthread\n");
+                release(&ptable.lock);
+                return -1;
+                break;
+            default: //all other options- thread not exited yet
+                sleep(t, &ptable.lock);
+//                    release(&ptable.lock);
+//                    return 0;
+//                    break;
+        }
     }
+}
 
 /********************************
         kthread_mutex
  ********************************/
 
-    int
-    kthread_mutex_alloc() {
-        struct kthread_mutex_t *m;
+int
+kthread_mutex_alloc() {
+    struct kthread_mutex_t *m;
 
-        acquire(&mtable.lock);
+    acquire(&mtable.lock);
 
-        for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
-            if (!m->active)
-                goto alloc_mutex;
-        }
-
-        release(&mtable.lock);
-        return -1;
-
-        alloc_mutex:
-        m->waitingCounter = 0;
-        m->active = 1;
-        m->mid = mutexCounter++;
-        m->locked = 0;
-        m->thread = 0;
-        release(&mtable.lock);
-        return m->mid;
-
-
+    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+        if (!m->active)
+            goto alloc_mutex;
     }
 
+    release(&mtable.lock);
+    return -1;
 
-    int
-    kthread_mutex_dealloc(int mutex_id) {
-        struct kthread_mutex_t *m;
+    alloc_mutex:
+    m->waitingCounter = 0;
+    m->active = 1;
+    m->mid = mutexCounter++;
+    m->locked = 0;
+    m->thread = 0;
+    release(&mtable.lock);
+    return m->mid;
 
-        acquire(&mtable.lock);
 
-        for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
-            if (m->mid == mutex_id) {
-                if (m->locked || m->waitingCounter > 0) {
-                    release(&mtable.lock);
-                    return -1;
-                } else
-                    goto dealloc_mutex;
-            }
+}
+
+
+int
+kthread_mutex_dealloc(int mutex_id) {
+    struct kthread_mutex_t *m;
+
+    acquire(&mtable.lock);
+
+    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+        if (m->mid == mutex_id) {
+            if (m->locked || m->waitingCounter > 0) {
+                release(&mtable.lock);
+                return -1;
+            } else
+                goto dealloc_mutex;
         }
-
-        release(&mtable.lock);
-        return -1;
-
-        dealloc_mutex:
-        m->active = 0;
-        m->mid = -1;
-        m->locked = 0;
-        m->thread = 0;
-        release(&mtable.lock);
-        return 0;
     }
+
+    release(&mtable.lock);
+    return -1;
+
+    dealloc_mutex:
+    m->active = 0;
+    m->mid = -1;
+    m->locked = 0;
+    m->thread = 0;
+    release(&mtable.lock);
+    return 0;
+}
 
 
 // Record the current call stack in pcs[] by following the %ebp chain.
 // TODO NOT OUR CODE MIGHT BE REMOVED
-    void
-    mgetcallerpcs(void *v, uint pcs[]) {
-        uint *ebp;
-        int i;
+void
+mgetcallerpcs(void *v, uint pcs[]) {
+    uint *ebp;
+    int i;
 
-        ebp = (uint *) v - 2;
-        for (i = 0; i < 10; i++) {
-            if (ebp == 0 || ebp < (uint *) KERNBASE || ebp == (uint *) 0xffffffff)
-                break;
-            pcs[i] = ebp[1];     // saved %eip
-            ebp = (uint *) ebp[0]; // saved %ebp
-        }
-        for (; i < 10; i++)
-            pcs[i] = 0;
+    ebp = (uint *) v - 2;
+    for (i = 0; i < 10; i++) {
+        if (ebp == 0 || ebp < (uint *) KERNBASE || ebp == (uint *) 0xffffffff)
+            break;
+        pcs[i] = ebp[1];     // saved %eip
+        ebp = (uint *) ebp[0]; // saved %ebp
     }
+    for (; i < 10; i++)
+        pcs[i] = 0;
+}
 
 // Pushcli/popcli are like cli/sti except that they are matched:
 // it takes two popcli to undo two pushcli.  Also, if interrupts
 // are off, then pushcli, popcli leaves them off.
 
-    void
-    mpushcli(void) {
-        int eflags;
+void
+mpushcli(void) {
+    int eflags;
 
-        eflags = readeflags();
-        cli();
-        if (mycpu()->ncli == 0)
-            mycpu()->intena = eflags & FL_IF;
-        mycpu()->ncli += 1;
-    }
+    eflags = readeflags();
+    cli();
+    if (mycpu()->ncli == 0)
+        mycpu()->intena = eflags & FL_IF;
+    mycpu()->ncli += 1;
+}
 
-    void
-    mpopcli(void) {
-        if (readeflags() & FL_IF)
-            panic("popcli - interruptible");
-        if (--mycpu()->ncli < 0)
-            panic("popcli");
-        if (mycpu()->ncli == 0 && mycpu()->intena)
-            sti();
-    }
+void
+mpopcli(void) {
+    if (readeflags() & FL_IF)
+        panic("popcli - interruptible");
+    if (--mycpu()->ncli < 0)
+        panic("popcli");
+    if (mycpu()->ncli == 0 && mycpu()->intena)
+        sti();
+}
 
 
-    int
-    kthread_mutex_lock(int mutex_id) {
-        struct kthread_mutex_t *m;
+int
+kthread_mutex_lock(int mutex_id) {
+    struct kthread_mutex_t *m;
 
-        mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
+    mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
 
-        acquire(&mtable.lock);
+    acquire(&mtable.lock);
 
-        for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
-            if (m->active && m->mid == mutex_id) {
-                if (m->locked) {
-                    m->waitingCounter++;
-                    sleep(m->thread, &mtable.lock);
-                    m->waitingCounter--;
-                }
-                goto lock_mutex;
+    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+        if (m->active && m->mid == mutex_id) {
+            if (m->locked) {
+                m->waitingCounter++;
+                sleep(m->thread, &mtable.lock);
+                m->waitingCounter--;
             }
+            goto lock_mutex;
         }
-
-        release(&mtable.lock);
-        return -1;
-
-        lock_mutex:
-
-        // The xchg is atomic.
-        while (xchg(&m->locked, 1) != 0);
-
-        // Tell the C compiler and the processor to not move loads or stores
-        // past this point, to ensure that the critical section's memory
-        // references happen after the lock is acquired.
-        __sync_synchronize();   // << TODO - not our line!!!
-
-        // Record info about lock acquisition for debugging.
-        m->thread = mythread();
-        mgetcallerpcs(&m, m->pcs);
-        release(&mtable.lock);
-        return 0;
     }
+
+    release(&mtable.lock);
+    return -1;
+
+    lock_mutex:
+
+    // The xchg is atomic.
+    while (xchg(&m->locked, 1) != 0);
+
+    // Tell the C compiler and the processor to not move loads or stores
+    // past this point, to ensure that the critical section's memory
+    // references happen after the lock is acquired.
+    __sync_synchronize();   // << TODO - not our line!!!
+
+    // Record info about lock acquisition for debugging.
+    m->thread = mythread();
+    mgetcallerpcs(&m, m->pcs);
+    release(&mtable.lock);
+    return 0;
+}
 
 // Release the lock.
-    int
-    kthread_mutex_unlock(int mutex_id) {
-        struct kthread_mutex_t *m;
+int
+kthread_mutex_unlock(int mutex_id) {
+    struct kthread_mutex_t *m;
 
-        acquire(&mtable.lock);
+    acquire(&mtable.lock);
 
-        for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
-            if (m->active && m->mid == mutex_id && m->locked && m->thread == mythread())
-                goto unlock_mutex;
-        }
-
-        release(&mtable.lock);
-        return -1;
-
-        unlock_mutex:
-
-        m->pcs[0] = 0;
-        m->thread = 0;
-
-        // Tell the C compiler and the processor to not move loads or stores
-        // past this point, to ensure that all the stores in the critical
-        // section are visible to other cores before the lock is released.
-        // Both the C compiler and the hardware may re-order loads and
-        // stores; __sync_synchronize() tells them both not to.
-        __sync_synchronize();
-
-        // Release the lock, equivalent to lk->locked = 0.
-        // This code can't use a C assignment, since it might
-        // not be atomic. A real OS would use C atomics here.
-        asm volatile("movl $0, %0" : "+m" (m->locked) : );
-
-        wakeup(mythread());
-        mpopcli();
-        return 0;
+    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+        if (m->active && m->mid == mutex_id && m->locked && m->thread == mythread())
+            goto unlock_mutex;
     }
+
+    release(&mtable.lock);
+    return -1;
+
+    unlock_mutex:
+
+    m->pcs[0] = 0;
+    m->thread = 0;
+
+    // Tell the C compiler and the processor to not move loads or stores
+    // past this point, to ensure that all the stores in the critical
+    // section are visible to other cores before the lock is released.
+    // Both the C compiler and the hardware may re-order loads and
+    // stores; __sync_synchronize() tells them both not to.
+    __sync_synchronize();
+
+    // Release the lock, equivalent to lk->locked = 0.
+    // This code can't use a C assignment, since it might
+    // not be atomic. A real OS would use C atomics here.
+    asm volatile("movl $0, %0" : "+m" (m->locked) : );
+
+    wakeup(mythread());
+    mpopcli();
+    return 0;
+}
 
 /********************************
         trnmnt_tree
