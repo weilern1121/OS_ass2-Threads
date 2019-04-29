@@ -935,10 +935,14 @@ int kthread_join(int thread_id) {
         cprintf(" KTHREAD_JOIN ");
     struct thread *t;
     struct proc *p = myproc();
+    int foundFlag=0;
     acquire(&ptable.lock);
-    for(;;) { //only way to exit loop is via not found tid or t->state = UNUSED/ZOMBIE
+    for (;;) { //only way to exit loop is via tid not found or s.state=UNUSED/ZOMBIE
+        if(foundFlag)
+            goto foundTid;
         for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
             if (t->tid == thread_id) {
+                foundFlag=1; //found tidflag - reduce search in next iteration
                 goto foundTid;
                 //TODO - old version
                 /*if (t->state == ZOMBIE) {
@@ -964,7 +968,6 @@ int kthread_join(int thread_id) {
             case ZOMBIE: //clean t and return 0
                 t->state = UNUSED;
                 t->tkilled = 0;
-                t->tid=0;
                 release(&ptable.lock);
                 if (t->tkstack != 0) {
                     kfree(t->tkstack);
@@ -973,7 +976,7 @@ int kthread_join(int thread_id) {
                 return 0;
                 break;
             case UNUSED: //error - can't wait on thread that already exited
-                if (DEBUGMODE > 0)
+                if(DEBUGMODE>0)
                     cprintf("kthread_join ERROR - waiting on UNUSED kthread\n");
                 release(&ptable.lock);
                 return -1;
