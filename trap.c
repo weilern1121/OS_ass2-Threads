@@ -36,7 +36,6 @@ trap(struct trapframe *tf) {
         if (myproc()->killed)
             exit();
         if (mythread()->tkilled) {
-            cprintf("TRAP EXIT0 \n");
             if(DEBUGMODE > 0)
                 cprintf("mythread()->tkilled == 1 --> kthread_exit()\n");
             kthread_exit();
@@ -46,7 +45,6 @@ trap(struct trapframe *tf) {
         if (myproc()->killed)
             exit();
         if (mythread()->tkilled) {
-            cprintf("TRAP EXIT \n");
             if(DEBUGMODE > 0)
                 cprintf("mythread()->tkilled == 1 --> kthread_exit()\n");
             kthread_exit();
@@ -126,7 +124,6 @@ trap(struct trapframe *tf) {
     }
 
     if(mythread() && mythread()->tkilled){
-        //cprintf("TRAP EXIT 2\n");
         if(DEBUGMODE > 0)
             cprintf("mythread() && mythread()->tkilled)\n");
         //cleanThread( mythread() );
@@ -140,7 +137,6 @@ trap(struct trapframe *tf) {
 
     // Check if the thread has been killed since we yielded
     if (mythread() && mythread()->tkilled && (tf->cs & 3) == DPL_USER){
-        cprintf("TRAP EXIT 3\n");
         if(DEBUGMODE > 0)
             cprintf("the thread has been killed since we yielded -> kthread_exit()\n");
         kthread_exit();

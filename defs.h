@@ -121,13 +121,15 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 struct thread*  mythread();
-void            cleanProcOneThread(struct thread *, struct proc *,int);
-void            cleanThread(struct thread *);
+//void            cleanProcOneThread(struct thread *, struct proc *,int);
+//void            cleanThread(struct thread *);
+void            exec_acquire(void);
+void            exec_release(void);
 //kthread
 int             kthread_create(void (*start_func)(), void* stack);
 int             kthread_id();
 void            kthread_exit();
-void            kthread_exit_trap();
+//void            kthread_exit_trap();
 int             kthread_join(int thread_id);
 //kthread_mutex
 int             kthread_mutex_alloc(void);

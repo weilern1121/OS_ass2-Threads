@@ -35,9 +35,9 @@ static void wakeup1(void *chan);
 
 void sleep(void *chan, struct spinlock *lk);
 
-extern void cleanThread(struct thread *t);
+void cleanThread(struct thread *t);
 
-extern void cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag);
+void cleanProcOneThread(struct thread *curthread, struct proc *p);
 
 void
 pinit(void) {
@@ -45,6 +45,18 @@ pinit(void) {
         cprintf(" PINIT ");
     initlock(&ptable.lock, "ptable");
     initlock(&mtable.lock, "mtable");
+}
+
+//used to lock ptable.lock from exec only!
+void
+exec_acquire(void) {
+    acquire(&ptable.lock);
+}
+
+//used to unlock ptable.lock from exec only!
+void
+exec_release(void) {
+    release(&ptable.lock);
 }
 
 //must be called under acquire(&ptable.lock); !!
@@ -67,7 +79,7 @@ cleanThread(struct thread *t) {
 
 // Remove threads (except of the exec thread)
 void
-cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag) {
+cleanProcOneThread(struct thread *curthread, struct proc *p) {
     if (DEBUGMODE > 0) {
         cprintf(" CLEAN_PROC_ONE_THREAD ");
     }
@@ -78,7 +90,11 @@ cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag) {
     int i;
     for (i = 0, t = p->thread; t < &p->thread[NTHREADS]; i++, t++) {
         if (t != curthread && t->state != UNUSED) {
-            if (execFlag) {
+            if (t->state == RUNNING)
+                sleep(t, &ptable.lock);
+            cleanThread(t);
+            //TODO - old version
+            /*if (execFlag) {
                 if (t->state != RUNNING)
                     cleanThread(t);
                 else {
@@ -91,33 +107,9 @@ cleanProcOneThread(struct thread *curthread, struct proc *p, int execFlag) {
                     sleep(t, &ptable.lock);
 
                 cleanThread(t);
-            }
+            }*/
         }
     }
-
-
-    /*if (t->state == RUNNING) {
-        if (execFlag == 1) { //got the call from exec
-            //sleep(t, &ptable.lock);
-            while (t->state == RUNNING) {
-                cprintf("TRAP CAME FROM HERE1");
-                release(&ptable.lock);
-                yield();
-                acquire(&ptable.lock);
-            }
-            //t->state = UNUSED;
-            t->tkilled = 1;
-
-        } else {
-            cprintf( "GOT HERE");
-            sleep(t, &ptable.lock);
-            cleanThread(t);
-        }
-    }
-    //if (t->state == ZOMBIE && t->tkilled )
-    t->state = UNUSED;
-}
-}*/
     release(&ptable.lock);
 }
 
@@ -389,7 +381,7 @@ exit(void) {
         panic("init exiting");
 
 
-    cleanProcOneThread(curthread, curproc, 0);
+    cleanProcOneThread(curthread, curproc);
     //When got here - the only thread that is RUNNINNG is curThread
     //all other threads are ZOMBIE
 
@@ -765,10 +757,9 @@ int kthread_create(void (*start_func)(), void *stack) {
     ptable.lock.name = "KTHREADCREATE";
     acquire(&ptable.lock); //find UNUSED thread in curproc
     for (t = p->thread, i = 0; t < &p->thread[NTHREADS]; i++, t++) {
-        /*if( t->state == ZOMBIE && t->tkilled && t != p->mainThread && t != curthread ) {
+        if( t->state == ZOMBIE && t->tkilled && t != p->mainThread && t != curthread ) {
             cleanThread(t);
-        }*/
-
+        }
         if (t->state == UNUSED) {
             //cprintf(" CLEAND THREAD NUM %d  \t\n" , i);
             goto foundThread2;
@@ -856,40 +847,6 @@ int kthread_id() {
     return mythread()->tid;
 }
 
-void kthread_exit_trap() {
-    if (DEBUGMODE > 0)
-        cprintf(" KTHREAD_EXIT ");
-    struct thread *t, *t1;
-    struct thread *curthread = mythread();
-    struct proc *p = myproc();
-
-    ptable.lock.name = "KTHREADEXIT";
-    acquire(&ptable.lock);
-    for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if (t->state != UNUSED && t != curthread) {
-            //found other thread ->close mythread
-            if (curthread == p->mainThread) { //if (curthread == p->mainThread) -> set new mainThread
-                for (t1 = p->thread; t1 < &p->thread[NTHREADS]; t1++) {
-                    if (t1->state == RUNNABLE && t1 != curthread)
-                        p->mainThread = t1;
-                }
-            }
-
-            wakeup1(curthread);
-            wakeup1(p);
-            wakeup1(p->parent->mainThread);
-
-            curthread->tkilled = 0;
-            curthread->state = UNUSED;
-
-            sched(); //need to call this func while holding ptable.lock
-            release(&ptable.lock);
-        }
-    }
-    //if got here- curThread is the only thread ->exit
-    release(&ptable.lock);
-    exit();
-}
 
 void kthread_exit() {
     if (DEBUGMODE > 0)
@@ -913,13 +870,14 @@ void kthread_exit() {
             wakeup1(curthread);
             wakeup1(p);
             wakeup1(p->parent->mainThread);
-
+            curthread->state = ZOMBIE;
+/*
             if (curthread->tkilled) {
                 curthread->tkilled = 0;
                 curthread->state = UNUSED;
             } else
                 curthread->state = ZOMBIE;
-
+*/
             sched(); //need to call this func while holding ptable.lock
             release(&ptable.lock);
         }
@@ -935,14 +893,14 @@ int kthread_join(int thread_id) {
         cprintf(" KTHREAD_JOIN ");
     struct thread *t;
     struct proc *p = myproc();
-    int foundFlag=0;
+    int foundFlag = 0;
     acquire(&ptable.lock);
     for (;;) { //only way to exit loop is via tid not found or s.state=UNUSED/ZOMBIE
-        if(foundFlag)
+        if (foundFlag) //if true- no need to search again- goto foundTid
             goto foundTid;
         for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
             if (t->tid == thread_id) {
-                foundFlag=1; //found tidflag - reduce search in next iteration
+                foundFlag = 1; //found tidflag - reduce search in next iteration
                 goto foundTid;
                 //TODO - old version
                 /*if (t->state == ZOMBIE) {
@@ -976,7 +934,7 @@ int kthread_join(int thread_id) {
                 return 0;
                 break;
             case UNUSED: //error - can't wait on thread that already exited
-                if(DEBUGMODE>0)
+                if (DEBUGMODE > 0)
                     cprintf("kthread_join ERROR - waiting on UNUSED kthread\n");
                 release(&ptable.lock);
                 return -1;
