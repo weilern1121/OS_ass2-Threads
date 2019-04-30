@@ -2378,7 +2378,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_18_UserPrograms = {"quitXV6","mutex5"};
     string test_18_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_18_time_limit = 420000;
+    int test_18_time_limit = 840000;
 
     string test_19_Input = R"V0G0N(
 mutex6
@@ -2392,7 +2392,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_19_UserPrograms = {"quitXV6","mutex6"};
     string test_19_Hint = "Problem with mutex, deallocated while locked is not prevented";
-    int test_19_time_limit = 420000;
+    int test_19_time_limit = 840000;
 
     string test_20_Input = R"V0G0N(
 mutex7
@@ -2463,7 +2463,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_20_UserPrograms = {"quitXV6","mutex7"};
     string test_20_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_20_time_limit = 900000;
+    int test_20_time_limit = 1800000;
 
     string test_21_Input = R"V0G0N(
 mutex8

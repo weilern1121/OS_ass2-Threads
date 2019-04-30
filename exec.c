@@ -12,7 +12,7 @@ exec(char *path, char **argv) {
     if (DEBUGMODE > 0)
         cprintf(" EXEC ");
     char *s, *last;
-    int i, off;
+    int i,j, off;
     uint argc, sz, sp, ustack[3 + MAXARG + 1];
     struct elfhdr elf;
     struct inode *ip;
@@ -119,6 +119,13 @@ exec(char *path, char **argv) {
     curthread->tf->eip = elf.entry;  // main
     curthread->tf->esp = sp;
 
+    if(DEBUGMODE>0) {
+        exec_acquire();
+        cprintf("\n");
+        for (j = 0, t = curproc->thread; t < &curproc->thread[NTHREADS]; j++, t++)
+            cprintf("i=  %d \t t.state= %d\n", j, t->state);
+        exec_release();
+    }
     switchuvm(curproc, curthread); //need to send mainThread, because other are not exists
     freevm(oldpgdir);
     return 0;

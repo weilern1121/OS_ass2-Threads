@@ -193,12 +193,8 @@ allocproc(void) {
     p->state = EMBRYO;
     p->pid = nextpid++;
 
-    struct kthread_mutex_t *m;
 
-     for (m = p->kthread_mutex_t; m < &p->kthread_mutex_t[MAX_MUTEXES]; m++)
-        m->active=0;
-
-            //TODO - from here- thread alloc
+    //TODO - from here- thread alloc
 
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
         if (t->state == UNUSED)
@@ -1064,7 +1060,7 @@ int
 kthread_mutex_lock(int mutex_id) {
     struct kthread_mutex_t *m;
 
-    mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
+    //mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
 
     //acquire(&ptable.lock);
 
@@ -1072,7 +1068,9 @@ kthread_mutex_lock(int mutex_id) {
         if (m->active && m->mid == mutex_id) {
             while (m->locked) {
                 m->waitingCounter++;
+                acquire(&ptable.lock);
                 sleep(m->thread, &ptable.lock);
+                release(&ptable.lock);
                 m->waitingCounter--;
             }
             goto lock_mutex;
@@ -1094,7 +1092,7 @@ kthread_mutex_lock(int mutex_id) {
 
     // Record info about lock acquisition for debugging.
     m->thread = mythread();
-    mgetcallerpcs(&m, m->pcs);
+    //mgetcallerpcs(&m, m->pcs);
     //release(&ptable.lock);
     //cprintf("DONE LOCK");
     return 0;
@@ -1133,7 +1131,7 @@ kthread_mutex_unlock(int mutex_id) {
     asm volatile("movl $0, %0" : "+m" (m->locked) : );
 
     wakeup(mythread());
-    mpopcli();
+    //mpopcli();
 
     //cprintf("DONE UNLOCK");
     return 0;
