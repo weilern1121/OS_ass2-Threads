@@ -296,7 +296,7 @@ growproc(int n) {
     uint sz;
     struct proc *curproc = myproc();
     if (DEBUGMODE > 0)
-        cprintf(" GROWPROC APPLYED ");
+        cprintf(" GROWPROC");
 
     sz = curproc->sz;
     if (n > 0) {
@@ -308,7 +308,7 @@ growproc(int n) {
     }
     curproc->sz = sz;
     if (DEBUGMODE > 0)
-        cprintf(" \n GROWPROC DONE ");
+        cprintf("->DONE ");
     switchuvm(curproc, mythread());
     return 0;
 }
@@ -451,7 +451,7 @@ wait(void) {
                 pid = p->pid;
                 //kfree for the stacks od the proc's threads
                 for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-                    if (t->state == ZOMBIE)
+                    //if (t->state == ZOMBIE)
                         cleanThread(t);
                 }
 
@@ -751,7 +751,7 @@ procdump(void) {
 
 int kthread_create(void (*start_func)(), void *stack) {
     if (DEBUGMODE > 0)
-        cprintf(" KTHREAD_CREATE ");
+        cprintf(" KTHREAD_CREATE");
     struct thread *t;
     struct thread *curthread = mythread();
     struct proc *p = myproc();
@@ -771,7 +771,7 @@ int kthread_create(void (*start_func)(), void *stack) {
     }
     //got here- didn't have a room for new thread
     if (DEBUGMODE > 0) {
-        cprintf("Error - t->state == UNUSED)\n");
+        cprintf("->Error - t->state == UNUSED)\n");
         for (t = p->thread; t < &p->thread[NTHREADS]; t++)
             cprintf("%d \t", t->state);
         cprintf("\n");
@@ -790,6 +790,8 @@ int kthread_create(void (*start_func)(), void *stack) {
         if (DEBUGMODE > 0)
             cprintf("Error - t->tkstack = kalloc()\n");
         release(&ptable.lock);
+        if (DEBUGMODE > 0)
+            cprintf("->ERROR ");
         return -1;
     }
     sp = t->tkstack + KSTACKSIZE;
@@ -841,20 +843,22 @@ int kthread_create(void (*start_func)(), void *stack) {
     t->state = RUNNABLE;
 
     release(&ptable.lock);
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
     return t->tid;
 }
 
 //this func haven't been used - it's implementation is in sysproc
 int kthread_id() {
     if (DEBUGMODE > 0)
-        cprintf(" KTHREAD_ID ");
+        cprintf(" KTHREAD_ID->DONE ");
     return mythread()->tid;
 }
 
 
 void kthread_exit() {
     if (DEBUGMODE > 0)
-        cprintf(" KTHREAD_EXIT ");
+        cprintf(" KTHREAD_EXIT");
     struct thread *t, *t1;
     struct thread *curthread = mythread();
     struct proc *p = myproc();
@@ -882,6 +886,8 @@ void kthread_exit() {
             } else
                 curthread->state = ZOMBIE;
 */
+            if (DEBUGMODE > 0)
+                cprintf("->DONE ");
             sched(); //need to call this func while holding ptable.lock
             release(&ptable.lock);
         }
@@ -889,13 +895,15 @@ void kthread_exit() {
     //cprintf("\nLASTONE\n");
     //if got here- curThread is the only thread ->exit
     release(&ptable.lock);
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
     exit();
 }
 
 
 int kthread_join(int thread_id) {
     if (DEBUGMODE > 0)
-        cprintf(" KTHREAD_JOIN ");
+        cprintf(" KTHREAD_JOIN");
     struct thread *t;
     struct proc *p = myproc();
     int foundFlag = 0;
@@ -924,11 +932,13 @@ int kthread_join(int thread_id) {
 
         //if got here - exit the loop and didn't find the thread tid
         release(&ptable.lock);
+        if (DEBUGMODE > 0)
+            cprintf("->ERROR -NOT FOUND TID ");
         return -1;
 
         foundTid:
         switch (t->state) {
-            case ZOMBIE: //clean t and return 0
+            case ZOMBIE: //clean t and return 0 TODO - might return -1
                 t->state = UNUSED;
                 t->tkilled = 0;
                 release(&ptable.lock);
@@ -936,11 +946,13 @@ int kthread_join(int thread_id) {
                     kfree(t->tkstack);
                     t->tkstack = 0;
                 }
+                if (DEBUGMODE > 0)
+                    cprintf("->DONE_JOIN");
                 return 0;
                 break;
             case UNUSED: //error - can't wait on thread that already exited
                 if (DEBUGMODE > 0)
-                    cprintf("kthread_join ERROR - waiting on UNUSED kthread\n");
+                    cprintf("->ERROR - waiting on UNUSED kthread\n");
                 release(&ptable.lock);
                 return -1;
                 break;
@@ -959,6 +971,8 @@ int kthread_join(int thread_id) {
 
 int
 kthread_mutex_alloc() {
+    if (DEBUGMODE > 0)
+        cprintf(" KTHREAD_MUTEX_ALLOC");
     struct kthread_mutex_t *m;
 
     //acquire(&ptable.lock);
@@ -967,9 +981,10 @@ kthread_mutex_alloc() {
         if (!m->active)
             goto alloc_mutex;
     }
-
+    if (DEBUGMODE > 0)
+        cprintf("->ERROR ->NO_MUTEX ");
     //release(&ptable.lock);
-    cprintf("NO MUTEX");
+//    cprintf("NO MUTEX");
     return -1;
 
     alloc_mutex:
@@ -980,6 +995,8 @@ kthread_mutex_alloc() {
     m->thread = 0;
     //release(&ptable.lock);
     //cprintf("DONE ALLOC");
+    if (DEBUGMODE > 0)
+        cprintf("->DONE_MUTEX_ALLOC ");
     return m->mid;
 
 
@@ -988,6 +1005,8 @@ kthread_mutex_alloc() {
 
 int
 kthread_mutex_dealloc(int mutex_id) {
+    if (DEBUGMODE > 0)
+        cprintf(" KTHREAD_MUTEX_DEALLOC");
     struct kthread_mutex_t *m;
 
     //acquire(&ptable.lock);
@@ -996,12 +1015,15 @@ kthread_mutex_dealloc(int mutex_id) {
         if (m->mid == mutex_id) {
             if (m->locked || m->waitingCounter > 0) {
                 //release(&ptable.lock);
+                if (DEBUGMODE > 0)
+                    cprintf("->ERROR ");
                 return -1;
             } else
                 goto dealloc_mutex;
         }
     }
-
+    if (DEBUGMODE > 0)
+        cprintf("->ERROR ");
     //release(&ptable.lock);
     return -1;
 
@@ -1012,6 +1034,8 @@ kthread_mutex_dealloc(int mutex_id) {
     m->thread = 0;
     //release(&ptable.lock);
     //cprintf("DONE DEALLOC");
+    if (DEBUGMODE > 0)
+        cprintf("->DONE_MUTEX_DEALLOC ");
     return 0;
 }
 
@@ -1020,6 +1044,8 @@ kthread_mutex_dealloc(int mutex_id) {
 // TODO NOT OUR CODE MIGHT BE REMOVED
 void
 mgetcallerpcs(void *v, uint pcs[]) {
+    if (DEBUGMODE > 0)
+        cprintf(" MGETCALLERPCS");
     uint *ebp;
     int i;
 
@@ -1032,6 +1058,8 @@ mgetcallerpcs(void *v, uint pcs[]) {
     }
     for (; i < 10; i++)
         pcs[i] = 0;
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
 }
 
 // Pushcli/popcli are like cli/sti except that they are matched:
@@ -1040,6 +1068,8 @@ mgetcallerpcs(void *v, uint pcs[]) {
 
 void
 mpushcli(void) {
+    if (DEBUGMODE > 0)
+        cprintf(" MPUSHCLI");
     int eflags;
 
     eflags = readeflags();
@@ -1047,21 +1077,29 @@ mpushcli(void) {
     if (mycpu()->ncli == 0)
         mycpu()->intena = eflags & FL_IF;
     mycpu()->ncli += 1;
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
 }
 
 void
 mpopcli(void) {
+    if (DEBUGMODE > 0)
+        cprintf(" MPOPCLI");
     if (readeflags() & FL_IF)
         panic("popcli - interruptible");
     if (--mycpu()->ncli < 0)
         panic("popcli");
     if (mycpu()->ncli == 0 && mycpu()->intena)
         sti();
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
 }
 
 
 int
 kthread_mutex_lock(int mutex_id) {
+    if (DEBUGMODE > 0)
+        cprintf(" KTHREAD_MUTEX_LOCK");
     struct kthread_mutex_t *m;
 
     mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
@@ -1078,7 +1116,8 @@ kthread_mutex_lock(int mutex_id) {
             goto lock_mutex;
         }
     }
-
+    if (DEBUGMODE > 0)
+        cprintf("->ERROR ");
     //release(&ptable.lock);
     return -1;
 
@@ -1097,12 +1136,16 @@ kthread_mutex_lock(int mutex_id) {
     mgetcallerpcs(&m, m->pcs);
     //release(&ptable.lock);
     //cprintf("DONE LOCK");
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
     return 0;
 }
 
 // Release the lock.
 int
 kthread_mutex_unlock(int mutex_id) {
+    if (DEBUGMODE > 0)
+        cprintf(" KTHREAD_MUTEX_UNLOCK");
     struct kthread_mutex_t *m;
 
     //acquire(&ptable.lock);
@@ -1111,7 +1154,8 @@ kthread_mutex_unlock(int mutex_id) {
         if (m->active && m->mid == mutex_id && m->locked && m->thread == mythread())
             goto unlock_mutex;
     }
-
+    if (DEBUGMODE > 0)
+        cprintf("->ERROR ");
     //release(&ptable.lock);
     return -1;
 
@@ -1134,7 +1178,8 @@ kthread_mutex_unlock(int mutex_id) {
 
     wakeup(mythread());
     mpopcli();
-
+    if (DEBUGMODE > 0)
+        cprintf("->DONE ");
     //cprintf("DONE UNLOCK");
     return 0;
 }
