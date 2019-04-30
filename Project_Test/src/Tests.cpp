@@ -2065,7 +2065,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_14_UserPrograms = {"quitXV6","mutex1"};
     string test_14_Hint = "Problem with mutex sys calls, basic implementation";
-    int test_14_time_limit = 240000;
+    int test_14_time_limit = 480000;
 
     string test_15_Input = R"V0G0N(
 mutex2
@@ -2278,7 +2278,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     vector<string> test_15_UserPrograms = {"quitXV6","mutex2"};
     string test_15_Hint = "Problem with mutex allocation deallocation, allocating a lot of mutexes in different " 
                           "proccesses without explicitly deallocating shouldn't prevent new mutexes to be allocated";
-    int test_15_time_limit = 240000;
+    int test_15_time_limit = 480000;
 
     string test_16_Input = R"V0G0N(
 mutex3

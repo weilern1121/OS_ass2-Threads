@@ -12,10 +12,10 @@ struct {
     struct proc proc[NPROC];
 } ptable;
 
-struct {
+/*struct {
     struct spinlock lock;
     struct kthread_mutex_t kthread_mutex_t[MAX_MUTEXES];
-} mtable;
+} mtable;*/
 
 static struct proc *initproc;
 
@@ -44,7 +44,7 @@ pinit(void) {
     if (DEBUGMODE > 0)
         cprintf(" PINIT ");
     initlock(&ptable.lock, "ptable");
-    initlock(&mtable.lock, "mtable");
+    //initlock(&mtable.lock, "mtable");
 }
 
 //used to lock ptable.lock from exec only!
@@ -193,8 +193,12 @@ allocproc(void) {
     p->state = EMBRYO;
     p->pid = nextpid++;
 
+    struct kthread_mutex_t *m;
 
-    //TODO - from here- thread alloc
+     for (m = p->kthread_mutex_t; m < &p->kthread_mutex_t[MAX_MUTEXES]; m++)
+        m->active=0;
+
+            //TODO - from here- thread alloc
 
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
         if (t->state == UNUSED)
@@ -858,7 +862,7 @@ void kthread_exit() {
     ptable.lock.name = "KTHREADEXIT";
     acquire(&ptable.lock);
     for (t = p->thread; t < &p->thread[NTHREADS]; t++) {
-        if (t->state != UNUSED && t != curthread) {
+        if (t->state != UNUSED && t->state != ZOMBIE && t != curthread) {
             //found other thread ->close mythread
             if (curthread == p->mainThread) { //if (curthread == p->mainThread) -> set new mainThread
                 for (t1 = p->thread; t1 < &p->thread[NTHREADS]; t1++) {
@@ -882,6 +886,7 @@ void kthread_exit() {
             release(&ptable.lock);
         }
     }
+    //cprintf("\nLASTONE\n");
     //if got here- curThread is the only thread ->exit
     release(&ptable.lock);
     exit();
@@ -956,14 +961,15 @@ int
 kthread_mutex_alloc() {
     struct kthread_mutex_t *m;
 
-    acquire(&mtable.lock);
+    //acquire(&ptable.lock);
 
-    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+    for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
         if (!m->active)
             goto alloc_mutex;
     }
 
-    release(&mtable.lock);
+    //release(&ptable.lock);
+    cprintf("NO MUTEX");
     return -1;
 
     alloc_mutex:
@@ -972,7 +978,8 @@ kthread_mutex_alloc() {
     m->mid = mutexCounter++;
     m->locked = 0;
     m->thread = 0;
-    release(&mtable.lock);
+    //release(&ptable.lock);
+    //cprintf("DONE ALLOC");
     return m->mid;
 
 
@@ -983,19 +990,19 @@ int
 kthread_mutex_dealloc(int mutex_id) {
     struct kthread_mutex_t *m;
 
-    acquire(&mtable.lock);
+    //acquire(&ptable.lock);
 
-    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+    for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
         if (m->mid == mutex_id) {
             if (m->locked || m->waitingCounter > 0) {
-                release(&mtable.lock);
+                //release(&ptable.lock);
                 return -1;
             } else
                 goto dealloc_mutex;
         }
     }
 
-    release(&mtable.lock);
+    //release(&ptable.lock);
     return -1;
 
     dealloc_mutex:
@@ -1003,7 +1010,8 @@ kthread_mutex_dealloc(int mutex_id) {
     m->mid = -1;
     m->locked = 0;
     m->thread = 0;
-    release(&mtable.lock);
+    //release(&ptable.lock);
+    //cprintf("DONE DEALLOC");
     return 0;
 }
 
@@ -1058,20 +1066,20 @@ kthread_mutex_lock(int mutex_id) {
 
     mpushcli(); // disable interrupts to avoid deadlock.  << TODO - not our line!!!
 
-    acquire(&mtable.lock);
+    //acquire(&ptable.lock);
 
-    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+    for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
         if (m->active && m->mid == mutex_id) {
-            if (m->locked) {
+            while (m->locked) {
                 m->waitingCounter++;
-                sleep(m->thread, &mtable.lock);
+                sleep(m->thread, &ptable.lock);
                 m->waitingCounter--;
             }
             goto lock_mutex;
         }
     }
 
-    release(&mtable.lock);
+    //release(&ptable.lock);
     return -1;
 
     lock_mutex:
@@ -1087,7 +1095,8 @@ kthread_mutex_lock(int mutex_id) {
     // Record info about lock acquisition for debugging.
     m->thread = mythread();
     mgetcallerpcs(&m, m->pcs);
-    release(&mtable.lock);
+    //release(&ptable.lock);
+    //cprintf("DONE LOCK");
     return 0;
 }
 
@@ -1096,14 +1105,14 @@ int
 kthread_mutex_unlock(int mutex_id) {
     struct kthread_mutex_t *m;
 
-    acquire(&mtable.lock);
+    //acquire(&ptable.lock);
 
-    for (m = mtable.kthread_mutex_t; m < &mtable.kthread_mutex_t[MAX_MUTEXES]; m++) {
+    for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
         if (m->active && m->mid == mutex_id && m->locked && m->thread == mythread())
             goto unlock_mutex;
     }
 
-    release(&mtable.lock);
+    //release(&ptable.lock);
     return -1;
 
     unlock_mutex:
@@ -1125,6 +1134,8 @@ kthread_mutex_unlock(int mutex_id) {
 
     wakeup(mythread());
     mpopcli();
+
+    //cprintf("DONE UNLOCK");
     return 0;
 }
 

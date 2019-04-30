@@ -129,7 +129,6 @@ void            exec_release(void);
 int             kthread_create(void (*start_func)(), void* stack);
 int             kthread_id();
 void            kthread_exit();
-//void            kthread_exit_trap();
 int             kthread_join(int thread_id);
 //kthread_mutex
 int             kthread_mutex_alloc(void);

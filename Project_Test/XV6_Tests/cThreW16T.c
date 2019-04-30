@@ -116,5 +116,6 @@ void initiateExecTest(){
         }
         
     }
+    printf(1,"FINISHED ALL THREADS MAKE \n");
 }
 

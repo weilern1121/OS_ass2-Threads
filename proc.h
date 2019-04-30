@@ -55,6 +55,17 @@ struct thread {
     //void (*start_func)();       //pointer to the running function of the thread
 };
 
+struct kthread_mutex_t {
+    uint locked;       // Is the lock held?
+    int active;        // Is the Mutex been init?
+    int mid;
+    int waitingCounter; //couner of how many threads are waiting on this specific mutex
+    // For debugging:
+    struct thread *thread;   // The cpu holding the lock.
+    // TODO we are not sure about this line but it doesnt affect us now;
+    uint pcs[10];      // The call stack (an array of program counters)
+    // that locked the lock.
+};
 
 // Per-process state
 struct proc {
@@ -73,6 +84,7 @@ struct proc {
   char name[16];               // Process name (debugging)
   struct thread thread[NTHREADS];  // process's thread array
   struct thread *mainThread;  // proc's main thread
+  struct kthread_mutex_t kthread_mutex_t[MAX_MUTEXES];
   //struct spinlock *procLock; //lock - might change to MUTEX
   int exited;                  // If non-zero, have been exited
 };
@@ -85,17 +97,7 @@ struct proc {
 
 
 
-struct kthread_mutex_t {
-    uint locked;       // Is the lock held?
-    int active;        // Is the Mutex been init?
-    int mid;
-    int waitingCounter; //couner of how many threads are waiting on this specific mutex
-    // For debugging:
-    struct thread *thread;   // The cpu holding the lock.
-    // TODO we are not sure about this line but it doesnt affect us now;
-    uint pcs[10];      // The call stack (an array of program counters)
-    // that locked the lock.
-};
+
 /*
 struct trnmnt_tree{
     struct spinlock *lock;           //spinlock
