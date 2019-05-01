@@ -167,7 +167,8 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_trntree1\
+	_kt_sys13\
+	_creThreads\
 	_sh\
 	_init\
 	_ls\
@@ -282,11 +283,17 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_trntree1: $(ULIB)
-	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o trntree1.o ./Project_Test/XV6_Tests/trntree1.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _trntree1 trntree1.o $(ULIB)
-	objdump -S _trntree1 > trntree1.asm
-	$(OBJDUMP) -t _trntree1 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > trntree1.sym
+_kt_sys13: $(ULIB)
+	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o kt_sys13.o ./Project_Test/XV6_Tests/kt_sys13.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _kt_sys13 kt_sys13.o $(ULIB)
+	objdump -S _kt_sys13 > kt_sys13.asm
+	$(OBJDUMP) -t _kt_sys13 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kt_sys13.sym
+
+_creThreads: $(ULIB)
+	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o creThreads.o ./Project_Test/XV6_Tests/creThreads.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _creThreads creThreads.o $(ULIB)
+	objdump -S _creThreads > creThreads.asm
+	$(OBJDUMP) -t _creThreads | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > creThreads.sym
 
 _sh: $(ULIB)
 	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sh.o sh.c

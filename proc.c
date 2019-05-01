@@ -631,6 +631,11 @@ sleep(void *chan, struct spinlock *lk) {
     sched();
 
     // Tidy up.
+    if(t->tkilled)
+    {
+        release(&ptable.lock);
+        kthread_exit();
+    }
     t->chan = 0;
 
     // Reacquire original lock.

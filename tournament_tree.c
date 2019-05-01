@@ -15,7 +15,7 @@ struct {
     trnmnt_tree trnmnt_tree[NPROC];
 } treetable;
 
-int power(int num) {
+int ourpower(int num) {
     //Calculating 2^b
     if (num < 0) {
         //cprintf("Illegal input: for a^b: a= %d, b= %d \n", a, b);
@@ -41,7 +41,7 @@ trnmnt_tree_alloc(int depth){
     t->active = ACTIVE;
     t->depth = depth;
 
-    for(int i=0; i<(power(depth)-1); i++)
+    for(int i=0; i<(ourpower(depth)-1); i++)
         t->trnmntMutex[i] = kthread_mutex_alloc();
 
     return t;
@@ -53,7 +53,7 @@ trnmnt_tree_dealloc(trnmnt_tree* tree){
         return -1;
 
 
-    for(int i=0; i<(power(tree->depth)-1); i++){
+    for(int i=0; i<(ourpower(tree->depth)-1); i++){
         if(kthread_mutex_dealloc(tree->trnmntMutex[i]) == -1 )
             return -1;
     }
@@ -71,19 +71,19 @@ trnmnt_tree_acquire(trnmnt_tree* tree,int ID){
         localID= localID/2;     //wich lock try to lock in current level
         if(kthread_mutex_lock(tree->trnmntMutex[x+localID]) == -1)
             return -1; //lock ->if not succeed sleep (in mutex implementation)
-        x+=((power(tree->depth))/(power(lvl))); //move x to point to the next level for localID
+        x+=((ourpower(tree->depth))/(ourpower(lvl))); //move x to point to the next level for localID
     }
     return 0;
 }
 
 int
 trnmnt_tree_release(trnmnt_tree* tree,int ID){
-    int x=power(tree->depth)-2, localID;
+    int x=ourpower(tree->depth)-2, localID;
     for(int lvl=tree->depth; lvl>=1; lvl--){
-        localID= ID/power(lvl);     //wich lock try to lock in current level
+        localID= ID/ourpower(lvl);     //wich lock try to lock in current level
         if(kthread_mutex_unlock(tree->trnmntMutex[x+localID]) == -1)
             return -1; //unlock ->if not curthead holds this lock -> return -1 (in mutex implementation)
-        x -= power(tree->depth-lvl+1); //move x to point to the next level for localID
+        x -= ourpower(tree->depth-lvl+1); //move x to point to the next level for localID
     }
     return 0;
 }

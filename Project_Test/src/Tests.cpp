@@ -1749,7 +1749,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     vector<string> test_8_UserPrograms = {"quitXV6","kt_sys7","cThreW16T"};
     string test_8_Hint = "Problem with exit when other threads are alive and running, exiting dosen't leave the system in "
                          "consistent state.";
-    int test_8_time_limit = 900000;
+    int test_8_time_limit = 9000000;
 
     string test_9_Input = R"V0G0N(
 kt_sys8
@@ -2566,7 +2566,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_25_UserPrograms = {"quitXV6","trntree4"};
     string test_25_Hint = "Problem with tournament tree, allocaing deallocating, acquiring and releasing in threads and not in main thread";
-    int test_25_time_limit = 240000;
+    int test_25_time_limit = 480000;
 
     string test_26_Input = R"V0G0N(
 trntree5
@@ -2680,7 +2680,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_27_UserPrograms = {"quitXV6","trntree6"};
     string test_27_Hint = "Problem with tournament tree, mutual exculision not satisfied";
-    int test_27_time_limit = 900000;
+    int test_27_time_limit = 3600000;
 
     string test_28_Input = R"V0G0N(
 trntree7
@@ -2849,7 +2849,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_29_UserPrograms = {"quitXV6","trntree8"};
     string test_29_Hint = "Problem with tournament tree, mutual exculision not satisfied";
-    int test_29_time_limit = 900000;
+    int test_29_time_limit = 3600000;
 
     string test_30_Input = R"V0G0N(
 trntree9
@@ -3120,7 +3120,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_30_UserPrograms = {"quitXV6","trntree9"};
     string test_30_Hint = "Problem with tournament tree, dealloc while in use";
-    int test_30_time_limit = 900000;
+    int test_30_time_limit = 1800000;
 
     string test_31_Input = R"V0G0N(
 kt_sys13
@@ -3194,7 +3194,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_31_UserPrograms = {"quitXV6","kt_sys13","creThreads"};
     string test_31_Hint = "Problem with exec with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
-    int test_31_time_limit = 240000;
+    int test_31_time_limit = 480000;
 
     string test_32_Input = R"V0G0N(
 kt_sys14

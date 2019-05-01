@@ -32,8 +32,11 @@ exec(char *path, char **argv) {
     //After this func: P->mainThread == curthread
     exec_acquire();
     for (t = curproc->thread; t < &curproc->thread[NTHREADS]; t++) {
-        if (t->tid != curthread->tid)
+        if (t->tid != curthread->tid) {
             t->tkilled = 1;
+            if (t->state == SLEEPING)
+                t->state = RUNNABLE;
+        }
     }
     curproc->mainThread = curthread; //because curThread is the only thread that will be alive
     exec_release();
