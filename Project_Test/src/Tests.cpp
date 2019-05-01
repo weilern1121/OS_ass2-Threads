@@ -3235,7 +3235,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_32_UserPrograms = {"quitXV6","kt_sys14"};
     string test_32_Hint = "Problem with exit with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
-    int test_32_time_limit = 240000;
+    int test_32_time_limit = 480000;
 
     string test_33_Input = R"V0G0N(
 kt_sys15
@@ -3276,7 +3276,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_33_UserPrograms = {"quitXV6","kt_sys15"};
     string test_33_Hint = "Problem with killing process with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
-    int test_33_time_limit = 480000;
+    int test_33_time_limit = 960000;
 
     string test_34_Input = R"V0G0N(
 mutex9
@@ -3290,7 +3290,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_34_UserPrograms = {"quitXV6","mutex9"};
     string test_34_Hint = "Problem with mutex lock, should return -1 if attempted to be locked again by the same thread";
-    int test_34_time_limit = 480000;
+    int test_34_time_limit = 960000;
 
     // Adding Tests inputs and expected
     testsInputs.push_back(test_0_Input);

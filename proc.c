@@ -90,9 +90,18 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
     int i;
     for (i = 0, t = p->thread; t < &p->thread[NTHREADS]; i++, t++) {
         if (t != curthread && t->state != UNUSED) {
-            if (t->state == RUNNING)
-                sleep(t, &ptable.lock);
-            cleanThread(t);
+            if(t->state == SLEEPING)
+            {
+                t->tkilled = 1;
+                t->state = RUNNABLE;
+            }
+            else{
+                if (t->state == RUNNING)
+                    sleep(t, &ptable.lock);
+
+                cleanThread(t);
+            }
+
             //TODO - old version
             /*if (execFlag) {
                 if (t->state != RUNNING)
@@ -1072,6 +1081,8 @@ kthread_mutex_lock(int mutex_id) {
     for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
         if (m->active && m->mid == mutex_id) {
             while (m->locked) {
+                if(mythread() == m->thread)
+                    return -1;
                 m->waitingCounter++;
                 acquire(&ptable.lock);
                 sleep(m->thread, &ptable.lock);
