@@ -1,18 +1,18 @@
 #include "types.h"
 #include "param.h"
 #include "tournament_tree.h"
-#include "defs.h"
-#include "kthread.h"
-#include "defs.h"
-#include "memlayout.h"
-#include "mmu.h"
-#include "x86.h"
-#include "proc.h"
+//#include "defs.h"
+//#include "kthread.h"
+//#include "defs.h"
+//#include "memlayout.h"
+//#include "mmu.h"
+//#include "x86.h"
+//#include "proc.h"
 //#include "spinlock.h"
 
 struct {
     //struct spinlock lock;
-    struct trnmnt_tree trnmnt_tree[NPROC];
+    trnmnt_tree trnmnt_tree[NPROC];
 } treetable;
 
 int power(int num) {
@@ -29,7 +29,7 @@ int power(int num) {
 
 struct trnmnt_tree*
 trnmnt_tree_alloc(int depth){
-    struct trnmnt_tree *t;//= (struct trnmnt_tree *) kalloc();
+    trnmnt_tree *t;//= (struct trnmnt_tree *) kalloc();
 
     for (t = treetable.trnmnt_tree ; t < &treetable.trnmnt_tree[NPROC] ; t++) {
         if (t->active == INACTIVE)
@@ -39,7 +39,7 @@ trnmnt_tree_alloc(int depth){
 
     found_tree:
     t->active = ACTIVE;
-    t->depth=depth;
+    t->depth = depth;
 
     for(int i=0; i<(power(depth)-1); i++)
         t->trnmntMutex[i] = kthread_mutex_alloc();
@@ -48,7 +48,7 @@ trnmnt_tree_alloc(int depth){
 }
 
 int
-trnmnt_tree_dealloc(struct trnmnt_tree* tree){
+trnmnt_tree_dealloc(trnmnt_tree* tree){
     if(tree->active == INACTIVE )
         return -1;
 
@@ -60,12 +60,12 @@ trnmnt_tree_dealloc(struct trnmnt_tree* tree){
 
     tree->depth=0;
     tree->active = INACTIVE;
-    //kfree((char *) tree);
+
     return 0;
 }
 
 int
-trnmnt_tree_acquire(struct trnmnt_tree* tree,int ID){
+trnmnt_tree_acquire(trnmnt_tree* tree,int ID){
     int x=0, localID=ID;
     for(int lvl=1; lvl<=tree->depth; lvl++){
         localID= localID/2;     //wich lock try to lock in current level
@@ -77,7 +77,7 @@ trnmnt_tree_acquire(struct trnmnt_tree* tree,int ID){
 }
 
 int
-trnmnt_tree_release(struct trnmnt_tree* tree,int ID){
+trnmnt_tree_release(trnmnt_tree* tree,int ID){
     int x=power(tree->depth)-2, localID;
     for(int lvl=tree->depth; lvl>=1; lvl--){
         localID= ID/power(lvl);     //wich lock try to lock in current level

@@ -29,6 +29,11 @@ void threadStart_1(){
         printf(1,"mutex locked unsuccessfully\n"); 
     } 
 
+    result = kthread_mutex_lock(mid); 
+    if(result >= 0){  
+        printf(1,"mutex locked successfully where it should not have been\n"); 
+    } 
+
     sleep(400);
     
     result = kthread_mutex_unlock(mid); 
@@ -44,18 +49,22 @@ void threadStart_2(){
     while(dontStart){} 
     sleep(200);
 
-    result = kthread_mutex_dealloc(mid); 
-    if(result == 0){
-            printf(1,"mutex deallocated successfully where it should not have been\n"); 
+    result = kthread_mutex_lock(mid); 
+    if(result < 0){  
+        printf(1,"mutex locked unsuccessfully\n"); 
     } 
-    else if(result == -1){} 
-    else{ 
-        printf(1,"unkown return code from mutex dealloc\n"); 
-    }  
 
-        
+    result = kthread_mutex_lock(mid); 
+    if(result >= 0){  
+        printf(1,"mutex locked successfully where it should not have been\n"); 
+    } 
 
-    sleep(600);
+    sleep(400);
+    
+    result = kthread_mutex_unlock(mid); 
+    if(result < 0){ 
+        printf(1,"mutex unlocked unsuccessfully\n"); 
+    }
 
     result = kthread_mutex_dealloc(mid); 
     if(result == 0){} 

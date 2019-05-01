@@ -13,14 +13,21 @@
 #define THREAD_NUM 15
 #define STACK_SIZE 500
 
+volatile int dontStart;
+int pids[THREAD_NUM];
+
 #define THREAD_START(name, id) \
     void name(){ \
-        if( id %2 == 0){ \
-            while(1){}; \
-        } else{ \
-            sleep(10000); \
+        while(dontStart){}  \
+        if(id <= 3){ \
+            sleep(99999999); \
         } \
-        printf(1,"Thread %d exiting, should have been killed by exit\n",id);          \
+        else if(id == 15){ \
+            kthread_join(pids[3]); \
+        }else{ \
+            kthread_join(pids[id]); \
+        } \
+        printf(1,"Thread %d exiting, should have been killed by exec\n",id);          \
         kthread_exit(); \
     }
 
@@ -42,7 +49,6 @@ THREAD_START(threadStart_12, 12)
 THREAD_START(threadStart_13, 13)
 THREAD_START(threadStart_14, 14)
 THREAD_START(threadStart_15, 15)
-THREAD_START(threadStart_16, 16)
 
 void (*threads_starts[])(void) = 
     {threadStart_1,
@@ -59,19 +65,28 @@ void (*threads_starts[])(void) =
      threadStart_12,
      threadStart_13,
      threadStart_14,
-     threadStart_15,
-     threadStart_16};
+     threadStart_15};
 
 void initiateExecTest();
 
 int main(int argc, char *argv[]){
-    initiateExecTest();
-    sleep(500);
+   int pid;
+
+    if((pid = fork()) == 0){
+        initiateExecTest();
+    }
+    else if(pid > 0){
+        wait();
+    }
+    else{
+        printf(1,"fork failed\n");
+    }
+
     exit();
 }
 
 void initiateExecTest(){
-    int kthreadCreateFlag = 0;
+    dontStart = 1;
 
     THREAD_STACK(threadStack_1)
     THREAD_STACK(threadStack_2)
@@ -88,7 +103,6 @@ void initiateExecTest(){
     THREAD_STACK(threadStack_13)
     THREAD_STACK(threadStack_14)
     THREAD_STACK(threadStack_15)
-    THREAD_STACK(threadStack_16)
 
     void (*threads_stacks[])(void) = 
     {threadStack_1,
@@ -105,16 +119,34 @@ void initiateExecTest(){
      threadStack_12,
      threadStack_13,
      threadStack_14,
-     threadStack_15,
-     threadStack_16};
+     threadStack_15};
 
-    
     for(int i = 0;i < THREAD_NUM;i++){
-        kthreadCreateFlag = kthread_create(threads_starts[i], threads_stacks[i]);
-        if(kthreadCreateFlag < 0){
-            printf(1,"Finished creating thread %d unsuccessfully with %d return code\n",i,kthreadCreateFlag);
+        printf(1,"Creating thread %d\n",i+1);
+        pids[i] = kthread_create(threads_starts[i], threads_stacks[i]);
+        if(pids[i] > 0){
+            printf(1,"Created thread %d successfully\n",i+1);
+        }
+        else{
+            printf(1,"Created thread %d unsuccessfully\n",i+1);
         }
         
     }
+
+    dontStart = 0;
+
+    sleep(3000);
+
+    printf(1,"Eexcuting exec creThreads\n");
+
+    char * command;
+    char *args[4];
+
+    args[0] = "/creThreads";
+    args[1] = 0;
+    args[2] = 0;
+    command = "/creThreads";
+    exec(command,args);
+    printf(1,"Error, shouldnt come through here !!!\n");
 }
 

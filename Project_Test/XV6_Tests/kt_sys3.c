@@ -18,7 +18,7 @@
         sleep( id * 200); \
         printf(1,"thread %d entering\n", id ); \
         printf(1,"thread %d exiting\n", id ); \
-        kthread_exit();\
+        kthread_exit(); \
     }
 
 #define THREAD_STACK(name) \

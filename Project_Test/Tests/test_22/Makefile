@@ -167,7 +167,7 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_mutex7\
+	_trntree1\
 	_sh\
 	_init\
 	_ls\
@@ -282,11 +282,11 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_mutex7: $(ULIB)
-	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o mutex7.o ./Project_Test/XV6_Tests/mutex7.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _mutex7 mutex7.o $(ULIB)
-	objdump -S _mutex7 > mutex7.asm
-	$(OBJDUMP) -t _mutex7 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > mutex7.sym
+_trntree1: $(ULIB)
+	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o trntree1.o ./Project_Test/XV6_Tests/trntree1.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _trntree1 trntree1.o $(ULIB)
+	objdump -S _trntree1 > trntree1.asm
+	$(OBJDUMP) -t _trntree1 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > trntree1.sym
 
 _sh: $(ULIB)
 	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sh.o sh.c

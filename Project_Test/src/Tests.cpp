@@ -103,17 +103,6 @@ $ thread 1 entering
 thread 1 exiting
 $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
-
-
-
-
-
-
-
-
-
-
-
     vector<string> test_2_UserPrograms = {"quitXV6","kt_sys1"};
     string test_2_Hint = "Problem with creating threads and exiting threads.";
     int test_2_time_limit = 240000;
@@ -528,7 +517,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_7_UserPrograms = {"quitXV6","kt_sys6"};
     string test_7_Hint = "Problem with cleaning after threads in thread join.";
-    int test_7_time_limit = 840000;
+    int test_7_time_limit = 420000;
 
     string test_8_Input = R"V0G0N(
 kt_sys7
@@ -1760,7 +1749,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     vector<string> test_8_UserPrograms = {"quitXV6","kt_sys7","cThreW16T"};
     string test_8_Hint = "Problem with exit when other threads are alive and running, exiting dosen't leave the system in "
                          "consistent state.";
-    int test_8_time_limit = 1680000;
+    int test_8_time_limit = 900000;
 
     string test_9_Input = R"V0G0N(
 kt_sys8
@@ -2065,7 +2054,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_14_UserPrograms = {"quitXV6","mutex1"};
     string test_14_Hint = "Problem with mutex sys calls, basic implementation";
-    int test_14_time_limit = 480000;
+    int test_14_time_limit = 240000;
 
     string test_15_Input = R"V0G0N(
 mutex2
@@ -2278,7 +2267,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     vector<string> test_15_UserPrograms = {"quitXV6","mutex2"};
     string test_15_Hint = "Problem with mutex allocation deallocation, allocating a lot of mutexes in different " 
                           "proccesses without explicitly deallocating shouldn't prevent new mutexes to be allocated";
-    int test_15_time_limit = 480000;
+    int test_15_time_limit = 240000;
 
     string test_16_Input = R"V0G0N(
 mutex3
@@ -2378,7 +2367,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_18_UserPrograms = {"quitXV6","mutex5"};
     string test_18_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_18_time_limit = 840000;
+    int test_18_time_limit = 420000;
 
     string test_19_Input = R"V0G0N(
 mutex6
@@ -2392,7 +2381,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_19_UserPrograms = {"quitXV6","mutex6"};
     string test_19_Hint = "Problem with mutex, deallocated while locked is not prevented";
-    int test_19_time_limit = 840000;
+    int test_19_time_limit = 420000;
 
     string test_20_Input = R"V0G0N(
 mutex7
@@ -2463,7 +2452,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_20_UserPrograms = {"quitXV6","mutex7"};
     string test_20_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_20_time_limit = 1800000;
+    int test_20_time_limit = 900000;
 
     string test_21_Input = R"V0G0N(
 mutex8
@@ -3133,6 +3122,176 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     string test_30_Hint = "Problem with tournament tree, dealloc while in use";
     int test_30_time_limit = 900000;
 
+    string test_31_Input = R"V0G0N(
+kt_sys13
+    )V0G0N";
+    string test_31_Expected = R"V0G0N(
+$ Creating thread 1
+Created thread 1 successfully
+Creating thread 2
+Created thread 2 successfully
+Creating thread 3
+Created thread 3 successfully
+Creating thread 4
+Created thread 4 successfully
+Creating thread 5
+Created thread 5 successfully
+Creating thread 6
+Created thread 6 successfully
+Creating thread 7
+Created thread 7 successfully
+Creating thread 8
+Created thread 8 successfully
+Creating thread 9
+Created thread 9 successfully
+Creating thread 10
+Created thread 10 successfully
+Creating thread 11
+Created thread 11 successfully
+Creating thread 12
+Created thread 12 successfully
+Creating thread 13
+Created thread 13 successfully
+Creating thread 14
+Created thread 14 successfully
+Creating thread 15
+Created thread 15 successfully
+Eexcuting exec creThreads
+Creating thread 1
+Finished creating thread 1 successfully
+Creating thread 2
+Finished creating thread 2 successfully
+Creating thread 3
+Finished creating thread 3 successfully
+Creating thread 4
+Finished creating thread 4 successfully
+Creating thread 5
+Finished creating thread 5 successfully
+Creating thread 6
+Finished creating thread 6 successfully
+Creating thread 7
+Finished creating thread 7 successfully
+Creating thread 8
+Finished creating thread 8 successfully
+Creating thread 9
+Finished creating thread 9 successfully
+Creating thread 10
+Finished creating thread 10 successfully
+Creating thread 11
+Finished creating thread 11 successfully
+Creating thread 12
+Finished creating thread 12 successfully
+Creating thread 13
+Finished creating thread 13 successfully
+Creating thread 14
+Finished creating thread 14 successfully
+Creating thread 15
+Finished creating thread 15 successfully
+Creating thread 16
+Finished creating thread 16 unsuccessfully
+Should have sucessfully created all threads but one
+$ $ Finished Yehonatan Peleg Test, quiting...
+)V0G0N";
+    vector<string> test_31_UserPrograms = {"quitXV6","kt_sys13","creThreads"};
+    string test_31_Hint = "Problem with exec with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
+    int test_31_time_limit = 240000;
+
+    string test_32_Input = R"V0G0N(
+kt_sys14
+    )V0G0N";
+    string test_32_Expected = R"V0G0N(
+$ Creating thread 1
+Created thread 1 successfully
+Creating thread 2
+Created thread 2 successfully
+Creating thread 3
+Created thread 3 successfully
+Creating thread 4
+Created thread 4 successfully
+Creating thread 5
+Created thread 5 successfully
+Creating thread 6
+Created thread 6 successfully
+Creating thread 7
+Created thread 7 successfully
+Creating thread 8
+Created thread 8 successfully
+Creating thread 9
+Created thread 9 successfully
+Creating thread 10
+Created thread 10 successfully
+Creating thread 11
+Created thread 11 successfully
+Creating thread 12
+Created thread 12 successfully
+Creating thread 13
+Created thread 13 successfully
+Creating thread 14
+Created thread 14 successfully
+Creating thread 15
+Created thread 15 successfully
+Exiting
+$ $ Finished Yehonatan Peleg Test, quiting...
+)V0G0N";
+    vector<string> test_32_UserPrograms = {"quitXV6","kt_sys14"};
+    string test_32_Hint = "Problem with exit with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
+    int test_32_time_limit = 240000;
+
+    string test_33_Input = R"V0G0N(
+kt_sys15
+    )V0G0N";
+    string test_33_Expected = R"V0G0N(
+$ Creating thread 1
+Created thread 1 successfully
+Creating thread 2
+Created thread 2 successfully
+Creating thread 3
+Created thread 3 successfully
+Creating thread 4
+Created thread 4 successfully
+Creating thread 5
+Created thread 5 successfully
+Creating thread 6
+Created thread 6 successfully
+Creating thread 7
+Created thread 7 successfully
+Creating thread 8
+Created thread 8 successfully
+Creating thread 9
+Created thread 9 successfully
+Creating thread 10
+Created thread 10 successfully
+Creating thread 11
+Created thread 11 successfully
+Creating thread 12
+Created thread 12 successfully
+Creating thread 13
+Created thread 13 successfully
+Creating thread 14
+Created thread 14 successfully
+Creating thread 15
+Created thread 15 successfully
+Killing process
+$ $ Finished Yehonatan Peleg Test, quiting...
+)V0G0N";
+    vector<string> test_33_UserPrograms = {"quitXV6","kt_sys15"};
+    string test_33_Hint = "Problem with killing process with threads alive when threads are sleeping, need to make all threads that are sleeping runnable";
+    int test_33_time_limit = 480000;
+
+    string test_34_Input = R"V0G0N(
+mutex9
+    )V0G0N";
+    string test_34_Expected = R"V0G0N(
+$ Attempting to join thread 1
+Finished joing thread 1
+Attempting to join thread 2
+Finished joing thread 2
+$ $ Finished Yehonatan Peleg Test, quiting...
+)V0G0N";
+    vector<string> test_34_UserPrograms = {"quitXV6","mutex9"};
+    string test_34_Hint = "Problem with mutex lock, should return -1 if attempted to be locked again by the same thread";
+    int test_34_time_limit = 480000;
+
     // Adding Tests inputs and expected
     testsInputs.push_back(test_0_Input);
     testsExpected.push_back(test_0_Expected);
@@ -3319,6 +3478,30 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     testsUserPrograms.push_back(test_30_UserPrograms);
     testsHints.push_back(test_30_Hint);
     tesTimeLimits.push_back(test_30_time_limit);
+
+    testsInputs.push_back(test_31_Input);
+    testsExpected.push_back(test_31_Expected);
+    testsUserPrograms.push_back(test_31_UserPrograms);
+    testsHints.push_back(test_31_Hint);
+    tesTimeLimits.push_back(test_31_time_limit);
+
+    testsInputs.push_back(test_32_Input);
+    testsExpected.push_back(test_32_Expected);
+    testsUserPrograms.push_back(test_32_UserPrograms);
+    testsHints.push_back(test_32_Hint);
+    tesTimeLimits.push_back(test_32_time_limit);
+
+    testsInputs.push_back(test_33_Input);
+    testsExpected.push_back(test_33_Expected);
+    testsUserPrograms.push_back(test_33_UserPrograms);
+    testsHints.push_back(test_33_Hint);
+    tesTimeLimits.push_back(test_33_time_limit);
+
+    testsInputs.push_back(test_34_Input);
+    testsExpected.push_back(test_34_Expected);
+    testsUserPrograms.push_back(test_34_UserPrograms);
+    testsHints.push_back(test_34_Hint);
+    tesTimeLimits.push_back(test_34_time_limit);
 }
 
 /* ### Example of use ###

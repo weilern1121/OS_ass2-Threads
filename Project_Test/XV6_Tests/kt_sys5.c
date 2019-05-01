@@ -114,6 +114,7 @@ void initiateExecTest(){
      threadStack_15,
      threadStack_16};
 
+    
     for(int i = 0;i < THREAD_NUM;i++){
         printf(1,"Creating thread %d\n",i+1);
         kthreadCreateFlag = kthread_create(threads_starts[i], threads_stacks[i]);

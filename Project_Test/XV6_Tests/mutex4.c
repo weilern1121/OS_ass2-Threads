@@ -24,12 +24,9 @@ int result;
 
 void threadStart_1(){
     int result;
-    while(dontStart){}
-    //printf(1,"Attempting to LOCK 1 \n");
+    while(dontStart){} 
 
-    result = kthread_mutex_lock(mid);
-    //printf(1,"GOOD to LOCK 1 \n");
-
+    result = kthread_mutex_lock(mid); 
     if(result < 0){  
         printf(1,"mutex locked unsuccessfully\n"); 
     } 
@@ -42,11 +39,8 @@ void threadStart_1(){
     else{
         printf(1,"mutual exclusion not satisfied with %d condition value\n",conditionOne); 
     }
-    //printf(1,"Attempting to UNLOCK 1 \n");
 
-    result = kthread_mutex_unlock(mid);
-    //printf(1,"GOOD to UNLOCK 1 \n");
-
+    result = kthread_mutex_unlock(mid); 
     if(result < 0){ 
         printf(1,"mutex unlocked unsuccessfully\n"); 
     } 
@@ -58,10 +52,7 @@ void threadStart_2(){
     while(dontStart){} 
     sleep(200);
 
-    //printf(1,"Attempting to LOCK 2 \n");
-    result = kthread_mutex_lock(mid);
-    //printf(1,"GOOD to LOCK 2 \n");
-
+    result = kthread_mutex_lock(mid); 
     if(result < 0){  
         printf(1,"mutex locked unsuccessfully\n"); 
     } 
@@ -132,7 +123,6 @@ void initiateMutexTest(){
     for(int i = 0;i < THREAD_NUM;i++){
         pids[i] = kthread_create(threads_starts[i], threads_stacks[i]);
     }
-    //printf(1,"DONE THREAD CREATION \n");
 
     dontStart = 0;
     
