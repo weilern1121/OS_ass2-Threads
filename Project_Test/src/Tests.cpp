@@ -88,12 +88,16 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     int test_0_time_limit = 240000;
 
     string test_1_Input = R"V0G0N(
-OusertestsO
+OforktestO
+    )V0G0N";
+    string test_1_Expected = R"V0G0N(
+$ fork test
+fork test OK
+$ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
-    string test_1_Expected = "#ALL TESTS PASSED"; 
-    vector<string> test_1_UserPrograms = {"quitXV6","OusertestsO"};
-    string test_1_Hint = "General problem with xv6 due to changes made to it."; 
-    int test_1_time_limit = 1800000;
+    vector<string> test_1_UserPrograms = {"quitXV6","OforktestO"};
+    string test_1_Hint = "General problem with xv6 due to changes made to it.";
+    int test_1_time_limit = 240000;
 
     string test_2_Input = R"V0G0N(
 kt_sys1
@@ -286,7 +290,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_6_UserPrograms = {"quitXV6","kt_sys5","creThreads"};
     string test_6_Hint = "Problem with exec with threads alive.";
-    int test_6_time_limit = 240000;
+    int test_6_time_limit = 480000;
 
     string test_7_Input = R"V0G0N(
 kt_sys6

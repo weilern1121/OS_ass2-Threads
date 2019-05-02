@@ -90,17 +90,15 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
     int i;
     for (i = 0, t = p->thread; t < &p->thread[NTHREADS]; i++, t++) {
         if (t != curthread && t->state != UNUSED) {
-            if(t->state == SLEEPING)
-            {
-                t->tkilled = 1;
-                t->state = RUNNABLE;
-            }
-            else{
                 if (t->state == RUNNING)
                     sleep(t, &ptable.lock);
 
                 cleanThread(t);
-            }
+
+        }
+    }
+    release(&ptable.lock);
+}
 
             //TODO - old version
             /*if (execFlag) {
@@ -117,10 +115,7 @@ cleanProcOneThread(struct thread *curthread, struct proc *p) {
 
                 cleanThread(t);
             }*/
-        }
-    }
-    release(&ptable.lock);
-}
+
 
 // Must be called with interrupts disabled
 int
