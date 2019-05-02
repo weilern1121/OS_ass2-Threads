@@ -1017,7 +1017,7 @@ kthread_mutex_dealloc(int mutex_id) {
     for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
 
         if (m->mid == mutex_id) {
-            if (m->locked  || m->waitingCounter > 0) {
+            if (m->locked  || m->waitingCounter > 0 || !m->active ) {
                 //release(&ptable.lock);
                 return -1;
             } else
