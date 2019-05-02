@@ -40,4 +40,5 @@ SYSCALL(kthread_mutex_alloc)
 SYSCALL(kthread_mutex_dealloc)
 SYSCALL(kthread_mutex_lock)
 SYSCALL(kthread_mutex_unlock)
+SYSCALL(safe_tree_dealloc)
 

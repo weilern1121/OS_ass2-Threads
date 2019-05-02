@@ -36,6 +36,7 @@ int kthread_mutex_alloc(void);
 int kthread_mutex_dealloc(int);
 int kthread_mutex_lock(int);
 int kthread_mutex_unlock(int);
+int safe_tree_dealloc(int);
 
 /*//trnmnt_tree.c
 

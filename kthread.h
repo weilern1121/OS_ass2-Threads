@@ -18,7 +18,6 @@ int trnmnt_tree_dealloc(trnmnt_tree* tree);
 int trnmnt_tree_acquire(trnmnt_tree* tree,int ID);
 int trnmnt_tree_release(trnmnt_tree* tree,int ID);
 
-
 //struct kthread_mutex_t {
 //    uint locked;       // Is the lock held?
 //    int active;        // Is the Mutex been init?

@@ -146,6 +146,15 @@ sys_kthread_mutex_unlock(void) {
         return -1;
     return kthread_mutex_unlock(tid);
 }
+
+int
+sys_safe_tree_dealloc(void) {
+    int tid;
+    if (argint(0, &tid) < 0)
+        return -1;
+    return safe_tree_dealloc(tid);
+}
+
 /*
 //trnmnt_tree syscalls
 struct trnmnt_tree *

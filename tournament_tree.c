@@ -29,7 +29,7 @@ int ourpower(int num) {
 
 struct trnmnt_tree*
 trnmnt_tree_alloc(int depth){
-    trnmnt_tree *t;//= (struct trnmnt_tree *) kalloc();
+    trnmnt_tree *t;
 
     for (t = treetable.trnmnt_tree ; t < &treetable.trnmnt_tree[NPROC] ; t++) {
         if (t->active == INACTIVE)
@@ -53,9 +53,18 @@ trnmnt_tree_dealloc(trnmnt_tree* tree){
         return -1;
 
 
-    for(int i=0; i<(ourpower(tree->depth)-1); i++){
-        if(kthread_mutex_dealloc(tree->trnmntMutex[i]) == -1 )
+
+    for(int j=0; j<(ourpower(tree->depth)-1); j++){
+        if(safe_tree_dealloc(tree->trnmntMutex[j]) == 0 )
             return -1;
+
+    }
+
+    for(int i=0; i<(ourpower(tree->depth)-1); i++){
+        if(kthread_mutex_dealloc(tree->trnmntMutex[i]) == -1 ){
+            //printf(1," WERE ARE FUCKED %d  \n" , i);
+            return -1;
+        }
     }
 
     tree->depth=0;

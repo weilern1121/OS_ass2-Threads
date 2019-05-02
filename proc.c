@@ -23,7 +23,7 @@ int nextpid = 1;
 
 int tidCounter = 1;
 
-int mutexCounter = 1;
+int mutexCounter = 0;
 
 //int DEBUGMODE = 0; //0-off , 1- without SLEEP & WAKEUP & SCHED , 2-all commands
 
@@ -979,15 +979,17 @@ kthread_mutex_alloc() {
     }
 
     //release(&ptable.lock);
-    cprintf("NO MUTEX");
+
     return -1;
 
     alloc_mutex:
+    //cprintf("FOUND MUTEX THAT WILL GET ID %d   \n", mutexCounter);
     m->waitingCounter = 0;
     m->active = 1;
-    m->mid = mutexCounter++;
+    m->mid = mutexCounter;
     m->locked = 0;
     m->thread = 0;
+    mutexCounter += 1;
     //release(&ptable.lock);
     //cprintf("DONE ALLOC");
     return m->mid;
@@ -995,6 +997,20 @@ kthread_mutex_alloc() {
 
 }
 
+int
+safe_tree_dealloc(int mutex_id) {
+    struct kthread_mutex_t *m;
+
+    for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
+        if (m->mid == mutex_id) {
+            if (m->locked)
+                return 0;
+            else
+                return 1;
+        }
+    }
+    return 0;
+}
 
 int
 kthread_mutex_dealloc(int mutex_id) {
@@ -1002,9 +1018,11 @@ kthread_mutex_dealloc(int mutex_id) {
 
     //acquire(&ptable.lock);
 
+    //cprintf("MUTEX THAT WILL GET DEALLOC WITH ID %d   \n",mutex_id);
     for (m = myproc()->kthread_mutex_t; m < &myproc()->kthread_mutex_t[MAX_MUTEXES]; m++) {
+
         if (m->mid == mutex_id) {
-            if (m->locked || m->waitingCounter > 0) {
+            if (m->locked  || m->waitingCounter > 0) {
                 //release(&ptable.lock);
                 return -1;
             } else
@@ -1012,6 +1030,7 @@ kthread_mutex_dealloc(int mutex_id) {
         }
     }
 
+    //cprintf("PROB HERE");
     //release(&ptable.lock);
     return -1;
 

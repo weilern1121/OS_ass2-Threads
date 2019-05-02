@@ -28,6 +28,7 @@
 #define SYS_kthread_mutex_dealloc 27
 #define SYS_kthread_mutex_lock 28
 #define SYS_kthread_mutex_unlock 29
+#define SYS_safe_tree_dealloc 30
 
 
 /*#define SYS_trnmnt_tree_alloc 30
