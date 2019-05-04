@@ -53,7 +53,7 @@ void threadStart_2(){
     result = trnmnt_tree_dealloc(tree); 
     if(result == 0){ 
         printf(1,"trnmnt_tree deallocated successfully where it should not have been\n"); 
-    }
+    } 
 
     sleep(600);
 

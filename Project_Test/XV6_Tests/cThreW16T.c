@@ -111,7 +111,7 @@ void initiateExecTest(){
     
     for(int i = 0;i < THREAD_NUM;i++){
         kthreadCreateFlag = kthread_create(threads_starts[i], threads_stacks[i]);
-        if(kthreadCreateFlag < 0){
+        if(kthreadCreateFlag <= 0){
             printf(1,"Finished creating thread %d unsuccessfully with %d return code\n",i,kthreadCreateFlag);
         }
         

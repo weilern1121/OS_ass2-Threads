@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="OS_ass2_Threads"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OS_ass2_Threads">
+				<Option output="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/OS_ass2_Threads" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/."/>
+					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ass2_Threads"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OS_ass2_Threads/fast">
+				<Option output="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/OS_ass2_Threads" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/."/>
+					<Add directory="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ass2_Threads/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass2/OS_ass2-Threads/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/OforktestO.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/OusertestsO.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/allBut1.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/cThreW16T.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/creThreads.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/doNoth.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys1.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys10.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys11.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys12.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys13.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys14.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys15.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys16.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys2.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys3.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys4.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys5.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys6.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys7.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys8.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/kt_sys9.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex1.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex2.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex3.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex4.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex5.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex6.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex7.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex8.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/mutex9.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/quitXV6.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/sleep.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree1.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree2.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree3.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree4.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree5.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree6.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree7.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree8.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/XV6_Tests/trntree9.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/include/ProjectTest.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/include/Tests.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/src/ProjectTest.cpp">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/src/Tests.cpp">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/Project_Test/src/temp.cpp">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/asm.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/bio.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/bootmain.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/buf.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/cat.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/console.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/date.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/defs.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/echo.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/elf.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/exec.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fcntl.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/file.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/file.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/forktest.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fs.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/fs.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/grep.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ide.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/init.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ioapic.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kalloc.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kbd.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kbd.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kill.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/kthread.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/lapic.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ln.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/log.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ls.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/main.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/memide.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/memlayout.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mkdir.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mkfs.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mmu.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mp.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/mp.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/param.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/picirq.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/pipe.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/printf.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/proc.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/proc.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/rm.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sanity.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sh.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sleeplock.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sleeplock.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/spinlock.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/spinlock.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/stat.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/stressfs.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/string.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/syscall.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/syscall.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sysfile.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/sysproc.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/tournament_tree.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/tournament_tree.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/trap.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/traps.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/types.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/uart.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/ulib.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/umalloc.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/user.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/usertests.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/vm.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/wc.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/x86.h">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/zombie.c">
+			<Option target="OS_ass2_Threads"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass2/OS_ass2-Threads/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,11 +1,59 @@
 cmake_minimum_required(VERSION 3.13)
-project(Assignment2 C)
+project(OS_ass2_Threads)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
+include_directories(Project_Test/include)
 
-add_executable(Assignment2
+add_executable(OS_ass2_Threads
+        Project_Test/include/ProjectTest.h
+        Project_Test/include/Tests.h
+        Project_Test/src/ProjectTest.cpp
+        Project_Test/src/temp.cpp
+        Project_Test/src/Tests.cpp
+        Project_Test/XV6_Tests/allBut1.c
+        Project_Test/XV6_Tests/creThreads.c
+        Project_Test/XV6_Tests/cThreW16T.c
+        Project_Test/XV6_Tests/doNoth.c
+        Project_Test/XV6_Tests/kt_sys1.c
+        Project_Test/XV6_Tests/kt_sys10.c
+        Project_Test/XV6_Tests/kt_sys11.c
+        Project_Test/XV6_Tests/kt_sys12.c
+        Project_Test/XV6_Tests/kt_sys13.c
+        Project_Test/XV6_Tests/kt_sys14.c
+        Project_Test/XV6_Tests/kt_sys15.c
+        Project_Test/XV6_Tests/kt_sys16.c
+        Project_Test/XV6_Tests/kt_sys2.c
+        Project_Test/XV6_Tests/kt_sys3.c
+        Project_Test/XV6_Tests/kt_sys4.c
+        Project_Test/XV6_Tests/kt_sys5.c
+        Project_Test/XV6_Tests/kt_sys6.c
+        Project_Test/XV6_Tests/kt_sys7.c
+        Project_Test/XV6_Tests/kt_sys8.c
+        Project_Test/XV6_Tests/kt_sys9.c
+        Project_Test/XV6_Tests/mutex1.c
+        Project_Test/XV6_Tests/mutex2.c
+        Project_Test/XV6_Tests/mutex3.c
+        Project_Test/XV6_Tests/mutex4.c
+        Project_Test/XV6_Tests/mutex5.c
+        Project_Test/XV6_Tests/mutex6.c
+        Project_Test/XV6_Tests/mutex7.c
+        Project_Test/XV6_Tests/mutex8.c
+        Project_Test/XV6_Tests/mutex9.c
+        Project_Test/XV6_Tests/OforktestO.c
+        Project_Test/XV6_Tests/OusertestsO.c
+        Project_Test/XV6_Tests/quitXV6.c
+        Project_Test/XV6_Tests/sleep.c
+        Project_Test/XV6_Tests/trntree1.c
+        Project_Test/XV6_Tests/trntree2.c
+        Project_Test/XV6_Tests/trntree3.c
+        Project_Test/XV6_Tests/trntree4.c
+        Project_Test/XV6_Tests/trntree5.c
+        Project_Test/XV6_Tests/trntree6.c
+        Project_Test/XV6_Tests/trntree7.c
+        Project_Test/XV6_Tests/trntree8.c
+        Project_Test/XV6_Tests/trntree9.c
         asm.h
         bio.c
         bootmain.c
@@ -51,6 +99,7 @@ add_executable(Assignment2
         proc.c
         proc.h
         rm.c
+        sanity.c
         sh.c
         sleeplock.c
         sleeplock.h
@@ -63,6 +112,8 @@ add_executable(Assignment2
         syscall.h
         sysfile.c
         sysproc.c
+        tournament_tree.c
+        tournament_tree.h
         trap.c
         traps.h
         types.h
@@ -74,5 +125,4 @@ add_executable(Assignment2
         vm.c
         wc.c
         x86.h
-        zombie.c
-        tournament_tree.h tournament_tree.c sanity.c)
+        zombie.c)

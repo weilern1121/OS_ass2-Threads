@@ -111,17 +111,1232 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Assignment2
+# Target rules for targets named OS_ass2_Threads
 
 # Build rule for target.
-Assignment2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Assignment2
-.PHONY : Assignment2
+OS_ass2_Threads: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OS_ass2_Threads
+.PHONY : OS_ass2_Threads
 
 # fast build rule for target.
-Assignment2/fast:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/build
-.PHONY : Assignment2/fast
+OS_ass2_Threads/fast:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/build
+.PHONY : OS_ass2_Threads/fast
+
+Project_Test/XV6_Tests/OforktestO.o: Project_Test/XV6_Tests/OforktestO.c.o
+
+.PHONY : Project_Test/XV6_Tests/OforktestO.o
+
+# target to build an object file
+Project_Test/XV6_Tests/OforktestO.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OforktestO.c.o
+.PHONY : Project_Test/XV6_Tests/OforktestO.c.o
+
+Project_Test/XV6_Tests/OforktestO.i: Project_Test/XV6_Tests/OforktestO.c.i
+
+.PHONY : Project_Test/XV6_Tests/OforktestO.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/OforktestO.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OforktestO.c.i
+.PHONY : Project_Test/XV6_Tests/OforktestO.c.i
+
+Project_Test/XV6_Tests/OforktestO.s: Project_Test/XV6_Tests/OforktestO.c.s
+
+.PHONY : Project_Test/XV6_Tests/OforktestO.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/OforktestO.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OforktestO.c.s
+.PHONY : Project_Test/XV6_Tests/OforktestO.c.s
+
+Project_Test/XV6_Tests/OusertestsO.o: Project_Test/XV6_Tests/OusertestsO.c.o
+
+.PHONY : Project_Test/XV6_Tests/OusertestsO.o
+
+# target to build an object file
+Project_Test/XV6_Tests/OusertestsO.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OusertestsO.c.o
+.PHONY : Project_Test/XV6_Tests/OusertestsO.c.o
+
+Project_Test/XV6_Tests/OusertestsO.i: Project_Test/XV6_Tests/OusertestsO.c.i
+
+.PHONY : Project_Test/XV6_Tests/OusertestsO.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/OusertestsO.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OusertestsO.c.i
+.PHONY : Project_Test/XV6_Tests/OusertestsO.c.i
+
+Project_Test/XV6_Tests/OusertestsO.s: Project_Test/XV6_Tests/OusertestsO.c.s
+
+.PHONY : Project_Test/XV6_Tests/OusertestsO.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/OusertestsO.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/OusertestsO.c.s
+.PHONY : Project_Test/XV6_Tests/OusertestsO.c.s
+
+Project_Test/XV6_Tests/allBut1.o: Project_Test/XV6_Tests/allBut1.c.o
+
+.PHONY : Project_Test/XV6_Tests/allBut1.o
+
+# target to build an object file
+Project_Test/XV6_Tests/allBut1.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/allBut1.c.o
+.PHONY : Project_Test/XV6_Tests/allBut1.c.o
+
+Project_Test/XV6_Tests/allBut1.i: Project_Test/XV6_Tests/allBut1.c.i
+
+.PHONY : Project_Test/XV6_Tests/allBut1.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/allBut1.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/allBut1.c.i
+.PHONY : Project_Test/XV6_Tests/allBut1.c.i
+
+Project_Test/XV6_Tests/allBut1.s: Project_Test/XV6_Tests/allBut1.c.s
+
+.PHONY : Project_Test/XV6_Tests/allBut1.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/allBut1.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/allBut1.c.s
+.PHONY : Project_Test/XV6_Tests/allBut1.c.s
+
+Project_Test/XV6_Tests/cThreW16T.o: Project_Test/XV6_Tests/cThreW16T.c.o
+
+.PHONY : Project_Test/XV6_Tests/cThreW16T.o
+
+# target to build an object file
+Project_Test/XV6_Tests/cThreW16T.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/cThreW16T.c.o
+.PHONY : Project_Test/XV6_Tests/cThreW16T.c.o
+
+Project_Test/XV6_Tests/cThreW16T.i: Project_Test/XV6_Tests/cThreW16T.c.i
+
+.PHONY : Project_Test/XV6_Tests/cThreW16T.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/cThreW16T.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/cThreW16T.c.i
+.PHONY : Project_Test/XV6_Tests/cThreW16T.c.i
+
+Project_Test/XV6_Tests/cThreW16T.s: Project_Test/XV6_Tests/cThreW16T.c.s
+
+.PHONY : Project_Test/XV6_Tests/cThreW16T.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/cThreW16T.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/cThreW16T.c.s
+.PHONY : Project_Test/XV6_Tests/cThreW16T.c.s
+
+Project_Test/XV6_Tests/creThreads.o: Project_Test/XV6_Tests/creThreads.c.o
+
+.PHONY : Project_Test/XV6_Tests/creThreads.o
+
+# target to build an object file
+Project_Test/XV6_Tests/creThreads.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/creThreads.c.o
+.PHONY : Project_Test/XV6_Tests/creThreads.c.o
+
+Project_Test/XV6_Tests/creThreads.i: Project_Test/XV6_Tests/creThreads.c.i
+
+.PHONY : Project_Test/XV6_Tests/creThreads.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/creThreads.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/creThreads.c.i
+.PHONY : Project_Test/XV6_Tests/creThreads.c.i
+
+Project_Test/XV6_Tests/creThreads.s: Project_Test/XV6_Tests/creThreads.c.s
+
+.PHONY : Project_Test/XV6_Tests/creThreads.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/creThreads.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/creThreads.c.s
+.PHONY : Project_Test/XV6_Tests/creThreads.c.s
+
+Project_Test/XV6_Tests/doNoth.o: Project_Test/XV6_Tests/doNoth.c.o
+
+.PHONY : Project_Test/XV6_Tests/doNoth.o
+
+# target to build an object file
+Project_Test/XV6_Tests/doNoth.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/doNoth.c.o
+.PHONY : Project_Test/XV6_Tests/doNoth.c.o
+
+Project_Test/XV6_Tests/doNoth.i: Project_Test/XV6_Tests/doNoth.c.i
+
+.PHONY : Project_Test/XV6_Tests/doNoth.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/doNoth.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/doNoth.c.i
+.PHONY : Project_Test/XV6_Tests/doNoth.c.i
+
+Project_Test/XV6_Tests/doNoth.s: Project_Test/XV6_Tests/doNoth.c.s
+
+.PHONY : Project_Test/XV6_Tests/doNoth.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/doNoth.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/doNoth.c.s
+.PHONY : Project_Test/XV6_Tests/doNoth.c.s
+
+Project_Test/XV6_Tests/kt_sys1.o: Project_Test/XV6_Tests/kt_sys1.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys1.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys1.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys1.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys1.c.o
+
+Project_Test/XV6_Tests/kt_sys1.i: Project_Test/XV6_Tests/kt_sys1.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys1.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys1.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys1.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys1.c.i
+
+Project_Test/XV6_Tests/kt_sys1.s: Project_Test/XV6_Tests/kt_sys1.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys1.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys1.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys1.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys1.c.s
+
+Project_Test/XV6_Tests/kt_sys10.o: Project_Test/XV6_Tests/kt_sys10.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys10.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys10.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys10.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys10.c.o
+
+Project_Test/XV6_Tests/kt_sys10.i: Project_Test/XV6_Tests/kt_sys10.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys10.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys10.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys10.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys10.c.i
+
+Project_Test/XV6_Tests/kt_sys10.s: Project_Test/XV6_Tests/kt_sys10.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys10.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys10.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys10.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys10.c.s
+
+Project_Test/XV6_Tests/kt_sys11.o: Project_Test/XV6_Tests/kt_sys11.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys11.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys11.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys11.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys11.c.o
+
+Project_Test/XV6_Tests/kt_sys11.i: Project_Test/XV6_Tests/kt_sys11.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys11.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys11.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys11.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys11.c.i
+
+Project_Test/XV6_Tests/kt_sys11.s: Project_Test/XV6_Tests/kt_sys11.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys11.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys11.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys11.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys11.c.s
+
+Project_Test/XV6_Tests/kt_sys12.o: Project_Test/XV6_Tests/kt_sys12.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys12.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys12.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys12.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys12.c.o
+
+Project_Test/XV6_Tests/kt_sys12.i: Project_Test/XV6_Tests/kt_sys12.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys12.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys12.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys12.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys12.c.i
+
+Project_Test/XV6_Tests/kt_sys12.s: Project_Test/XV6_Tests/kt_sys12.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys12.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys12.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys12.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys12.c.s
+
+Project_Test/XV6_Tests/kt_sys13.o: Project_Test/XV6_Tests/kt_sys13.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys13.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys13.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys13.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys13.c.o
+
+Project_Test/XV6_Tests/kt_sys13.i: Project_Test/XV6_Tests/kt_sys13.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys13.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys13.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys13.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys13.c.i
+
+Project_Test/XV6_Tests/kt_sys13.s: Project_Test/XV6_Tests/kt_sys13.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys13.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys13.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys13.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys13.c.s
+
+Project_Test/XV6_Tests/kt_sys14.o: Project_Test/XV6_Tests/kt_sys14.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys14.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys14.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys14.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys14.c.o
+
+Project_Test/XV6_Tests/kt_sys14.i: Project_Test/XV6_Tests/kt_sys14.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys14.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys14.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys14.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys14.c.i
+
+Project_Test/XV6_Tests/kt_sys14.s: Project_Test/XV6_Tests/kt_sys14.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys14.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys14.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys14.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys14.c.s
+
+Project_Test/XV6_Tests/kt_sys15.o: Project_Test/XV6_Tests/kt_sys15.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys15.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys15.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys15.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys15.c.o
+
+Project_Test/XV6_Tests/kt_sys15.i: Project_Test/XV6_Tests/kt_sys15.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys15.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys15.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys15.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys15.c.i
+
+Project_Test/XV6_Tests/kt_sys15.s: Project_Test/XV6_Tests/kt_sys15.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys15.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys15.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys15.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys15.c.s
+
+Project_Test/XV6_Tests/kt_sys16.o: Project_Test/XV6_Tests/kt_sys16.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys16.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys16.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys16.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys16.c.o
+
+Project_Test/XV6_Tests/kt_sys16.i: Project_Test/XV6_Tests/kt_sys16.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys16.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys16.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys16.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys16.c.i
+
+Project_Test/XV6_Tests/kt_sys16.s: Project_Test/XV6_Tests/kt_sys16.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys16.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys16.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys16.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys16.c.s
+
+Project_Test/XV6_Tests/kt_sys2.o: Project_Test/XV6_Tests/kt_sys2.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys2.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys2.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys2.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys2.c.o
+
+Project_Test/XV6_Tests/kt_sys2.i: Project_Test/XV6_Tests/kt_sys2.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys2.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys2.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys2.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys2.c.i
+
+Project_Test/XV6_Tests/kt_sys2.s: Project_Test/XV6_Tests/kt_sys2.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys2.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys2.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys2.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys2.c.s
+
+Project_Test/XV6_Tests/kt_sys3.o: Project_Test/XV6_Tests/kt_sys3.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys3.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys3.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys3.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys3.c.o
+
+Project_Test/XV6_Tests/kt_sys3.i: Project_Test/XV6_Tests/kt_sys3.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys3.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys3.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys3.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys3.c.i
+
+Project_Test/XV6_Tests/kt_sys3.s: Project_Test/XV6_Tests/kt_sys3.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys3.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys3.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys3.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys3.c.s
+
+Project_Test/XV6_Tests/kt_sys4.o: Project_Test/XV6_Tests/kt_sys4.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys4.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys4.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys4.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys4.c.o
+
+Project_Test/XV6_Tests/kt_sys4.i: Project_Test/XV6_Tests/kt_sys4.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys4.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys4.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys4.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys4.c.i
+
+Project_Test/XV6_Tests/kt_sys4.s: Project_Test/XV6_Tests/kt_sys4.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys4.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys4.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys4.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys4.c.s
+
+Project_Test/XV6_Tests/kt_sys5.o: Project_Test/XV6_Tests/kt_sys5.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys5.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys5.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys5.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys5.c.o
+
+Project_Test/XV6_Tests/kt_sys5.i: Project_Test/XV6_Tests/kt_sys5.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys5.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys5.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys5.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys5.c.i
+
+Project_Test/XV6_Tests/kt_sys5.s: Project_Test/XV6_Tests/kt_sys5.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys5.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys5.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys5.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys5.c.s
+
+Project_Test/XV6_Tests/kt_sys6.o: Project_Test/XV6_Tests/kt_sys6.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys6.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys6.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys6.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys6.c.o
+
+Project_Test/XV6_Tests/kt_sys6.i: Project_Test/XV6_Tests/kt_sys6.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys6.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys6.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys6.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys6.c.i
+
+Project_Test/XV6_Tests/kt_sys6.s: Project_Test/XV6_Tests/kt_sys6.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys6.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys6.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys6.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys6.c.s
+
+Project_Test/XV6_Tests/kt_sys7.o: Project_Test/XV6_Tests/kt_sys7.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys7.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys7.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys7.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys7.c.o
+
+Project_Test/XV6_Tests/kt_sys7.i: Project_Test/XV6_Tests/kt_sys7.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys7.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys7.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys7.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys7.c.i
+
+Project_Test/XV6_Tests/kt_sys7.s: Project_Test/XV6_Tests/kt_sys7.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys7.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys7.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys7.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys7.c.s
+
+Project_Test/XV6_Tests/kt_sys8.o: Project_Test/XV6_Tests/kt_sys8.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys8.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys8.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys8.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys8.c.o
+
+Project_Test/XV6_Tests/kt_sys8.i: Project_Test/XV6_Tests/kt_sys8.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys8.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys8.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys8.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys8.c.i
+
+Project_Test/XV6_Tests/kt_sys8.s: Project_Test/XV6_Tests/kt_sys8.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys8.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys8.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys8.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys8.c.s
+
+Project_Test/XV6_Tests/kt_sys9.o: Project_Test/XV6_Tests/kt_sys9.c.o
+
+.PHONY : Project_Test/XV6_Tests/kt_sys9.o
+
+# target to build an object file
+Project_Test/XV6_Tests/kt_sys9.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys9.c.o
+.PHONY : Project_Test/XV6_Tests/kt_sys9.c.o
+
+Project_Test/XV6_Tests/kt_sys9.i: Project_Test/XV6_Tests/kt_sys9.c.i
+
+.PHONY : Project_Test/XV6_Tests/kt_sys9.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/kt_sys9.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys9.c.i
+.PHONY : Project_Test/XV6_Tests/kt_sys9.c.i
+
+Project_Test/XV6_Tests/kt_sys9.s: Project_Test/XV6_Tests/kt_sys9.c.s
+
+.PHONY : Project_Test/XV6_Tests/kt_sys9.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/kt_sys9.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/kt_sys9.c.s
+.PHONY : Project_Test/XV6_Tests/kt_sys9.c.s
+
+Project_Test/XV6_Tests/mutex1.o: Project_Test/XV6_Tests/mutex1.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex1.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex1.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex1.c.o
+.PHONY : Project_Test/XV6_Tests/mutex1.c.o
+
+Project_Test/XV6_Tests/mutex1.i: Project_Test/XV6_Tests/mutex1.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex1.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex1.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex1.c.i
+.PHONY : Project_Test/XV6_Tests/mutex1.c.i
+
+Project_Test/XV6_Tests/mutex1.s: Project_Test/XV6_Tests/mutex1.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex1.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex1.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex1.c.s
+.PHONY : Project_Test/XV6_Tests/mutex1.c.s
+
+Project_Test/XV6_Tests/mutex2.o: Project_Test/XV6_Tests/mutex2.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex2.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex2.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex2.c.o
+.PHONY : Project_Test/XV6_Tests/mutex2.c.o
+
+Project_Test/XV6_Tests/mutex2.i: Project_Test/XV6_Tests/mutex2.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex2.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex2.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex2.c.i
+.PHONY : Project_Test/XV6_Tests/mutex2.c.i
+
+Project_Test/XV6_Tests/mutex2.s: Project_Test/XV6_Tests/mutex2.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex2.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex2.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex2.c.s
+.PHONY : Project_Test/XV6_Tests/mutex2.c.s
+
+Project_Test/XV6_Tests/mutex3.o: Project_Test/XV6_Tests/mutex3.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex3.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex3.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex3.c.o
+.PHONY : Project_Test/XV6_Tests/mutex3.c.o
+
+Project_Test/XV6_Tests/mutex3.i: Project_Test/XV6_Tests/mutex3.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex3.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex3.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex3.c.i
+.PHONY : Project_Test/XV6_Tests/mutex3.c.i
+
+Project_Test/XV6_Tests/mutex3.s: Project_Test/XV6_Tests/mutex3.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex3.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex3.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex3.c.s
+.PHONY : Project_Test/XV6_Tests/mutex3.c.s
+
+Project_Test/XV6_Tests/mutex4.o: Project_Test/XV6_Tests/mutex4.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex4.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex4.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex4.c.o
+.PHONY : Project_Test/XV6_Tests/mutex4.c.o
+
+Project_Test/XV6_Tests/mutex4.i: Project_Test/XV6_Tests/mutex4.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex4.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex4.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex4.c.i
+.PHONY : Project_Test/XV6_Tests/mutex4.c.i
+
+Project_Test/XV6_Tests/mutex4.s: Project_Test/XV6_Tests/mutex4.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex4.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex4.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex4.c.s
+.PHONY : Project_Test/XV6_Tests/mutex4.c.s
+
+Project_Test/XV6_Tests/mutex5.o: Project_Test/XV6_Tests/mutex5.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex5.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex5.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex5.c.o
+.PHONY : Project_Test/XV6_Tests/mutex5.c.o
+
+Project_Test/XV6_Tests/mutex5.i: Project_Test/XV6_Tests/mutex5.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex5.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex5.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex5.c.i
+.PHONY : Project_Test/XV6_Tests/mutex5.c.i
+
+Project_Test/XV6_Tests/mutex5.s: Project_Test/XV6_Tests/mutex5.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex5.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex5.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex5.c.s
+.PHONY : Project_Test/XV6_Tests/mutex5.c.s
+
+Project_Test/XV6_Tests/mutex6.o: Project_Test/XV6_Tests/mutex6.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex6.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex6.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex6.c.o
+.PHONY : Project_Test/XV6_Tests/mutex6.c.o
+
+Project_Test/XV6_Tests/mutex6.i: Project_Test/XV6_Tests/mutex6.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex6.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex6.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex6.c.i
+.PHONY : Project_Test/XV6_Tests/mutex6.c.i
+
+Project_Test/XV6_Tests/mutex6.s: Project_Test/XV6_Tests/mutex6.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex6.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex6.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex6.c.s
+.PHONY : Project_Test/XV6_Tests/mutex6.c.s
+
+Project_Test/XV6_Tests/mutex7.o: Project_Test/XV6_Tests/mutex7.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex7.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex7.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex7.c.o
+.PHONY : Project_Test/XV6_Tests/mutex7.c.o
+
+Project_Test/XV6_Tests/mutex7.i: Project_Test/XV6_Tests/mutex7.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex7.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex7.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex7.c.i
+.PHONY : Project_Test/XV6_Tests/mutex7.c.i
+
+Project_Test/XV6_Tests/mutex7.s: Project_Test/XV6_Tests/mutex7.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex7.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex7.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex7.c.s
+.PHONY : Project_Test/XV6_Tests/mutex7.c.s
+
+Project_Test/XV6_Tests/mutex8.o: Project_Test/XV6_Tests/mutex8.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex8.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex8.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex8.c.o
+.PHONY : Project_Test/XV6_Tests/mutex8.c.o
+
+Project_Test/XV6_Tests/mutex8.i: Project_Test/XV6_Tests/mutex8.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex8.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex8.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex8.c.i
+.PHONY : Project_Test/XV6_Tests/mutex8.c.i
+
+Project_Test/XV6_Tests/mutex8.s: Project_Test/XV6_Tests/mutex8.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex8.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex8.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex8.c.s
+.PHONY : Project_Test/XV6_Tests/mutex8.c.s
+
+Project_Test/XV6_Tests/mutex9.o: Project_Test/XV6_Tests/mutex9.c.o
+
+.PHONY : Project_Test/XV6_Tests/mutex9.o
+
+# target to build an object file
+Project_Test/XV6_Tests/mutex9.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex9.c.o
+.PHONY : Project_Test/XV6_Tests/mutex9.c.o
+
+Project_Test/XV6_Tests/mutex9.i: Project_Test/XV6_Tests/mutex9.c.i
+
+.PHONY : Project_Test/XV6_Tests/mutex9.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/mutex9.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex9.c.i
+.PHONY : Project_Test/XV6_Tests/mutex9.c.i
+
+Project_Test/XV6_Tests/mutex9.s: Project_Test/XV6_Tests/mutex9.c.s
+
+.PHONY : Project_Test/XV6_Tests/mutex9.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/mutex9.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/mutex9.c.s
+.PHONY : Project_Test/XV6_Tests/mutex9.c.s
+
+Project_Test/XV6_Tests/quitXV6.o: Project_Test/XV6_Tests/quitXV6.c.o
+
+.PHONY : Project_Test/XV6_Tests/quitXV6.o
+
+# target to build an object file
+Project_Test/XV6_Tests/quitXV6.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/quitXV6.c.o
+.PHONY : Project_Test/XV6_Tests/quitXV6.c.o
+
+Project_Test/XV6_Tests/quitXV6.i: Project_Test/XV6_Tests/quitXV6.c.i
+
+.PHONY : Project_Test/XV6_Tests/quitXV6.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/quitXV6.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/quitXV6.c.i
+.PHONY : Project_Test/XV6_Tests/quitXV6.c.i
+
+Project_Test/XV6_Tests/quitXV6.s: Project_Test/XV6_Tests/quitXV6.c.s
+
+.PHONY : Project_Test/XV6_Tests/quitXV6.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/quitXV6.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/quitXV6.c.s
+.PHONY : Project_Test/XV6_Tests/quitXV6.c.s
+
+Project_Test/XV6_Tests/sleep.o: Project_Test/XV6_Tests/sleep.c.o
+
+.PHONY : Project_Test/XV6_Tests/sleep.o
+
+# target to build an object file
+Project_Test/XV6_Tests/sleep.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/sleep.c.o
+.PHONY : Project_Test/XV6_Tests/sleep.c.o
+
+Project_Test/XV6_Tests/sleep.i: Project_Test/XV6_Tests/sleep.c.i
+
+.PHONY : Project_Test/XV6_Tests/sleep.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/sleep.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/sleep.c.i
+.PHONY : Project_Test/XV6_Tests/sleep.c.i
+
+Project_Test/XV6_Tests/sleep.s: Project_Test/XV6_Tests/sleep.c.s
+
+.PHONY : Project_Test/XV6_Tests/sleep.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/sleep.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/sleep.c.s
+.PHONY : Project_Test/XV6_Tests/sleep.c.s
+
+Project_Test/XV6_Tests/trntree1.o: Project_Test/XV6_Tests/trntree1.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree1.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree1.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree1.c.o
+.PHONY : Project_Test/XV6_Tests/trntree1.c.o
+
+Project_Test/XV6_Tests/trntree1.i: Project_Test/XV6_Tests/trntree1.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree1.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree1.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree1.c.i
+.PHONY : Project_Test/XV6_Tests/trntree1.c.i
+
+Project_Test/XV6_Tests/trntree1.s: Project_Test/XV6_Tests/trntree1.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree1.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree1.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree1.c.s
+.PHONY : Project_Test/XV6_Tests/trntree1.c.s
+
+Project_Test/XV6_Tests/trntree2.o: Project_Test/XV6_Tests/trntree2.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree2.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree2.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree2.c.o
+.PHONY : Project_Test/XV6_Tests/trntree2.c.o
+
+Project_Test/XV6_Tests/trntree2.i: Project_Test/XV6_Tests/trntree2.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree2.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree2.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree2.c.i
+.PHONY : Project_Test/XV6_Tests/trntree2.c.i
+
+Project_Test/XV6_Tests/trntree2.s: Project_Test/XV6_Tests/trntree2.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree2.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree2.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree2.c.s
+.PHONY : Project_Test/XV6_Tests/trntree2.c.s
+
+Project_Test/XV6_Tests/trntree3.o: Project_Test/XV6_Tests/trntree3.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree3.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree3.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree3.c.o
+.PHONY : Project_Test/XV6_Tests/trntree3.c.o
+
+Project_Test/XV6_Tests/trntree3.i: Project_Test/XV6_Tests/trntree3.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree3.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree3.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree3.c.i
+.PHONY : Project_Test/XV6_Tests/trntree3.c.i
+
+Project_Test/XV6_Tests/trntree3.s: Project_Test/XV6_Tests/trntree3.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree3.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree3.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree3.c.s
+.PHONY : Project_Test/XV6_Tests/trntree3.c.s
+
+Project_Test/XV6_Tests/trntree4.o: Project_Test/XV6_Tests/trntree4.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree4.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree4.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree4.c.o
+.PHONY : Project_Test/XV6_Tests/trntree4.c.o
+
+Project_Test/XV6_Tests/trntree4.i: Project_Test/XV6_Tests/trntree4.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree4.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree4.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree4.c.i
+.PHONY : Project_Test/XV6_Tests/trntree4.c.i
+
+Project_Test/XV6_Tests/trntree4.s: Project_Test/XV6_Tests/trntree4.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree4.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree4.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree4.c.s
+.PHONY : Project_Test/XV6_Tests/trntree4.c.s
+
+Project_Test/XV6_Tests/trntree5.o: Project_Test/XV6_Tests/trntree5.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree5.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree5.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree5.c.o
+.PHONY : Project_Test/XV6_Tests/trntree5.c.o
+
+Project_Test/XV6_Tests/trntree5.i: Project_Test/XV6_Tests/trntree5.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree5.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree5.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree5.c.i
+.PHONY : Project_Test/XV6_Tests/trntree5.c.i
+
+Project_Test/XV6_Tests/trntree5.s: Project_Test/XV6_Tests/trntree5.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree5.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree5.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree5.c.s
+.PHONY : Project_Test/XV6_Tests/trntree5.c.s
+
+Project_Test/XV6_Tests/trntree6.o: Project_Test/XV6_Tests/trntree6.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree6.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree6.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree6.c.o
+.PHONY : Project_Test/XV6_Tests/trntree6.c.o
+
+Project_Test/XV6_Tests/trntree6.i: Project_Test/XV6_Tests/trntree6.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree6.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree6.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree6.c.i
+.PHONY : Project_Test/XV6_Tests/trntree6.c.i
+
+Project_Test/XV6_Tests/trntree6.s: Project_Test/XV6_Tests/trntree6.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree6.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree6.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree6.c.s
+.PHONY : Project_Test/XV6_Tests/trntree6.c.s
+
+Project_Test/XV6_Tests/trntree7.o: Project_Test/XV6_Tests/trntree7.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree7.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree7.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree7.c.o
+.PHONY : Project_Test/XV6_Tests/trntree7.c.o
+
+Project_Test/XV6_Tests/trntree7.i: Project_Test/XV6_Tests/trntree7.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree7.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree7.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree7.c.i
+.PHONY : Project_Test/XV6_Tests/trntree7.c.i
+
+Project_Test/XV6_Tests/trntree7.s: Project_Test/XV6_Tests/trntree7.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree7.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree7.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree7.c.s
+.PHONY : Project_Test/XV6_Tests/trntree7.c.s
+
+Project_Test/XV6_Tests/trntree8.o: Project_Test/XV6_Tests/trntree8.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree8.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree8.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree8.c.o
+.PHONY : Project_Test/XV6_Tests/trntree8.c.o
+
+Project_Test/XV6_Tests/trntree8.i: Project_Test/XV6_Tests/trntree8.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree8.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree8.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree8.c.i
+.PHONY : Project_Test/XV6_Tests/trntree8.c.i
+
+Project_Test/XV6_Tests/trntree8.s: Project_Test/XV6_Tests/trntree8.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree8.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree8.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree8.c.s
+.PHONY : Project_Test/XV6_Tests/trntree8.c.s
+
+Project_Test/XV6_Tests/trntree9.o: Project_Test/XV6_Tests/trntree9.c.o
+
+.PHONY : Project_Test/XV6_Tests/trntree9.o
+
+# target to build an object file
+Project_Test/XV6_Tests/trntree9.c.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree9.c.o
+.PHONY : Project_Test/XV6_Tests/trntree9.c.o
+
+Project_Test/XV6_Tests/trntree9.i: Project_Test/XV6_Tests/trntree9.c.i
+
+.PHONY : Project_Test/XV6_Tests/trntree9.i
+
+# target to preprocess a source file
+Project_Test/XV6_Tests/trntree9.c.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree9.c.i
+.PHONY : Project_Test/XV6_Tests/trntree9.c.i
+
+Project_Test/XV6_Tests/trntree9.s: Project_Test/XV6_Tests/trntree9.c.s
+
+.PHONY : Project_Test/XV6_Tests/trntree9.s
+
+# target to generate assembly for a file
+Project_Test/XV6_Tests/trntree9.c.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/XV6_Tests/trntree9.c.s
+.PHONY : Project_Test/XV6_Tests/trntree9.c.s
+
+Project_Test/src/ProjectTest.o: Project_Test/src/ProjectTest.cpp.o
+
+.PHONY : Project_Test/src/ProjectTest.o
+
+# target to build an object file
+Project_Test/src/ProjectTest.cpp.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/ProjectTest.cpp.o
+.PHONY : Project_Test/src/ProjectTest.cpp.o
+
+Project_Test/src/ProjectTest.i: Project_Test/src/ProjectTest.cpp.i
+
+.PHONY : Project_Test/src/ProjectTest.i
+
+# target to preprocess a source file
+Project_Test/src/ProjectTest.cpp.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/ProjectTest.cpp.i
+.PHONY : Project_Test/src/ProjectTest.cpp.i
+
+Project_Test/src/ProjectTest.s: Project_Test/src/ProjectTest.cpp.s
+
+.PHONY : Project_Test/src/ProjectTest.s
+
+# target to generate assembly for a file
+Project_Test/src/ProjectTest.cpp.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/ProjectTest.cpp.s
+.PHONY : Project_Test/src/ProjectTest.cpp.s
+
+Project_Test/src/Tests.o: Project_Test/src/Tests.cpp.o
+
+.PHONY : Project_Test/src/Tests.o
+
+# target to build an object file
+Project_Test/src/Tests.cpp.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/Tests.cpp.o
+.PHONY : Project_Test/src/Tests.cpp.o
+
+Project_Test/src/Tests.i: Project_Test/src/Tests.cpp.i
+
+.PHONY : Project_Test/src/Tests.i
+
+# target to preprocess a source file
+Project_Test/src/Tests.cpp.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/Tests.cpp.i
+.PHONY : Project_Test/src/Tests.cpp.i
+
+Project_Test/src/Tests.s: Project_Test/src/Tests.cpp.s
+
+.PHONY : Project_Test/src/Tests.s
+
+# target to generate assembly for a file
+Project_Test/src/Tests.cpp.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/Tests.cpp.s
+.PHONY : Project_Test/src/Tests.cpp.s
+
+Project_Test/src/temp.o: Project_Test/src/temp.cpp.o
+
+.PHONY : Project_Test/src/temp.o
+
+# target to build an object file
+Project_Test/src/temp.cpp.o:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/temp.cpp.o
+.PHONY : Project_Test/src/temp.cpp.o
+
+Project_Test/src/temp.i: Project_Test/src/temp.cpp.i
+
+.PHONY : Project_Test/src/temp.i
+
+# target to preprocess a source file
+Project_Test/src/temp.cpp.i:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/temp.cpp.i
+.PHONY : Project_Test/src/temp.cpp.i
+
+Project_Test/src/temp.s: Project_Test/src/temp.cpp.s
+
+.PHONY : Project_Test/src/temp.s
+
+# target to generate assembly for a file
+Project_Test/src/temp.cpp.s:
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/Project_Test/src/temp.cpp.s
+.PHONY : Project_Test/src/temp.cpp.s
 
 bio.o: bio.c.o
 
@@ -129,7 +1344,7 @@ bio.o: bio.c.o
 
 # target to build an object file
 bio.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bio.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bio.c.o
 .PHONY : bio.c.o
 
 bio.i: bio.c.i
@@ -138,7 +1353,7 @@ bio.i: bio.c.i
 
 # target to preprocess a source file
 bio.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bio.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bio.c.i
 .PHONY : bio.c.i
 
 bio.s: bio.c.s
@@ -147,7 +1362,7 @@ bio.s: bio.c.s
 
 # target to generate assembly for a file
 bio.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bio.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bio.c.s
 .PHONY : bio.c.s
 
 bootmain.o: bootmain.c.o
@@ -156,7 +1371,7 @@ bootmain.o: bootmain.c.o
 
 # target to build an object file
 bootmain.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bootmain.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bootmain.c.o
 .PHONY : bootmain.c.o
 
 bootmain.i: bootmain.c.i
@@ -165,7 +1380,7 @@ bootmain.i: bootmain.c.i
 
 # target to preprocess a source file
 bootmain.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bootmain.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bootmain.c.i
 .PHONY : bootmain.c.i
 
 bootmain.s: bootmain.c.s
@@ -174,7 +1389,7 @@ bootmain.s: bootmain.c.s
 
 # target to generate assembly for a file
 bootmain.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/bootmain.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/bootmain.c.s
 .PHONY : bootmain.c.s
 
 cat.o: cat.c.o
@@ -183,7 +1398,7 @@ cat.o: cat.c.o
 
 # target to build an object file
 cat.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/cat.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/cat.c.o
 .PHONY : cat.c.o
 
 cat.i: cat.c.i
@@ -192,7 +1407,7 @@ cat.i: cat.c.i
 
 # target to preprocess a source file
 cat.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/cat.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/cat.c.i
 .PHONY : cat.c.i
 
 cat.s: cat.c.s
@@ -201,7 +1416,7 @@ cat.s: cat.c.s
 
 # target to generate assembly for a file
 cat.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/cat.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/cat.c.s
 .PHONY : cat.c.s
 
 console.o: console.c.o
@@ -210,7 +1425,7 @@ console.o: console.c.o
 
 # target to build an object file
 console.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/console.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/console.c.o
 .PHONY : console.c.o
 
 console.i: console.c.i
@@ -219,7 +1434,7 @@ console.i: console.c.i
 
 # target to preprocess a source file
 console.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/console.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/console.c.i
 .PHONY : console.c.i
 
 console.s: console.c.s
@@ -228,7 +1443,7 @@ console.s: console.c.s
 
 # target to generate assembly for a file
 console.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/console.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/console.c.s
 .PHONY : console.c.s
 
 echo.o: echo.c.o
@@ -237,7 +1452,7 @@ echo.o: echo.c.o
 
 # target to build an object file
 echo.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/echo.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/echo.c.o
 .PHONY : echo.c.o
 
 echo.i: echo.c.i
@@ -246,7 +1461,7 @@ echo.i: echo.c.i
 
 # target to preprocess a source file
 echo.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/echo.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/echo.c.i
 .PHONY : echo.c.i
 
 echo.s: echo.c.s
@@ -255,7 +1470,7 @@ echo.s: echo.c.s
 
 # target to generate assembly for a file
 echo.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/echo.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/echo.c.s
 .PHONY : echo.c.s
 
 exec.o: exec.c.o
@@ -264,7 +1479,7 @@ exec.o: exec.c.o
 
 # target to build an object file
 exec.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/exec.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/exec.c.o
 .PHONY : exec.c.o
 
 exec.i: exec.c.i
@@ -273,7 +1488,7 @@ exec.i: exec.c.i
 
 # target to preprocess a source file
 exec.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/exec.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/exec.c.i
 .PHONY : exec.c.i
 
 exec.s: exec.c.s
@@ -282,7 +1497,7 @@ exec.s: exec.c.s
 
 # target to generate assembly for a file
 exec.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/exec.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/exec.c.s
 .PHONY : exec.c.s
 
 file.o: file.c.o
@@ -291,7 +1506,7 @@ file.o: file.c.o
 
 # target to build an object file
 file.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/file.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/file.c.o
 .PHONY : file.c.o
 
 file.i: file.c.i
@@ -300,7 +1515,7 @@ file.i: file.c.i
 
 # target to preprocess a source file
 file.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/file.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/file.c.i
 .PHONY : file.c.i
 
 file.s: file.c.s
@@ -309,7 +1524,7 @@ file.s: file.c.s
 
 # target to generate assembly for a file
 file.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/file.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/file.c.s
 .PHONY : file.c.s
 
 forktest.o: forktest.c.o
@@ -318,7 +1533,7 @@ forktest.o: forktest.c.o
 
 # target to build an object file
 forktest.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/forktest.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/forktest.c.o
 .PHONY : forktest.c.o
 
 forktest.i: forktest.c.i
@@ -327,7 +1542,7 @@ forktest.i: forktest.c.i
 
 # target to preprocess a source file
 forktest.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/forktest.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/forktest.c.i
 .PHONY : forktest.c.i
 
 forktest.s: forktest.c.s
@@ -336,7 +1551,7 @@ forktest.s: forktest.c.s
 
 # target to generate assembly for a file
 forktest.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/forktest.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/forktest.c.s
 .PHONY : forktest.c.s
 
 fs.o: fs.c.o
@@ -345,7 +1560,7 @@ fs.o: fs.c.o
 
 # target to build an object file
 fs.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/fs.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/fs.c.o
 .PHONY : fs.c.o
 
 fs.i: fs.c.i
@@ -354,7 +1569,7 @@ fs.i: fs.c.i
 
 # target to preprocess a source file
 fs.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/fs.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/fs.c.i
 .PHONY : fs.c.i
 
 fs.s: fs.c.s
@@ -363,7 +1578,7 @@ fs.s: fs.c.s
 
 # target to generate assembly for a file
 fs.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/fs.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/fs.c.s
 .PHONY : fs.c.s
 
 grep.o: grep.c.o
@@ -372,7 +1587,7 @@ grep.o: grep.c.o
 
 # target to build an object file
 grep.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/grep.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/grep.c.o
 .PHONY : grep.c.o
 
 grep.i: grep.c.i
@@ -381,7 +1596,7 @@ grep.i: grep.c.i
 
 # target to preprocess a source file
 grep.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/grep.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/grep.c.i
 .PHONY : grep.c.i
 
 grep.s: grep.c.s
@@ -390,7 +1605,7 @@ grep.s: grep.c.s
 
 # target to generate assembly for a file
 grep.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/grep.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/grep.c.s
 .PHONY : grep.c.s
 
 ide.o: ide.c.o
@@ -399,7 +1614,7 @@ ide.o: ide.c.o
 
 # target to build an object file
 ide.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ide.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ide.c.o
 .PHONY : ide.c.o
 
 ide.i: ide.c.i
@@ -408,7 +1623,7 @@ ide.i: ide.c.i
 
 # target to preprocess a source file
 ide.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ide.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ide.c.i
 .PHONY : ide.c.i
 
 ide.s: ide.c.s
@@ -417,7 +1632,7 @@ ide.s: ide.c.s
 
 # target to generate assembly for a file
 ide.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ide.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ide.c.s
 .PHONY : ide.c.s
 
 init.o: init.c.o
@@ -426,7 +1641,7 @@ init.o: init.c.o
 
 # target to build an object file
 init.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/init.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/init.c.o
 .PHONY : init.c.o
 
 init.i: init.c.i
@@ -435,7 +1650,7 @@ init.i: init.c.i
 
 # target to preprocess a source file
 init.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/init.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/init.c.i
 .PHONY : init.c.i
 
 init.s: init.c.s
@@ -444,7 +1659,7 @@ init.s: init.c.s
 
 # target to generate assembly for a file
 init.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/init.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/init.c.s
 .PHONY : init.c.s
 
 ioapic.o: ioapic.c.o
@@ -453,7 +1668,7 @@ ioapic.o: ioapic.c.o
 
 # target to build an object file
 ioapic.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ioapic.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ioapic.c.o
 .PHONY : ioapic.c.o
 
 ioapic.i: ioapic.c.i
@@ -462,7 +1677,7 @@ ioapic.i: ioapic.c.i
 
 # target to preprocess a source file
 ioapic.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ioapic.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ioapic.c.i
 .PHONY : ioapic.c.i
 
 ioapic.s: ioapic.c.s
@@ -471,7 +1686,7 @@ ioapic.s: ioapic.c.s
 
 # target to generate assembly for a file
 ioapic.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ioapic.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ioapic.c.s
 .PHONY : ioapic.c.s
 
 kalloc.o: kalloc.c.o
@@ -480,7 +1695,7 @@ kalloc.o: kalloc.c.o
 
 # target to build an object file
 kalloc.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kalloc.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kalloc.c.o
 .PHONY : kalloc.c.o
 
 kalloc.i: kalloc.c.i
@@ -489,7 +1704,7 @@ kalloc.i: kalloc.c.i
 
 # target to preprocess a source file
 kalloc.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kalloc.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kalloc.c.i
 .PHONY : kalloc.c.i
 
 kalloc.s: kalloc.c.s
@@ -498,7 +1713,7 @@ kalloc.s: kalloc.c.s
 
 # target to generate assembly for a file
 kalloc.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kalloc.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kalloc.c.s
 .PHONY : kalloc.c.s
 
 kbd.o: kbd.c.o
@@ -507,7 +1722,7 @@ kbd.o: kbd.c.o
 
 # target to build an object file
 kbd.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kbd.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kbd.c.o
 .PHONY : kbd.c.o
 
 kbd.i: kbd.c.i
@@ -516,7 +1731,7 @@ kbd.i: kbd.c.i
 
 # target to preprocess a source file
 kbd.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kbd.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kbd.c.i
 .PHONY : kbd.c.i
 
 kbd.s: kbd.c.s
@@ -525,7 +1740,7 @@ kbd.s: kbd.c.s
 
 # target to generate assembly for a file
 kbd.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kbd.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kbd.c.s
 .PHONY : kbd.c.s
 
 kill.o: kill.c.o
@@ -534,7 +1749,7 @@ kill.o: kill.c.o
 
 # target to build an object file
 kill.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kill.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kill.c.o
 .PHONY : kill.c.o
 
 kill.i: kill.c.i
@@ -543,7 +1758,7 @@ kill.i: kill.c.i
 
 # target to preprocess a source file
 kill.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kill.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kill.c.i
 .PHONY : kill.c.i
 
 kill.s: kill.c.s
@@ -552,7 +1767,7 @@ kill.s: kill.c.s
 
 # target to generate assembly for a file
 kill.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/kill.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/kill.c.s
 .PHONY : kill.c.s
 
 lapic.o: lapic.c.o
@@ -561,7 +1776,7 @@ lapic.o: lapic.c.o
 
 # target to build an object file
 lapic.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/lapic.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/lapic.c.o
 .PHONY : lapic.c.o
 
 lapic.i: lapic.c.i
@@ -570,7 +1785,7 @@ lapic.i: lapic.c.i
 
 # target to preprocess a source file
 lapic.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/lapic.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/lapic.c.i
 .PHONY : lapic.c.i
 
 lapic.s: lapic.c.s
@@ -579,7 +1794,7 @@ lapic.s: lapic.c.s
 
 # target to generate assembly for a file
 lapic.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/lapic.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/lapic.c.s
 .PHONY : lapic.c.s
 
 ln.o: ln.c.o
@@ -588,7 +1803,7 @@ ln.o: ln.c.o
 
 # target to build an object file
 ln.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ln.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ln.c.o
 .PHONY : ln.c.o
 
 ln.i: ln.c.i
@@ -597,7 +1812,7 @@ ln.i: ln.c.i
 
 # target to preprocess a source file
 ln.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ln.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ln.c.i
 .PHONY : ln.c.i
 
 ln.s: ln.c.s
@@ -606,7 +1821,7 @@ ln.s: ln.c.s
 
 # target to generate assembly for a file
 ln.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ln.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ln.c.s
 .PHONY : ln.c.s
 
 log.o: log.c.o
@@ -615,7 +1830,7 @@ log.o: log.c.o
 
 # target to build an object file
 log.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/log.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/log.c.o
 .PHONY : log.c.o
 
 log.i: log.c.i
@@ -624,7 +1839,7 @@ log.i: log.c.i
 
 # target to preprocess a source file
 log.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/log.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/log.c.i
 .PHONY : log.c.i
 
 log.s: log.c.s
@@ -633,7 +1848,7 @@ log.s: log.c.s
 
 # target to generate assembly for a file
 log.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/log.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/log.c.s
 .PHONY : log.c.s
 
 ls.o: ls.c.o
@@ -642,7 +1857,7 @@ ls.o: ls.c.o
 
 # target to build an object file
 ls.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ls.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ls.c.o
 .PHONY : ls.c.o
 
 ls.i: ls.c.i
@@ -651,7 +1866,7 @@ ls.i: ls.c.i
 
 # target to preprocess a source file
 ls.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ls.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ls.c.i
 .PHONY : ls.c.i
 
 ls.s: ls.c.s
@@ -660,7 +1875,7 @@ ls.s: ls.c.s
 
 # target to generate assembly for a file
 ls.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ls.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ls.c.s
 .PHONY : ls.c.s
 
 main.o: main.c.o
@@ -669,7 +1884,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/main.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -678,7 +1893,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/main.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -687,7 +1902,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/main.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/main.c.s
 .PHONY : main.c.s
 
 memide.o: memide.c.o
@@ -696,7 +1911,7 @@ memide.o: memide.c.o
 
 # target to build an object file
 memide.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/memide.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/memide.c.o
 .PHONY : memide.c.o
 
 memide.i: memide.c.i
@@ -705,7 +1920,7 @@ memide.i: memide.c.i
 
 # target to preprocess a source file
 memide.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/memide.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/memide.c.i
 .PHONY : memide.c.i
 
 memide.s: memide.c.s
@@ -714,7 +1929,7 @@ memide.s: memide.c.s
 
 # target to generate assembly for a file
 memide.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/memide.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/memide.c.s
 .PHONY : memide.c.s
 
 mkdir.o: mkdir.c.o
@@ -723,7 +1938,7 @@ mkdir.o: mkdir.c.o
 
 # target to build an object file
 mkdir.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkdir.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkdir.c.o
 .PHONY : mkdir.c.o
 
 mkdir.i: mkdir.c.i
@@ -732,7 +1947,7 @@ mkdir.i: mkdir.c.i
 
 # target to preprocess a source file
 mkdir.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkdir.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkdir.c.i
 .PHONY : mkdir.c.i
 
 mkdir.s: mkdir.c.s
@@ -741,7 +1956,7 @@ mkdir.s: mkdir.c.s
 
 # target to generate assembly for a file
 mkdir.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkdir.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkdir.c.s
 .PHONY : mkdir.c.s
 
 mkfs.o: mkfs.c.o
@@ -750,7 +1965,7 @@ mkfs.o: mkfs.c.o
 
 # target to build an object file
 mkfs.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkfs.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkfs.c.o
 .PHONY : mkfs.c.o
 
 mkfs.i: mkfs.c.i
@@ -759,7 +1974,7 @@ mkfs.i: mkfs.c.i
 
 # target to preprocess a source file
 mkfs.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkfs.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkfs.c.i
 .PHONY : mkfs.c.i
 
 mkfs.s: mkfs.c.s
@@ -768,7 +1983,7 @@ mkfs.s: mkfs.c.s
 
 # target to generate assembly for a file
 mkfs.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mkfs.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mkfs.c.s
 .PHONY : mkfs.c.s
 
 mp.o: mp.c.o
@@ -777,7 +1992,7 @@ mp.o: mp.c.o
 
 # target to build an object file
 mp.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mp.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mp.c.o
 .PHONY : mp.c.o
 
 mp.i: mp.c.i
@@ -786,7 +2001,7 @@ mp.i: mp.c.i
 
 # target to preprocess a source file
 mp.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mp.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mp.c.i
 .PHONY : mp.c.i
 
 mp.s: mp.c.s
@@ -795,7 +2010,7 @@ mp.s: mp.c.s
 
 # target to generate assembly for a file
 mp.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/mp.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/mp.c.s
 .PHONY : mp.c.s
 
 picirq.o: picirq.c.o
@@ -804,7 +2019,7 @@ picirq.o: picirq.c.o
 
 # target to build an object file
 picirq.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/picirq.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/picirq.c.o
 .PHONY : picirq.c.o
 
 picirq.i: picirq.c.i
@@ -813,7 +2028,7 @@ picirq.i: picirq.c.i
 
 # target to preprocess a source file
 picirq.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/picirq.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/picirq.c.i
 .PHONY : picirq.c.i
 
 picirq.s: picirq.c.s
@@ -822,7 +2037,7 @@ picirq.s: picirq.c.s
 
 # target to generate assembly for a file
 picirq.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/picirq.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/picirq.c.s
 .PHONY : picirq.c.s
 
 pipe.o: pipe.c.o
@@ -831,7 +2046,7 @@ pipe.o: pipe.c.o
 
 # target to build an object file
 pipe.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/pipe.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/pipe.c.o
 .PHONY : pipe.c.o
 
 pipe.i: pipe.c.i
@@ -840,7 +2055,7 @@ pipe.i: pipe.c.i
 
 # target to preprocess a source file
 pipe.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/pipe.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/pipe.c.i
 .PHONY : pipe.c.i
 
 pipe.s: pipe.c.s
@@ -849,7 +2064,7 @@ pipe.s: pipe.c.s
 
 # target to generate assembly for a file
 pipe.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/pipe.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/pipe.c.s
 .PHONY : pipe.c.s
 
 printf.o: printf.c.o
@@ -858,7 +2073,7 @@ printf.o: printf.c.o
 
 # target to build an object file
 printf.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/printf.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/printf.c.o
 .PHONY : printf.c.o
 
 printf.i: printf.c.i
@@ -867,7 +2082,7 @@ printf.i: printf.c.i
 
 # target to preprocess a source file
 printf.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/printf.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/printf.c.i
 .PHONY : printf.c.i
 
 printf.s: printf.c.s
@@ -876,7 +2091,7 @@ printf.s: printf.c.s
 
 # target to generate assembly for a file
 printf.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/printf.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/printf.c.s
 .PHONY : printf.c.s
 
 proc.o: proc.c.o
@@ -885,7 +2100,7 @@ proc.o: proc.c.o
 
 # target to build an object file
 proc.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/proc.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/proc.c.o
 .PHONY : proc.c.o
 
 proc.i: proc.c.i
@@ -894,7 +2109,7 @@ proc.i: proc.c.i
 
 # target to preprocess a source file
 proc.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/proc.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/proc.c.i
 .PHONY : proc.c.i
 
 proc.s: proc.c.s
@@ -903,7 +2118,7 @@ proc.s: proc.c.s
 
 # target to generate assembly for a file
 proc.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/proc.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/proc.c.s
 .PHONY : proc.c.s
 
 rm.o: rm.c.o
@@ -912,7 +2127,7 @@ rm.o: rm.c.o
 
 # target to build an object file
 rm.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/rm.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/rm.c.o
 .PHONY : rm.c.o
 
 rm.i: rm.c.i
@@ -921,7 +2136,7 @@ rm.i: rm.c.i
 
 # target to preprocess a source file
 rm.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/rm.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/rm.c.i
 .PHONY : rm.c.i
 
 rm.s: rm.c.s
@@ -930,7 +2145,7 @@ rm.s: rm.c.s
 
 # target to generate assembly for a file
 rm.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/rm.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/rm.c.s
 .PHONY : rm.c.s
 
 sanity.o: sanity.c.o
@@ -939,7 +2154,7 @@ sanity.o: sanity.c.o
 
 # target to build an object file
 sanity.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sanity.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sanity.c.o
 .PHONY : sanity.c.o
 
 sanity.i: sanity.c.i
@@ -948,7 +2163,7 @@ sanity.i: sanity.c.i
 
 # target to preprocess a source file
 sanity.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sanity.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sanity.c.i
 .PHONY : sanity.c.i
 
 sanity.s: sanity.c.s
@@ -957,7 +2172,7 @@ sanity.s: sanity.c.s
 
 # target to generate assembly for a file
 sanity.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sanity.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sanity.c.s
 .PHONY : sanity.c.s
 
 sh.o: sh.c.o
@@ -966,7 +2181,7 @@ sh.o: sh.c.o
 
 # target to build an object file
 sh.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sh.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sh.c.o
 .PHONY : sh.c.o
 
 sh.i: sh.c.i
@@ -975,7 +2190,7 @@ sh.i: sh.c.i
 
 # target to preprocess a source file
 sh.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sh.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sh.c.i
 .PHONY : sh.c.i
 
 sh.s: sh.c.s
@@ -984,7 +2199,7 @@ sh.s: sh.c.s
 
 # target to generate assembly for a file
 sh.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sh.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sh.c.s
 .PHONY : sh.c.s
 
 sleeplock.o: sleeplock.c.o
@@ -993,7 +2208,7 @@ sleeplock.o: sleeplock.c.o
 
 # target to build an object file
 sleeplock.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sleeplock.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sleeplock.c.o
 .PHONY : sleeplock.c.o
 
 sleeplock.i: sleeplock.c.i
@@ -1002,7 +2217,7 @@ sleeplock.i: sleeplock.c.i
 
 # target to preprocess a source file
 sleeplock.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sleeplock.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sleeplock.c.i
 .PHONY : sleeplock.c.i
 
 sleeplock.s: sleeplock.c.s
@@ -1011,7 +2226,7 @@ sleeplock.s: sleeplock.c.s
 
 # target to generate assembly for a file
 sleeplock.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sleeplock.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sleeplock.c.s
 .PHONY : sleeplock.c.s
 
 spinlock.o: spinlock.c.o
@@ -1020,7 +2235,7 @@ spinlock.o: spinlock.c.o
 
 # target to build an object file
 spinlock.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/spinlock.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/spinlock.c.o
 .PHONY : spinlock.c.o
 
 spinlock.i: spinlock.c.i
@@ -1029,7 +2244,7 @@ spinlock.i: spinlock.c.i
 
 # target to preprocess a source file
 spinlock.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/spinlock.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/spinlock.c.i
 .PHONY : spinlock.c.i
 
 spinlock.s: spinlock.c.s
@@ -1038,7 +2253,7 @@ spinlock.s: spinlock.c.s
 
 # target to generate assembly for a file
 spinlock.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/spinlock.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/spinlock.c.s
 .PHONY : spinlock.c.s
 
 stressfs.o: stressfs.c.o
@@ -1047,7 +2262,7 @@ stressfs.o: stressfs.c.o
 
 # target to build an object file
 stressfs.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/stressfs.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/stressfs.c.o
 .PHONY : stressfs.c.o
 
 stressfs.i: stressfs.c.i
@@ -1056,7 +2271,7 @@ stressfs.i: stressfs.c.i
 
 # target to preprocess a source file
 stressfs.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/stressfs.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/stressfs.c.i
 .PHONY : stressfs.c.i
 
 stressfs.s: stressfs.c.s
@@ -1065,7 +2280,7 @@ stressfs.s: stressfs.c.s
 
 # target to generate assembly for a file
 stressfs.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/stressfs.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/stressfs.c.s
 .PHONY : stressfs.c.s
 
 string.o: string.c.o
@@ -1074,7 +2289,7 @@ string.o: string.c.o
 
 # target to build an object file
 string.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/string.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/string.c.o
 .PHONY : string.c.o
 
 string.i: string.c.i
@@ -1083,7 +2298,7 @@ string.i: string.c.i
 
 # target to preprocess a source file
 string.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/string.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/string.c.i
 .PHONY : string.c.i
 
 string.s: string.c.s
@@ -1092,7 +2307,7 @@ string.s: string.c.s
 
 # target to generate assembly for a file
 string.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/string.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/string.c.s
 .PHONY : string.c.s
 
 syscall.o: syscall.c.o
@@ -1101,7 +2316,7 @@ syscall.o: syscall.c.o
 
 # target to build an object file
 syscall.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/syscall.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/syscall.c.o
 .PHONY : syscall.c.o
 
 syscall.i: syscall.c.i
@@ -1110,7 +2325,7 @@ syscall.i: syscall.c.i
 
 # target to preprocess a source file
 syscall.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/syscall.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/syscall.c.i
 .PHONY : syscall.c.i
 
 syscall.s: syscall.c.s
@@ -1119,7 +2334,7 @@ syscall.s: syscall.c.s
 
 # target to generate assembly for a file
 syscall.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/syscall.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/syscall.c.s
 .PHONY : syscall.c.s
 
 sysfile.o: sysfile.c.o
@@ -1128,7 +2343,7 @@ sysfile.o: sysfile.c.o
 
 # target to build an object file
 sysfile.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysfile.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysfile.c.o
 .PHONY : sysfile.c.o
 
 sysfile.i: sysfile.c.i
@@ -1137,7 +2352,7 @@ sysfile.i: sysfile.c.i
 
 # target to preprocess a source file
 sysfile.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysfile.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysfile.c.i
 .PHONY : sysfile.c.i
 
 sysfile.s: sysfile.c.s
@@ -1146,7 +2361,7 @@ sysfile.s: sysfile.c.s
 
 # target to generate assembly for a file
 sysfile.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysfile.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysfile.c.s
 .PHONY : sysfile.c.s
 
 sysproc.o: sysproc.c.o
@@ -1155,7 +2370,7 @@ sysproc.o: sysproc.c.o
 
 # target to build an object file
 sysproc.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysproc.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysproc.c.o
 .PHONY : sysproc.c.o
 
 sysproc.i: sysproc.c.i
@@ -1164,7 +2379,7 @@ sysproc.i: sysproc.c.i
 
 # target to preprocess a source file
 sysproc.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysproc.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysproc.c.i
 .PHONY : sysproc.c.i
 
 sysproc.s: sysproc.c.s
@@ -1173,7 +2388,7 @@ sysproc.s: sysproc.c.s
 
 # target to generate assembly for a file
 sysproc.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/sysproc.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/sysproc.c.s
 .PHONY : sysproc.c.s
 
 tournament_tree.o: tournament_tree.c.o
@@ -1182,7 +2397,7 @@ tournament_tree.o: tournament_tree.c.o
 
 # target to build an object file
 tournament_tree.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/tournament_tree.c.o
 .PHONY : tournament_tree.c.o
 
 tournament_tree.i: tournament_tree.c.i
@@ -1191,7 +2406,7 @@ tournament_tree.i: tournament_tree.c.i
 
 # target to preprocess a source file
 tournament_tree.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/tournament_tree.c.i
 .PHONY : tournament_tree.c.i
 
 tournament_tree.s: tournament_tree.c.s
@@ -1200,7 +2415,7 @@ tournament_tree.s: tournament_tree.c.s
 
 # target to generate assembly for a file
 tournament_tree.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/tournament_tree.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/tournament_tree.c.s
 .PHONY : tournament_tree.c.s
 
 trap.o: trap.c.o
@@ -1209,7 +2424,7 @@ trap.o: trap.c.o
 
 # target to build an object file
 trap.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trap.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/trap.c.o
 .PHONY : trap.c.o
 
 trap.i: trap.c.i
@@ -1218,7 +2433,7 @@ trap.i: trap.c.i
 
 # target to preprocess a source file
 trap.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trap.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/trap.c.i
 .PHONY : trap.c.i
 
 trap.s: trap.c.s
@@ -1227,7 +2442,7 @@ trap.s: trap.c.s
 
 # target to generate assembly for a file
 trap.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/trap.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/trap.c.s
 .PHONY : trap.c.s
 
 uart.o: uart.c.o
@@ -1236,7 +2451,7 @@ uart.o: uart.c.o
 
 # target to build an object file
 uart.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/uart.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/uart.c.o
 .PHONY : uart.c.o
 
 uart.i: uart.c.i
@@ -1245,7 +2460,7 @@ uart.i: uart.c.i
 
 # target to preprocess a source file
 uart.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/uart.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/uart.c.i
 .PHONY : uart.c.i
 
 uart.s: uart.c.s
@@ -1254,7 +2469,7 @@ uart.s: uart.c.s
 
 # target to generate assembly for a file
 uart.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/uart.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/uart.c.s
 .PHONY : uart.c.s
 
 ulib.o: ulib.c.o
@@ -1263,7 +2478,7 @@ ulib.o: ulib.c.o
 
 # target to build an object file
 ulib.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ulib.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ulib.c.o
 .PHONY : ulib.c.o
 
 ulib.i: ulib.c.i
@@ -1272,7 +2487,7 @@ ulib.i: ulib.c.i
 
 # target to preprocess a source file
 ulib.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ulib.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ulib.c.i
 .PHONY : ulib.c.i
 
 ulib.s: ulib.c.s
@@ -1281,7 +2496,7 @@ ulib.s: ulib.c.s
 
 # target to generate assembly for a file
 ulib.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/ulib.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/ulib.c.s
 .PHONY : ulib.c.s
 
 umalloc.o: umalloc.c.o
@@ -1290,7 +2505,7 @@ umalloc.o: umalloc.c.o
 
 # target to build an object file
 umalloc.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/umalloc.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/umalloc.c.o
 .PHONY : umalloc.c.o
 
 umalloc.i: umalloc.c.i
@@ -1299,7 +2514,7 @@ umalloc.i: umalloc.c.i
 
 # target to preprocess a source file
 umalloc.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/umalloc.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/umalloc.c.i
 .PHONY : umalloc.c.i
 
 umalloc.s: umalloc.c.s
@@ -1308,7 +2523,7 @@ umalloc.s: umalloc.c.s
 
 # target to generate assembly for a file
 umalloc.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/umalloc.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/umalloc.c.s
 .PHONY : umalloc.c.s
 
 usertests.o: usertests.c.o
@@ -1317,7 +2532,7 @@ usertests.o: usertests.c.o
 
 # target to build an object file
 usertests.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/usertests.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/usertests.c.o
 .PHONY : usertests.c.o
 
 usertests.i: usertests.c.i
@@ -1326,7 +2541,7 @@ usertests.i: usertests.c.i
 
 # target to preprocess a source file
 usertests.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/usertests.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/usertests.c.i
 .PHONY : usertests.c.i
 
 usertests.s: usertests.c.s
@@ -1335,7 +2550,7 @@ usertests.s: usertests.c.s
 
 # target to generate assembly for a file
 usertests.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/usertests.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/usertests.c.s
 .PHONY : usertests.c.s
 
 vm.o: vm.c.o
@@ -1344,7 +2559,7 @@ vm.o: vm.c.o
 
 # target to build an object file
 vm.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/vm.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/vm.c.o
 .PHONY : vm.c.o
 
 vm.i: vm.c.i
@@ -1353,7 +2568,7 @@ vm.i: vm.c.i
 
 # target to preprocess a source file
 vm.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/vm.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/vm.c.i
 .PHONY : vm.c.i
 
 vm.s: vm.c.s
@@ -1362,7 +2577,7 @@ vm.s: vm.c.s
 
 # target to generate assembly for a file
 vm.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/vm.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/vm.c.s
 .PHONY : vm.c.s
 
 wc.o: wc.c.o
@@ -1371,7 +2586,7 @@ wc.o: wc.c.o
 
 # target to build an object file
 wc.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/wc.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/wc.c.o
 .PHONY : wc.c.o
 
 wc.i: wc.c.i
@@ -1380,7 +2595,7 @@ wc.i: wc.c.i
 
 # target to preprocess a source file
 wc.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/wc.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/wc.c.i
 .PHONY : wc.c.i
 
 wc.s: wc.c.s
@@ -1389,7 +2604,7 @@ wc.s: wc.c.s
 
 # target to generate assembly for a file
 wc.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/wc.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/wc.c.s
 .PHONY : wc.c.s
 
 zombie.o: zombie.c.o
@@ -1398,7 +2613,7 @@ zombie.o: zombie.c.o
 
 # target to build an object file
 zombie.c.o:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/zombie.c.o
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/zombie.c.o
 .PHONY : zombie.c.o
 
 zombie.i: zombie.c.i
@@ -1407,7 +2622,7 @@ zombie.i: zombie.c.i
 
 # target to preprocess a source file
 zombie.c.i:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/zombie.c.i
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/zombie.c.i
 .PHONY : zombie.c.i
 
 zombie.s: zombie.c.s
@@ -1416,7 +2631,7 @@ zombie.s: zombie.c.s
 
 # target to generate assembly for a file
 zombie.c.s:
-	$(MAKE) -f CMakeFiles/Assignment2.dir/build.make CMakeFiles/Assignment2.dir/zombie.c.s
+	$(MAKE) -f CMakeFiles/OS_ass2_Threads.dir/build.make CMakeFiles/OS_ass2_Threads.dir/zombie.c.s
 .PHONY : zombie.c.s
 
 # Help Target
@@ -1426,8 +2641,143 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Assignment2"
+	@echo "... OS_ass2_Threads"
 	@echo "... edit_cache"
+	@echo "... Project_Test/XV6_Tests/OforktestO.o"
+	@echo "... Project_Test/XV6_Tests/OforktestO.i"
+	@echo "... Project_Test/XV6_Tests/OforktestO.s"
+	@echo "... Project_Test/XV6_Tests/OusertestsO.o"
+	@echo "... Project_Test/XV6_Tests/OusertestsO.i"
+	@echo "... Project_Test/XV6_Tests/OusertestsO.s"
+	@echo "... Project_Test/XV6_Tests/allBut1.o"
+	@echo "... Project_Test/XV6_Tests/allBut1.i"
+	@echo "... Project_Test/XV6_Tests/allBut1.s"
+	@echo "... Project_Test/XV6_Tests/cThreW16T.o"
+	@echo "... Project_Test/XV6_Tests/cThreW16T.i"
+	@echo "... Project_Test/XV6_Tests/cThreW16T.s"
+	@echo "... Project_Test/XV6_Tests/creThreads.o"
+	@echo "... Project_Test/XV6_Tests/creThreads.i"
+	@echo "... Project_Test/XV6_Tests/creThreads.s"
+	@echo "... Project_Test/XV6_Tests/doNoth.o"
+	@echo "... Project_Test/XV6_Tests/doNoth.i"
+	@echo "... Project_Test/XV6_Tests/doNoth.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys1.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys1.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys1.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys10.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys10.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys10.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys11.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys11.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys11.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys12.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys12.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys12.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys13.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys13.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys13.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys14.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys14.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys14.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys15.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys15.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys15.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys16.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys16.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys16.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys2.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys2.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys2.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys3.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys3.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys3.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys4.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys4.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys4.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys5.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys5.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys5.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys6.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys6.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys6.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys7.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys7.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys7.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys8.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys8.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys8.s"
+	@echo "... Project_Test/XV6_Tests/kt_sys9.o"
+	@echo "... Project_Test/XV6_Tests/kt_sys9.i"
+	@echo "... Project_Test/XV6_Tests/kt_sys9.s"
+	@echo "... Project_Test/XV6_Tests/mutex1.o"
+	@echo "... Project_Test/XV6_Tests/mutex1.i"
+	@echo "... Project_Test/XV6_Tests/mutex1.s"
+	@echo "... Project_Test/XV6_Tests/mutex2.o"
+	@echo "... Project_Test/XV6_Tests/mutex2.i"
+	@echo "... Project_Test/XV6_Tests/mutex2.s"
+	@echo "... Project_Test/XV6_Tests/mutex3.o"
+	@echo "... Project_Test/XV6_Tests/mutex3.i"
+	@echo "... Project_Test/XV6_Tests/mutex3.s"
+	@echo "... Project_Test/XV6_Tests/mutex4.o"
+	@echo "... Project_Test/XV6_Tests/mutex4.i"
+	@echo "... Project_Test/XV6_Tests/mutex4.s"
+	@echo "... Project_Test/XV6_Tests/mutex5.o"
+	@echo "... Project_Test/XV6_Tests/mutex5.i"
+	@echo "... Project_Test/XV6_Tests/mutex5.s"
+	@echo "... Project_Test/XV6_Tests/mutex6.o"
+	@echo "... Project_Test/XV6_Tests/mutex6.i"
+	@echo "... Project_Test/XV6_Tests/mutex6.s"
+	@echo "... Project_Test/XV6_Tests/mutex7.o"
+	@echo "... Project_Test/XV6_Tests/mutex7.i"
+	@echo "... Project_Test/XV6_Tests/mutex7.s"
+	@echo "... Project_Test/XV6_Tests/mutex8.o"
+	@echo "... Project_Test/XV6_Tests/mutex8.i"
+	@echo "... Project_Test/XV6_Tests/mutex8.s"
+	@echo "... Project_Test/XV6_Tests/mutex9.o"
+	@echo "... Project_Test/XV6_Tests/mutex9.i"
+	@echo "... Project_Test/XV6_Tests/mutex9.s"
+	@echo "... Project_Test/XV6_Tests/quitXV6.o"
+	@echo "... Project_Test/XV6_Tests/quitXV6.i"
+	@echo "... Project_Test/XV6_Tests/quitXV6.s"
+	@echo "... Project_Test/XV6_Tests/sleep.o"
+	@echo "... Project_Test/XV6_Tests/sleep.i"
+	@echo "... Project_Test/XV6_Tests/sleep.s"
+	@echo "... Project_Test/XV6_Tests/trntree1.o"
+	@echo "... Project_Test/XV6_Tests/trntree1.i"
+	@echo "... Project_Test/XV6_Tests/trntree1.s"
+	@echo "... Project_Test/XV6_Tests/trntree2.o"
+	@echo "... Project_Test/XV6_Tests/trntree2.i"
+	@echo "... Project_Test/XV6_Tests/trntree2.s"
+	@echo "... Project_Test/XV6_Tests/trntree3.o"
+	@echo "... Project_Test/XV6_Tests/trntree3.i"
+	@echo "... Project_Test/XV6_Tests/trntree3.s"
+	@echo "... Project_Test/XV6_Tests/trntree4.o"
+	@echo "... Project_Test/XV6_Tests/trntree4.i"
+	@echo "... Project_Test/XV6_Tests/trntree4.s"
+	@echo "... Project_Test/XV6_Tests/trntree5.o"
+	@echo "... Project_Test/XV6_Tests/trntree5.i"
+	@echo "... Project_Test/XV6_Tests/trntree5.s"
+	@echo "... Project_Test/XV6_Tests/trntree6.o"
+	@echo "... Project_Test/XV6_Tests/trntree6.i"
+	@echo "... Project_Test/XV6_Tests/trntree6.s"
+	@echo "... Project_Test/XV6_Tests/trntree7.o"
+	@echo "... Project_Test/XV6_Tests/trntree7.i"
+	@echo "... Project_Test/XV6_Tests/trntree7.s"
+	@echo "... Project_Test/XV6_Tests/trntree8.o"
+	@echo "... Project_Test/XV6_Tests/trntree8.i"
+	@echo "... Project_Test/XV6_Tests/trntree8.s"
+	@echo "... Project_Test/XV6_Tests/trntree9.o"
+	@echo "... Project_Test/XV6_Tests/trntree9.i"
+	@echo "... Project_Test/XV6_Tests/trntree9.s"
+	@echo "... Project_Test/src/ProjectTest.o"
+	@echo "... Project_Test/src/ProjectTest.i"
+	@echo "... Project_Test/src/ProjectTest.s"
+	@echo "... Project_Test/src/Tests.o"
+	@echo "... Project_Test/src/Tests.i"
+	@echo "... Project_Test/src/Tests.s"
+	@echo "... Project_Test/src/temp.o"
+	@echo "... Project_Test/src/temp.i"
+	@echo "... Project_Test/src/temp.s"
 	@echo "... bio.o"
 	@echo "... bio.i"
 	@echo "... bio.s"

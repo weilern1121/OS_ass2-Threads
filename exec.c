@@ -22,12 +22,6 @@ exec(char *path, char **argv) {
     struct thread *curthread = mythread();
     struct thread *t;
 
-/*
-    //func in proc.c
-    //clean all other threads except curthread
-    //After this func: P->mainThread == curthread
-    cleanProcOneThread(curthread,curproc,1);
-*/
     //flag-up all other threads' tkilled except curthread
     //After this func: P->mainThread == curthread
     exec_acquire();
@@ -40,6 +34,14 @@ exec(char *path, char **argv) {
     }
     curproc->mainThread = curthread; //because curThread is the only thread that will be alive
     exec_release();
+
+    if(DEBUGMODE>0) { //debugging- print proc's threads states
+        exec_acquire();
+        cprintf("\n");
+        for (j = 0, t = curproc->thread; t < &curproc->thread[NTHREADS]; j++, t++)
+            cprintf("i=  %d \t t.state= %d\n", j, t->state);
+        exec_release();
+    }
 
     begin_op();
     if ((ip = namei(path)) == 0) {
@@ -122,13 +124,6 @@ exec(char *path, char **argv) {
     curthread->tf->eip = elf.entry;  // main
     curthread->tf->esp = sp;
 
-    if(DEBUGMODE>0) {
-        exec_acquire();
-        cprintf("\n");
-        for (j = 0, t = curproc->thread; t < &curproc->thread[NTHREADS]; j++, t++)
-            cprintf("i=  %d \t t.state= %d\n", j, t->state);
-        exec_release();
-    }
     switchuvm(curproc, curthread); //need to send mainThread, because other are not exists
     freevm(oldpgdir);
     return 0;

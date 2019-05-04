@@ -32,14 +32,14 @@ void threadStart_1(){
     result = kthread_mutex_lock(mid); 
     if(result >= 0){  
         printf(1,"mutex locked successfully where it should not have been\n"); 
-    }
+    } 
 
     sleep(400);
     
     result = kthread_mutex_unlock(mid); 
     if(result < 0){ 
         printf(1,"mutex unlocked unsuccessfully\n"); 
-    }
+    } 
 
     kthread_exit(); 
 }

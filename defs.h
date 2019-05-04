@@ -121,8 +121,6 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 struct thread*  mythread();
-//void            cleanProcOneThread(struct thread *, struct proc *,int);
-//void            cleanThread(struct thread *);
 void            exec_acquire(void);
 void            exec_release(void);
 //kthread
@@ -136,14 +134,6 @@ int             kthread_mutex_dealloc(int);
 int             kthread_mutex_lock(int);
 int             kthread_mutex_unlock(int);
 int             safe_tree_dealloc(int);
-
-/*
-//trnmnt_tree
-struct trnmnt_tree* trnmnt_tree_alloc(int);
-int             trnmnt_tree_dealloc(struct trnmnt_tree*);
-int             trnmnt_tree_acquire(struct trnmnt_tree*, int);
-int             trnmnt_tree_release(struct trnmnt_tree*, int);
-*/
 
 
 // swtch.S
