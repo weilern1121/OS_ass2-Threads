@@ -181,6 +181,7 @@ allocproc(void) {
         cprintf(" ALLOCPROC ");
     struct proc *p;
     struct thread *t;
+    struct kthread_mutex_t *m;
     char *sp;
     ptable.lock.name = "ALLOC";
     acquire(&ptable.lock);
@@ -216,7 +217,10 @@ allocproc(void) {
     p->mainThread = t;
     t->tkilled = 0;
 
-    // Allocate kernel stack.
+    for (m = p->kthread_mutex_t; m < &p->kthread_mutex_t[MAX_MUTEXES]; m++)
+        m->active = 0;
+
+        // Allocate kernel stack.
     if ((t->tkstack = kalloc()) == 0) {
         p->pid = -1;
         p->state = UNUSED;
@@ -906,6 +910,10 @@ int kthread_join(int thread_id) {
     int foundFlag = 0;
     acquire(&ptable.lock);
     for (;;) { //only way to exit loop is via tid not found or s.state=UNUSED/ZOMBIE
+        if( mythread()->tkilled ){
+            release(&ptable.lock);
+            kthread_exit();
+        }
         if (foundFlag) //if true- no need to search again- goto foundTid
             goto foundTid;
         for (t = p->thread; t < &p->thread[NTHREADS]; t++) {

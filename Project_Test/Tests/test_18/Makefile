@@ -167,7 +167,7 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_mutex3\
+	_mutex5\
 	_sh\
 	_init\
 	_ls\
@@ -282,11 +282,11 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_mutex3: $(ULIB)
-	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o mutex3.o ./Project_Test/XV6_Tests/mutex3.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _mutex3 mutex3.o $(ULIB)
-	objdump -S _mutex3 > mutex3.asm
-	$(OBJDUMP) -t _mutex3 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > mutex3.sym
+_mutex5: $(ULIB)
+	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o mutex5.o ./Project_Test/XV6_Tests/mutex5.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _mutex5 mutex5.o $(ULIB)
+	objdump -S _mutex5 > mutex5.asm
+	$(OBJDUMP) -t _mutex5 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > mutex5.sym
 
 _sh: $(ULIB)
 	gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sh.o sh.c

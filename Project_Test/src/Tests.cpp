@@ -2371,7 +2371,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_18_UserPrograms = {"quitXV6","mutex5"};
     string test_18_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_18_time_limit = 420000;
+    int test_18_time_limit = 1680000;
 
     string test_19_Input = R"V0G0N(
 mutex6
@@ -2456,7 +2456,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_20_UserPrograms = {"quitXV6","mutex7"};
     string test_20_Hint = "Problem with mutex, mutual exclusion not satisfied";
-    int test_20_time_limit = 900000;
+    int test_20_time_limit = 3600000;
 
     string test_21_Input = R"V0G0N(
 mutex8
@@ -2482,7 +2482,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
     string test_21_Hint = "Problem with mutex, locking and unlocking semantics-i.e., "
     "unlocking an unlock mutex should not be allowed, unlocking mutex when current thread "
     "is not the owner should not be allowed, etc...";
-    int test_21_time_limit = 240000;
+    int test_21_time_limit = 480000;
 
     string test_22_Input = R"V0G0N(
 trntree1

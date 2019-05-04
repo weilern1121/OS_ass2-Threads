@@ -19,13 +19,3 @@ Finished joing thread 9
 Attempting to join thread 10
 Finished joing thread 10
 Attempting to join thread 11
-Finished joing thread 11
-Attempting to join thread 12
-Finished joing thread 12
-Attempting to join thread 13
-Finished joing thread 13
-Attempting to join thread 14
-Finished joing thread 14
-Attempting to join thread 15
-Finished joing thread 15
-$ $ Finished Yehonatan Peleg Test, quiting...
