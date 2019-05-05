@@ -2,6 +2,7 @@
   <dictionary name="weilern">
     <words>
       <w>curthread</w>
+      <w>kthread</w>
     </words>
   </dictionary>
 </component>

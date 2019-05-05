@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/weilern/os192/ass2/OS_ass2-Threads/sanity.c
+types.h
+/home/weilern/os192/ass2/OS_ass2-Threads/types.h
+stat.h
+/home/weilern/os192/ass2/OS_ass2-Threads/stat.h
+user.h
+/home/weilern/os192/ass2/OS_ass2-Threads/user.h
+
+/home/weilern/os192/ass2/OS_ass2-Threads/stat.h
+
+/home/weilern/os192/ass2/OS_ass2-Threads/types.h
+
+/home/weilern/os192/ass2/OS_ass2-Threads/user.h
+

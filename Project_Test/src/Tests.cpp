@@ -1973,7 +1973,7 @@ $ $ Finished Yehonatan Peleg Test, quiting...
 )V0G0N";
     vector<string> test_12_UserPrograms = {"quitXV6","kt_sys11"};
     string test_12_Hint = "Problem with kthread_exit, should end process when last thread calls";
-    int test_12_time_limit = 240000;
+    int test_12_time_limit = 480000;
 
     string test_13_Input = R"V0G0N(
 kt_sys12
