@@ -3,7 +3,7 @@
 #include "user.h"
 
 #define NTHREADS       16  // max num of threads per proc
-volatile int kthreadsRunFlag = 0; //flag for test 2.2
+volatile int kthreadsRunFlag; //flag for test 2.2
 
 /********** 2.1 tests  **********/
 //test fork,exit and wait
@@ -62,79 +62,120 @@ int tid_arr[6]; //used to kthread_join func
     void name(){ \
         while(kthreadsRunFlag){}  \
         sleep(80000000);\
+        kthread_exit(); \
     }\
 
 #define THREAD_FUNC2(name, tid) \
     void name(){ \
         while(kthreadsRunFlag){}  \
-        if(kthread_id()==2){ \
             sleep(100000000);\
-        }\
+            kthread_exit(); \
     }\
 
 #define THREAD_FUNC3(name, tid) \
     void name(){ \
         while(kthreadsRunFlag){}  \
             kthread_join(tid_arr[tid]);\
+            kthread_exit(); \
     }\
 
 #define THREAD_FUNC4(name, tid) \
     void name(){ \
         while(kthreadsRunFlag){}  \
             kthread_join(tid_arr[tid]);\
+            kthread_exit(); \
     }\
 
 #define THREAD_FUNC5(name, tid) \
     void name(){ \
             while(kthreadsRunFlag){}  \
-            if( kthread_id()!=tid)\
-                printf(1,"\nERROR- kthread_id()!=tid\n");\
             kthread_join(tid_arr[tid]);\
+            kthread_exit(); \
     }\
 
 #define THREAD_FUNC6(name, tid) \
     void name(){ \
             while(kthreadsRunFlag){}  \
             kthread_join(tid_arr[2]);\
+            kthread_exit(); \
     }\
 
+
 THREAD_FUNC1(kthread1, 1)
+
 THREAD_FUNC2(kthread2, 2)
+
 THREAD_FUNC3(kthread3, 3)
+
 THREAD_FUNC4(kthread4, 4)
+
 THREAD_FUNC5(kthread5, 5)
+
 THREAD_FUNC6(kthread6, 6)
 
 void (*threads_starts[])(void) =
-        {kthread1,kthread2,kthread3,kthread4,kthread5,kthread6};
+        {kthread1, kthread2, kthread3, kthread4, kthread5, kthread6};
 
-int init_kthreads(void){
-    int checkFlag=0;
+void init_kthreads(void) {
+    int checkFlag = 0;
     kthreadsRunFlag = 1; //flag the threads funcs that they can start execute their code
     //malloc the tk_stacks for each kthread
-    void *tkaddr1 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
-    void *tkaddr2 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
-    void *tkaddr3 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
-    void *tkaddr4 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
-    void *tkaddr5 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
-    void *tkaddr6 = ((char *)malloc(STACK_SIZE*sizeof(char)))+STACK_SIZE;
+    void *tkaddr1 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr2 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr3 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr4 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr5 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr6 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
 
-    void (*tk_stacks[])(void) =
-            {tkaddr1,tkaddr2,tkaddr3,tkaddr4,tkaddr5,tkaddr6};
+    void (*tk_stacks_addr[])(void) =
+            {tkaddr1, tkaddr2, tkaddr3, tkaddr4, tkaddr5, tkaddr6};
 
-    for(int i=0; i<6; i++){
-        checkFlag=kthread_create(threads_starts[i],tk_stacks[i]);
-        if(checkFlag<0)
-            return -1;
+    for (int i = 0; i < 6; i++) {
+        printf(2, "kthread_create #%d\n", i + 1);
+        checkFlag = kthread_create(threads_starts[i], tk_stacks_addr[i]);
+        if (checkFlag < 0) {
+            printf(2, "kthread_create ERROR #%d\n", i + 1);
+            return;
+        }
+        printf(2, "kthread_create #%d COMPLETE\n", i + 1);
+        switch (i) {
+            case 0:
+                printf(2, "thread #%d start run his func -> sleep(80000000)\n", i + 1);
+                break;
+            case 1:
+                printf(2, "thread #%d start run his func -> sleep(100000000)\n", i + 1);
+                break;
+            case 2:
+            case 3:
+            case 4:
+                printf(2, "thread #%d start run his func -> kthread_join(himself)\n", i + 1);
+                break;
+            case 5:
+                printf(2, "thread #%d start run his func -> kthread_join(thread #2)\n", i + 1);
+                break;
+        }
     }
 
     kthreadsRunFlag = 0; //flag the threads to not enter theirs funcs from here
-
-    return 1;
-
 }
+
+void test_22(void) {
+    int pid;
+    if ((pid = fork()) == 0) {
+        init_kthreads();
+        exit();
+    } else if (pid > 0) { //wait for children to finish execution
+        sleep(500);
+        kill(pid);
+        wait();
+    } else {
+        printf(1, "fork failed\n");
+        exit();
+    }
+}
+
 void run_test(int testNum) {
-    int tmp = 0;
+//    int tmp = 0;
     switch (testNum) {
         case 21:
             printf(1, "Start test 2.1\n");
@@ -145,8 +186,8 @@ void run_test(int testNum) {
             break;
         case 22:
             printf(1, "Start test 2.2\n");
-            tmp=init_kthreads();
-            printf(1, tmp ? "Test 2.2 Passed!\n" :  "Test 2.2 Failed!\n");
+            test_22();
+            printf(1, "Test 2.2 Passed!\n");
             break;
         default:
             printf(2, "ERROR- wrong test_ID %d \n", testNum);
@@ -155,7 +196,7 @@ void run_test(int testNum) {
 }
 
 int main(int argc, char *argv[]) {
-    run_test(21);
+    //run_test(21);
     run_test(22);
 
     exit();
