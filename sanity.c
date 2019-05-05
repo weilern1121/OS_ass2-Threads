@@ -174,30 +174,123 @@ void test_22(void) {
     }
 }
 
-void run_test(int testNum) {
-//    int tmp = 0;
-    switch (testNum) {
-        case 21:
-            printf(1, "Start test 2.1\n");
-            if (test_21_1())
-                test_21_2();
-            else
-                printf(1, "Failed in test 2.1\n");
-            break;
-        case 22:
-            printf(1, "Start test 2.2\n");
-            test_22();
-            printf(1, "Test 2.2 Passed!\n");
-            break;
-        default:
-            printf(2, "ERROR- wrong test_ID %d \n", testNum);
+/********** 3.1 tests  **********/
+int mutex_id;
+
+#define THREAD_FUNC10(name, tid) \
+    void name(){ \
+        while(kthreadsRunFlag){}  \
+        mutex_id=kthread_mutex_alloc();\
+        if(mutex_id==-1)\
+            printf(1,"ERROR - kthread_mutex_alloc()");\
+        if(kthread_mutex_lock(mutex_id) <0)\
+            printf(2,"ERROR - kthread_mutex_lock(%d)",mutex_id);\
+        if(kthread_mutex_unlock(mutex_id) <0)\
+            printf(2,"ERROR - kthread_mutex_unlock(%d)",mutex_id);\
+        if(kthread_mutex_dealloc(mutex_id) <0)\
+            printf(2,"ERROR - kthread_mutex_dealloc(%d)",mutex_id);\
+        kthread_exit(); \
+    }\
+
+#define THREAD_FUNC11(name, tid) \
+    void name(){ \
+        while(kthreadsRunFlag){}  \
+        int mutex_id=99999;\
+        if(kthread_mutex_unlock(mutex_id) >=0)\
+            printf(2,"ERROR - kthread_mutex_unlock(%d)",mutex_id);\
+        if(kthread_mutex_dealloc(mutex_id) >=0)\
+            printf(2,"ERROR - kthread_mutex_dealloc(%d)",mutex_id);\
+        kthread_exit(); \
+    }\
+
+#define THREAD_FUNC12(name, tid) \
+    void name(){ \
+        while(kthreadsRunFlag){}  \
+        sleep(100);\
+        if(kthread_mutex_lock(mutex_id) >=0)\
+            printf(2,"ERROR - kthread_mutex_lock(%d)",mutex_id);\
+        kthread_exit(); \
+    }\
+
+
+THREAD_FUNC10(kthread10, 1) //alloc->lock->unlock->dealloc
+THREAD_FUNC11(kthread11, 1) //try to unlock->dealloc another lock
+THREAD_FUNC12(kthread12, 1) //try to lock->same lock as kthread10 after sleep
+
+void init_mutex_kthreads(void) {
+    int checkFlag = 0;
+    kthreadsRunFlag = 1; //flag the threads funcs that they can start execute their code
+    //malloc the tk_stacks for each kthread
+    void *tkaddr10 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr11 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+    void *tkaddr12 = ((char *) malloc(STACK_SIZE * sizeof(char))) + STACK_SIZE;
+
+    void (*tk_stacks_addr[])(void) =
+            {tkaddr10, tkaddr11, tkaddr12};
+
+    for (int i = 0; i < 3; i++) {
+        printf(2, "kthread_create #%d\n", i + 1);
+        checkFlag = kthread_create(threads_starts[i], tk_stacks_addr[i]);
+        if (checkFlag < 0) {
+            printf(2, "kthread_create ERROR #%d\n", i + 1);
             return;
+        }
+    }
+    kthreadsRunFlag = 0; //flag the threads to not enter theirs funcs from here
+}
+
+
+void test_31(void) {
+    int pid;
+    if ((pid = fork()) == 0) {
+        init_mutex_kthreads();
+        exit();
+    } else if (pid > 0) { //wait for children to finish execution
+        sleep(500);
+        kill(pid);
+        wait();
+    } else {
+        printf(1, "fork failed\n");
+        exit();
     }
 }
 
-int main(int argc, char *argv[]) {
-    //run_test(21);
-    run_test(22);
+/***************  main  ***************/
 
-    exit();
-}
+
+    void run_test(int testNum) {
+        switch (testNum) {
+            case 21:
+                printf(1, "-- Start test 2.1 --\n");
+                if (test_21_1())
+                    test_21_2();
+                else
+                    printf(1, "-- Failed in test 2.1 --\n");
+                printf(1,"\n");
+                break;
+            case 22:
+                printf(1, "-- Start test 2.2 --\n");
+                test_22();
+                printf(1, "-- Test 2.2 Passed! --\n");
+                printf(1,"\n");
+                break;
+            case 31:
+                printf(1, "-- Start test 3.1 --\n");
+                test_31();
+                printf(1, "-- Test 3.1 Passed! --\n");
+                printf(1,"\n");
+                break;
+            default:
+                printf(2, "ERROR- wrong test_ID %d \n\n", testNum);
+                return;
+        }
+    }
+
+    int main(int argc, char *argv[]) {
+        run_test(21); //Test to part 2.1 - fork, exit, wait and exec
+        run_test(22);//Test for part 2.2 - kthread create, exit and join
+        run_test(31);//Test for part 3.1 - mutex alloc,dealloc,lock,unlock
+
+
+        exit();
+    }
